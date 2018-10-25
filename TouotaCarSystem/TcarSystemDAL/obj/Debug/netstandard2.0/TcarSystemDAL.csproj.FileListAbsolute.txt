@@ -1,0 +1,17 @@
+F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystemDAL\bin\Debug\netstandard2.0\TcarSystemDAL.deps.json
+F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystemDAL\bin\Debug\netstandard2.0\TcarSystemDAL.dll
+F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystemDAL\bin\Debug\netstandard2.0\TcarSystemDAL.pdb
+F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystemDAL\bin\Debug\netstandard2.0\TcarSystemModel.dll
+F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystemDAL\bin\Debug\netstandard2.0\TcarSystemModel.pdb
+F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystemDAL\obj\Debug\netstandard2.0\TcarSystemDAL.csprojAssemblyReference.cache
+F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystemDAL\obj\Debug\netstandard2.0\TcarSystemDAL.csproj.CoreCompileInputs.cache
+F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystemDAL\obj\Debug\netstandard2.0\TcarSystemDAL.AssemblyInfoInputs.cache
+F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystemDAL\obj\Debug\netstandard2.0\TcarSystemDAL.AssemblyInfo.cs
+F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystemDAL\obj\Debug\netstandard2.0\TcarSystemDAL.csproj.CopyComplete
+F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystemDAL\obj\Debug\netstandard2.0\TcarSystemDAL.dll
+F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystemDAL\obj\Debug\netstandard2.0\TcarSystemDAL.pdb
+F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystemDAL\bin\Debug\netstandard2.0\System.configuration.dll
+F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystemDAL\bin\Debug\netstandard2.0\System.Data.SQLite.dll
+F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystemDAL\bin\Debug\netstandard2.0\System.Security.dll
+F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystemDAL\bin\Debug\netstandard2.0\zh-CHS\System.configuration.resources.dll
+F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystemDAL\bin\Debug\netstandard2.0\zh-CHS\System.Security.resources.dll
