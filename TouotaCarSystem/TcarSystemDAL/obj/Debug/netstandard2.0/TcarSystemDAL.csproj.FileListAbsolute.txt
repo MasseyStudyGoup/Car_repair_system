@@ -19,3 +19,13 @@ H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemDAL\obj\Debug
 H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemDAL\obj\Debug\netstandard2.0\TcarSystemDAL.csproj.CoreCompileInputs.cache
 H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemDAL\obj\Debug\netstandard2.0\TcarSystemDAL.AssemblyInfoInputs.cache
 H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemDAL\obj\Debug\netstandard2.0\TcarSystemDAL.AssemblyInfo.cs
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemDAL\bin\Debug\netstandard2.0\TcarSystemDAL.deps.json
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemDAL\bin\Debug\netstandard2.0\TcarSystemDAL.dll
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemDAL\bin\Debug\netstandard2.0\TcarSystemDAL.pdb
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemDAL\bin\Debug\netstandard2.0\System.configuration.dll
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemDAL\bin\Debug\netstandard2.0\System.Data.SQLite.dll
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemDAL\bin\Debug\netstandard2.0\TcarSystemModel.dll
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemDAL\bin\Debug\netstandard2.0\System.Security.dll
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemDAL\bin\Debug\netstandard2.0\TcarSystemModel.pdb
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemDAL\obj\Debug\netstandard2.0\TcarSystemDAL.dll
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemDAL\obj\Debug\netstandard2.0\TcarSystemDAL.pdb

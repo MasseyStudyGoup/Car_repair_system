@@ -43,26 +43,31 @@ namespace TcarSystem.DAL
         public static IList<JobInfo> GetAllJobInfos()
         {
             // TODO
+            return null;
         }
 
         public static JobInfoService GetJobById(int id)
         {
             //TODO
+            return null;
         }
 
         public static int AddJob(JobInfo job)
         {
             //
+            return 0;
         }
 
         public static int ModifyJob(JobInfo job)
         {
             //
+            return 0;
         }
 
         public static int DelJob(int id)
         {
             //todo
+            return 0;
         }
     }
 }

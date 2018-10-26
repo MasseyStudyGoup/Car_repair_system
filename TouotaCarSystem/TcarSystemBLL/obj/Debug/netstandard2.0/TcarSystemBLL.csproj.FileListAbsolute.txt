@@ -20,3 +20,16 @@ F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystemBLL\bin\Debug\ne
 H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemBLL\obj\Debug\netstandard2.0\TcarSystemBLL.csproj.CoreCompileInputs.cache
 H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemBLL\obj\Debug\netstandard2.0\TcarSystemBLL.AssemblyInfoInputs.cache
 H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemBLL\obj\Debug\netstandard2.0\TcarSystemBLL.AssemblyInfo.cs
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemBLL\bin\Debug\netstandard2.0\TcarSystemBLL.deps.json
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemBLL\bin\Debug\netstandard2.0\TcarSystemBLL.dll
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemBLL\bin\Debug\netstandard2.0\TcarSystemBLL.pdb
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemBLL\bin\Debug\netstandard2.0\TcarSystemDAL.dll
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemBLL\bin\Debug\netstandard2.0\TcarSystemModel.dll
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemBLL\bin\Debug\netstandard2.0\System.Data.SQLite.dll
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemBLL\bin\Debug\netstandard2.0\System.Configuration.dll
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemBLL\bin\Debug\netstandard2.0\System.Security.dll
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemBLL\bin\Debug\netstandard2.0\TcarSystemDAL.pdb
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemBLL\bin\Debug\netstandard2.0\TcarSystemModel.pdb
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemBLL\obj\Debug\netstandard2.0\TcarSystemBLL.csprojResolveAssemblyReference.cache
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemBLL\obj\Debug\netstandard2.0\TcarSystemBLL.dll
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemBLL\obj\Debug\netstandard2.0\TcarSystemBLL.pdb
