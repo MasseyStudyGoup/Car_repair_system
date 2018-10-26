@@ -122,3 +122,10 @@ F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystem\bin\Debug\Entit
 F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystem\bin\Debug\EntityFramework.SqlServer.xml
 F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystem\bin\Debug\System.Data.SQLite.xml
 F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystem\bin\Debug\System.Data.SQLite.dll.config
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystem\obj\Debug\TcarSystem.csprojResolveAssemblyReference.cache
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystem\obj\Debug\TcarSystem.csproj.TcarSystem.exe.config
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystem\obj\Debug\TcarSystem.Properties.Resources.resources
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystem\obj\Debug\TcarSystem.TcarLogin.resources
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystem\obj\Debug\TcarSystem.TcarMain.resources
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystem\obj\Debug\TcarSystem.csproj.GenerateResource.Cache
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystem\obj\Debug\TcarSystem.csproj.CoreCompileInputs.cache

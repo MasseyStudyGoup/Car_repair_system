@@ -12,14 +12,18 @@ namespace TcarSystem.DAL
     {
         private static IList<JobInfo> GetJobsBySQL(string strsql)
         {
-            IList<JobInfo> jobs = new List<JobInfo>;
+            IList<JobInfo> jobs = new List<JobInfo>();
             DataTable dt = SqliteHelper.ExecuteTable(strsql);
             if (dt != null)
             {
-                for(int i=-; i<dt.Rows.Count; i++)
+                for(int i=0; i<dt.Rows.Count; i++)
                 {
                     JobInfo job = new JobInfo();
-                    job.id = dt.Rows[i][]
+                    job.id = dt.Rows[i]["id"].ToString();
+                    job.jobDescription = dt.Rows[i]["jobDescription"].ToString();
+                    job.jobStatus = (JobStatus) int.Parse(dt.Rows[i]["jobStatus"].ToString());
+
+
                 }
             }
 

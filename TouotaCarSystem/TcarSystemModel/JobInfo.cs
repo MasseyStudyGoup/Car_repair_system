@@ -16,6 +16,8 @@ namespace TcarSystem.Model
         private string _jobDescription;
         private ResolveStatus _resolve;
         private Priority _priority;
+        private JobStatus _jobStatus;
+
         private string _comment;
         private Outlet _outlet;
 
@@ -73,6 +75,13 @@ namespace TcarSystem.Model
 
         }
 
+        public JobStatus jobStatus
+        {
+            get { return _jobStatus; }
+            set { _jobStatus = value; }
+
+        }
+
         public ResolveStatus resolve
         {
             get { return _resolve; }
@@ -91,6 +100,13 @@ namespace TcarSystem.Model
         {
             get { return _outlet; }
             set { _outlet = value; }
+
+        }
+
+        public string comment
+        {
+            get { return _comment; }
+            set { _comment = value; }
 
         }
 

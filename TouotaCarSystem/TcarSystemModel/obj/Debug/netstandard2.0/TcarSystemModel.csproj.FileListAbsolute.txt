@@ -7,3 +7,12 @@ F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystemModel\obj\Debug\
 F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystemModel\obj\Debug\netstandard2.0\TcarSystemModel.AssemblyInfo.cs
 F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystemModel\obj\Debug\netstandard2.0\TcarSystemModel.dll
 F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystemModel\obj\Debug\netstandard2.0\TcarSystemModel.pdb
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemModel\bin\Debug\netstandard2.0\TcarSystemModel.deps.json
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemModel\bin\Debug\netstandard2.0\TcarSystemModel.dll
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemModel\bin\Debug\netstandard2.0\TcarSystemModel.pdb
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemModel\obj\Debug\netstandard2.0\TcarSystemModel.csprojResolveAssemblyReference.cache
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemModel\obj\Debug\netstandard2.0\TcarSystemModel.csproj.CoreCompileInputs.cache
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemModel\obj\Debug\netstandard2.0\TcarSystemModel.AssemblyInfoInputs.cache
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemModel\obj\Debug\netstandard2.0\TcarSystemModel.AssemblyInfo.cs
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemModel\obj\Debug\netstandard2.0\TcarSystemModel.dll
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemModel\obj\Debug\netstandard2.0\TcarSystemModel.pdb

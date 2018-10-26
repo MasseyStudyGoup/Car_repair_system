@@ -15,3 +15,7 @@ F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystemDAL\bin\Debug\ne
 F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystemDAL\bin\Debug\netstandard2.0\System.Security.dll
 F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystemDAL\bin\Debug\netstandard2.0\zh-CHS\System.configuration.resources.dll
 F:\Opreating system\Car_repair_system\TouotaCarSystem\TcarSystemDAL\bin\Debug\netstandard2.0\zh-CHS\System.Security.resources.dll
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemDAL\obj\Debug\netstandard2.0\TcarSystemDAL.csprojResolveAssemblyReference.cache
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemDAL\obj\Debug\netstandard2.0\TcarSystemDAL.csproj.CoreCompileInputs.cache
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemDAL\obj\Debug\netstandard2.0\TcarSystemDAL.AssemblyInfoInputs.cache
+H:\My Documents\GitHub\Car_repair_system\TouotaCarSystem\TcarSystemDAL\obj\Debug\netstandard2.0\TcarSystemDAL.AssemblyInfo.cs
