@@ -8,6 +8,7 @@ namespace TcarSystem.Model
     {
         private string _id;
         private DateTime _createdate;
+        private DateTime _closedate;
         private string _customer;
         private string _carNo;
         private UserInfor _desk;
@@ -107,6 +108,13 @@ namespace TcarSystem.Model
         {
             get { return _comment; }
             set { _comment = value; }
+
+        }
+
+        public DateTime closedate
+        {
+            get { return _closedate; }
+            set { _closedate = value; }
 
         }
 

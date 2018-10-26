@@ -20,8 +20,18 @@ namespace TcarSystem.DAL
                 {
                     JobInfo job = new JobInfo();
                     job.id = dt.Rows[i]["id"].ToString();
+                    job.carNo = dt.Rows[i]["carNo"].ToString();
+                    job.customer = dt.Rows[i]["customer"].ToString();
                     job.jobDescription = dt.Rows[i]["jobDescription"].ToString();
+                    job.createdate = new DateTime (long.Parse(dt.Rows[i]["createdate"].ToString()));
                     job.jobStatus = (JobStatus) int.Parse(dt.Rows[i]["jobStatus"].ToString());
+                    job.priority = (Priority)int.Parse(dt.Rows[i]["priority"].ToString());
+                    job.resolve = (ResolveStatus)int.Parse(dt.Rows[i]["resovle"].ToString());
+                    job.desk = null;
+                    job.manager = null;
+                    job.worker = null;
+                    job.closedate = new DateTime(long.Parse(dt.Rows[i]["dateClose"].ToString()));
+                    job.comment = dt.Rows[i]["comment"].ToString();
 
 
                 }
