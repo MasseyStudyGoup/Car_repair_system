@@ -2,3 +2,6 @@ DateTime存储的时候要用以下方法
 
 https://docs.microsoft.com/en-us/dotnet/api/system.datetime?redirectedfrom=MSDN&view=netframework-4.7.2#persisting-values-as-integers
 dates[ctr].ToUniversalTime().Ticks;
+
+
+INSERT INTO `jobs`(`hist`,`pri`,`dateO`,`dateClose`,`createdate`,`carNo`,`desk`,`manager`,`worker`,`jobDescription`,`resolve`,`priority`,`comment`,`outlet`,`customer`,`jobStatus`) VALUES (NULL,0,0,0,'','',NULL,NULL,NULL,'',0,0,NULL,NULL,NULL,0);
