@@ -9,6 +9,8 @@ namespace TcarSystem.Model
         private string _id;
         private DateTime _createdate;
         private DateTime _closedate;
+        private DateTime _opendate;
+        private DateTime _assingdate;
         private string _customer;
         private string _carNo;
         private UserInfor _desk;
@@ -33,6 +35,18 @@ namespace TcarSystem.Model
             get { return _createdate; }
             set { _createdate = value; }
         }
+
+        public DateTime opendate
+        {
+            get { return _opendate; }
+            set { _opendate = value; }
+        }
+        public DateTime assigndate
+        {
+            get { return _assingdate; }
+            set { _assingdate = value; }
+        }
+
 
         public string customer
         {
@@ -117,8 +131,6 @@ namespace TcarSystem.Model
             set { _closedate = value; }
 
         }
-
-
 
     }
 

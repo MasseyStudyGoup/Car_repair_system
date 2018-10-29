@@ -18,6 +18,9 @@ namespace TcarSystem.DAL
             {
                 for(int i=0; i<dt.Rows.Count; i++)
                 {
+
+                    //to do: some fiels have been seperated from jobs
+
                     JobInfo job = new JobInfo();
                     job.id = dt.Rows[i]["id"].ToString();
                     job.carNo = dt.Rows[i]["carNo"].ToString();
@@ -30,9 +33,9 @@ namespace TcarSystem.DAL
                     job.desk = null;
                     job.manager = null;
                     job.worker = null;
-                    job.closedate = new DateTime(long.Parse(dt.Rows[i]["dateClose"].ToString()));
+                    job.closedate = new DateTime(long.Parse(dt.Rows[i]["closedate"].ToString()));
                     job.comment = dt.Rows[i]["comment"].ToString();
-
+                    jobs.Add(job);
 
                 }
             }
@@ -40,34 +43,156 @@ namespace TcarSystem.DAL
             return jobs;
              
         }
+
+
+        /// <summary>
+        /// get all jobs
+        /// </summary>
+        /// <param name="strsql">sql sentence</param>
+        /// <returns>a list of jobs</returns>
         public static IList<JobInfo> GetAllJobInfos()
         {
-            // TODO
-            return null;
+            
+            string strsql = "select * from jobs";
+
+            return GetJobsBySQL(strsql);
         }
 
-        public static JobInfoService GetJobById(int id)
+
+        /// <summary>
+        /// get a particular jobs
+        /// </summary>
+        /// <param name="strsql">sql sentence</param>
+        /// <returns>a job</returns>
+        public static JobInfo GetJobById(int id)
         {
-            //TODO
-            return null;
+           
+            string strsql = "select * from jobs where id=" + id.ToString();
+            try
+            {
+                return GetJobsBySQL(strsql)[0];
+            }
+            catch
+            {
+                return null;
+            }
+            
         }
 
+        /// <summary>
+        /// add a job
+        /// </summary>
+        /// <param name="strsql">sql sentence</param>
+        /// <returns>0 or 1</returns>
         public static int AddJob(JobInfo job)
         {
-            //
-            return 0;
+           
+            string strsql = string.Format("INSERT INTO `jobs`(`createdate`,`carNo`,`desk`,`manager`,`worker`,`jobDescription`,`priority`,`outlet`,`customer`) VALUES (0,'','',NULL,NULL,NULL,'',0,NULL,NULL)", job.createdate,job.assigndate, job.carNo,job.desk.UserId, job.manager.UserId, job.worker.UserId,job.jobDescription,job.priority,job.outlet,job.customer,);
+            return SqliteHelper.ExecuteNoneQuery(strsql);
+            
         }
 
+        /// <summary>
+        /// update a job
+        /// </summary>
+        /// <param name="strsql">sql sentence</param>
+        /// <returns>0 or 1</returns>
         public static int ModifyJob(JobInfo job)
         {
-            //
-            return 0;
+            
+            string strsql = string.Format("UPDATE `jobs` SET `createdate`=0,`carNo`='0',`desk`=0,`manager`=0,`worker`=0,`jobDescription`='0',`priority`=0,`outlet`='0',`customer`='0', WHERE id = 2",  job.createdate,  job.carNo, job.desk.UserId, job.manager.UserId, job.worker.UserId, job.jobDescription, job.priority, job.outlet, job.customer);
+
+            return SqliteHelper.ExecuteNoneQuery(strsql);
         }
 
+        /// <summary>
+        /// delete a job
+        /// </summary>
+        /// <param name="strsql">sql sentence</param>
+        /// <returns>0 or 1</returns>
         public static int DelJob(int id)
         {
-            //todo
-            return 0;
+          
+            string strsql = "delete from jobs where id=" + id.ToString();
+            string strsql1 = "delete from job_history where jobid=" + id.ToString();
+            SqliteHelper.ExecuteNoneQuery(strsql);
+            return SqliteHelper.ExecuteNoneQuery(strsql1);
         }
+
+        /// <summary>
+        /// close a job by Desk
+        /// </summary>
+        /// <param name="strsql">sql sentence</param>
+        /// <returns>0 or 1</returns>
+        public static int closeByDesk(JobInfo job)
+        {
+
+            string strsql = string.Format("UPDATE `jobs` SET `desk`=0 WHERE id = 2",  job.desk.UserId);
+            string strsql1 = string.Format("INSERT INTO `job_history`(`jobid`,`jobStatus`,`assigndate`,`closedate`,`opendate`,`resolve`,`comment`) VALUES (0,0,0,0,0,0,'')", job.id, job.jobStatus, job.assigndate, job.closedate, job.opendate, job.resolve, job.comment);
+
+            SqliteHelper.ExecuteNoneQuery(strsql);
+            return SqliteHelper.ExecuteNoneQuery(strsql1);
+        }
+
+
+        /// <summary>
+        /// confirm a job
+        /// </summary>
+        /// <param name="strsql">sql sentence</param>
+        /// <returns>0 or 1</returns>
+        public static int confirmById(JobInfo job)
+        {
+
+            string strsql = string.Format("UPDATE `jobs` SET `desk`=0,`manager`=0 WHERE id = 2", job.desk, job.manager);
+            string strsql1 = string.Format("INSERT INTO `job_history`(`jobid`,`jobStatus`,`assigndate`,`closedate`,`opendate`,`resolve`,`comment`) VALUES (0,0,0,0,0,0,'')", job.id, job.jobStatus, job.assigndate, job.closedate, job.opendate, job.resolve, job.comment);
+
+            SqliteHelper.ExecuteNoneQuery(strsql);
+            return SqliteHelper.ExecuteNoneQuery(strsql1);
+        }
+
+        /// <summary>
+        /// set a job's priority
+        /// </summary>
+        /// <param name="strsql">sql sentence</param>
+        /// <returns>0 or 1</returns>
+        public static int setPriority(JobInfo job)
+        {
+
+            string strsql = string.Format("UPDATE `jobs` SET `priority`=0, WHERE id = 2",  job.priority);
+
+            return SqliteHelper.ExecuteNoneQuery(strsql);
+        }
+
+        /// <summary>
+        /// assign a job
+        /// </summary>
+        /// <param name="strsql">sql sentence</param>
+        /// <returns>0 or 1</returns>
+        public static int assign(JobInfo job)
+        {
+
+            string strsql = string.Format("UPDATE `jobs` SET `worker`=0 WHERE id = 2",  job.worker);
+            string strsql1 = string.Format("INSERT INTO `job_history`(`jobid`,`jobStatus`,`assigndate`,`closedate`,`opendate`,`resolve`,`comment`) VALUES (0,0,0,0,0,0,'')", job.id, job.jobStatus, job.assigndate, job.closedate, job.opendate, job.resolve, job.comment);
+            SqliteHelper.ExecuteNoneQuery(strsql);
+            return SqliteHelper.ExecuteNoneQuery(strsql1);
+        }
+
+
+        /// <summary>
+        /// close a job by worker
+        /// </summary>
+        /// <param name="strsql">sql sentence</param>
+        /// <returns>0 or 1</returns>
+        public static int closeByWorker(JobInfo job)
+        {
+
+            string strsql = string.Format("UPDATE `jobs` SET `worker`=0 WHERE id = 2",  job.worker);
+            string strsql1 = string.Format("INSERT INTO `job_history`(`jobid`,`jobStatus`,`assigndate`,`closedate`,`opendate`,`resolve`,`comment`) VALUES (0,0,0,0,0,0,'')", job.id, job.jobStatus, job.assigndate, job.closedate, job.opendate, job.resolve, job.comment);
+            SqliteHelper.ExecuteNoneQuery(strsql);
+            return SqliteHelper.ExecuteNoneQuery(strsql1);
+        }
+
+
+
     }
 }
