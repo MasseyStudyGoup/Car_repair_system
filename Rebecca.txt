@@ -4,4 +4,4 @@ https://docs.microsoft.com/en-us/dotnet/api/system.datetime?redirectedfrom=MSDN&
 dates[ctr].ToUniversalTime().Ticks;
 
 
-INSERT INTO `jobs`(`hist`,`pri`,`dateO`,`dateClose`,`createdate`,`carNo`,`desk`,`manager`,`worker`,`jobDescription`,`resolve`,`priority`,`comment`,`outlet`,`customer`,`jobStatus`) VALUES (NULL,0,0,0,'','',NULL,NULL,NULL,'',0,0,NULL,NULL,NULL,0);
+UPDATE `jobs` SET `manager`=? WHERE _rowid_='2';
