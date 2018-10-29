@@ -10,4 +10,10 @@
     <ProjectReference Include="..\TcarSystemModel\TcarSystemModel.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\..\remove out file\TouotaCarSystem\Lib\System.Data.SQLite.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

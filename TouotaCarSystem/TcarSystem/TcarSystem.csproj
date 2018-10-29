@@ -66,8 +66,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HpdeskMDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HpdeskMDI.Designer.cs">
+      <DependentUpon>HpdeskMDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerMDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerMDI.Designer.cs">
+      <DependentUpon>ManagerMDI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SignForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignForm.Designer.cs">
+      <DependentUpon>SignForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TcarLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +98,30 @@
     <Compile Include="TcarMain.Designer.cs">
       <DependentUpon>TcarMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserMDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserMDI.Designer.cs">
+      <DependentUpon>UserMDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userpage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="userpage.Designer.cs">
+      <DependentUpon>userpage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkerMDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkerMDI.Designer.cs">
+      <DependentUpon>WorkerMDI.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="HpdeskMDI.resx">
+      <DependentUpon>HpdeskMDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerMDI.resx">
+      <DependentUpon>ManagerMDI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -89,11 +131,23 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SignForm.resx">
+      <DependentUpon>SignForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TcarLogin.resx">
       <DependentUpon>TcarLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TcarMain.resx">
       <DependentUpon>TcarMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserMDI.resx">
+      <DependentUpon>UserMDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userpage.resx">
+      <DependentUpon>userpage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkerMDI.resx">
+      <DependentUpon>WorkerMDI.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

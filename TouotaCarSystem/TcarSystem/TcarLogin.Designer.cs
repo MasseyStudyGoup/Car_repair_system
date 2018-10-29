@@ -81,6 +81,7 @@
             this.btnSigin.TabIndex = 5;
             this.btnSigin.Text = "Sign in";
             this.btnSigin.UseVisualStyleBackColor = false;
+            this.btnSigin.Click += new System.EventHandler(this.btnSigin_Click);
             // 
             // TcarLogin
             // 

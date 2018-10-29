@@ -44,7 +44,7 @@ namespace TcarSystem.DAL
             user.UserName = dr["user_name"].ToString();
             user.CarNo = dr["carNo"].ToString();
             user.User_password = dr["user_password"].ToString();
-            user.Identity = Convert.ToInt32(dr["identity"]);
+            user.Identity = dr["identity"].ToString();
 
             return user;
             //throw new NotImplementedException();

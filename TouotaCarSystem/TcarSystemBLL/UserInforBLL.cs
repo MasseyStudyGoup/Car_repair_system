@@ -4,6 +4,7 @@ using System.Text;
 using System.Linq;
 using TcarSystem.DAL;
 using TcarSystem.Model;
+using System.Data.SQLite;
 
 namespace TcarSystem.BLL
 {
@@ -33,6 +34,13 @@ namespace TcarSystem.BLL
                 msg = "Sorry, the account does not exist!";
             }
             return flag;
+        }
+        public string checkUtype(string loginName)
+        {
+            UserInfor user = dal.IsLoginByLoginName(loginName);
+            string gettype = user.Identity;
+
+            return gettype;
         }
     }
 }

@@ -18,11 +18,7 @@ namespace TcarSystem
             Application.SetCompatibleTextRenderingDefault(false);
 
             TcarLogin tlogin = new TcarLogin();
-
-            if (tlogin.ShowDialog() == DialogResult.OK)
-            {
-                Application.Run(new TcarMain());
-            }
+            Application.Run(new TcarLogin());
 
             
         }

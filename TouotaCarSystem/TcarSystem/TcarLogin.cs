@@ -14,6 +14,7 @@ namespace TcarSystem
 {
     public partial class TcarLogin : Form
     {
+
         public TcarLogin()
         {
             InitializeComponent();
@@ -21,12 +22,11 @@ namespace TcarSystem
 
         private void textBoxName_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void textBoxPassword_TextChanged(object sender, EventArgs e)
         {
-
+            textBoxPassword.PasswordChar = '*';
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -53,7 +53,37 @@ namespace TcarSystem
 
         public void Bind()
         {
-            this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            //this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            UserInforBLL bll = new UserInforBLL();
+            string userid = bll.checkUtype(textBoxName.Text);
+
+            if (userid == "user")
+            {
+                this.Hide();
+                //UserMDI mdu = new UserMDI();
+                //mdu.Show();
+                userpage usp = new userpage();
+                usp.Show();
+            }
+            else if (userid == "hpdesk")
+            {
+                this.Hide();
+                HpdeskMDI mdhp = new HpdeskMDI();
+                mdhp.Show();
+            }
+            else if (userid == "work")
+            {
+                this.Hide();
+                WorkerMDI mdwk = new WorkerMDI();
+                mdwk.Show();
+            }
+            else
+            {
+                this.Hide();
+                ManagerMDI mdm = new ManagerMDI();
+                mdm.Show();
+            }
+
         }
 
         //function for check name and password not null
@@ -71,6 +101,12 @@ namespace TcarSystem
             }
 
             return true;
+        }
+
+        private void btnSigin_Click(object sender, EventArgs e)
+        {
+            SignForm signin = new SignForm();
+            signin.Show();
         }
     }
 }
