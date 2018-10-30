@@ -10,8 +10,19 @@ namespace TcarSystem.BLL
     {
         public static IList<JobInfo> GetAllJobInfos()
         {
+            UserInfor user = UserInforBLL.CurrentUser;
+            string sql = "";
+            if (user.Identity == "mananger")
+            {
+                sql = string.Format("select * from jobs where outlet ='{0}'", user.outlet);
+//                return TcarSystem.DAL.JobInfoService.GetAllJobInfos(UserInforBLL.CurrentUser.outlet);
+            }
+            else 
+            {
+                sql = string.Format("select * from jobs where userid ={0}", user.UserId);
+            }
+            return TcarSystem.DAL.JobInfoService.GetJobsBySQL(sql);
 
-            return TcarSystem.DAL.JobInfoService.GetAllJobInfos();
         }
 
 

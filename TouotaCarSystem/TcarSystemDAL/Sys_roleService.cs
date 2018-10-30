@@ -41,7 +41,7 @@ namespace TcarSystem.DAL
 
         public static UserInfor GetUserByiId(int id)
         {
-            string strsql = "select * from user where userid=" + id.ToString();
+            string strsql = string.Format("select * from {0} where userid='{1}'", "user", id.ToString());
             try
             {
                 return GetUsersBySQL(strsql)[0];

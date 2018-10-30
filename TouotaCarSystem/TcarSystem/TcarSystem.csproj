@@ -66,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="helpDeskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="helpDeskForm.Designer.cs">
+      <DependentUpon>helpDeskForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="HpdeskMDI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,12 @@
     </Compile>
     <Compile Include="ManagerMDI.Designer.cs">
       <DependentUpon>ManagerMDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewJobForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewJobForm.Designer.cs">
+      <DependentUpon>NewJobForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,6 +110,18 @@
     <Compile Include="TcarMain.Designer.cs">
       <DependentUpon>TcarMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlhelpdersk.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlhelpdersk.Designer.cs">
+      <DependentUpon>UserControlhelpdersk.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserMDI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,11 +140,17 @@
     <Compile Include="WorkerMDI.Designer.cs">
       <DependentUpon>WorkerMDI.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="helpDeskForm.resx">
+      <DependentUpon>helpDeskForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HpdeskMDI.resx">
       <DependentUpon>HpdeskMDI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerMDI.resx">
       <DependentUpon>ManagerMDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewJobForm.resx">
+      <DependentUpon>NewJobForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -139,6 +169,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TcarMain.resx">
       <DependentUpon>TcarMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test.resx">
+      <DependentUpon>test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlhelpdersk.resx">
+      <DependentUpon>UserControlhelpdersk.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserMDI.resx">
       <DependentUpon>UserMDI.cs</DependentUpon>
@@ -182,7 +218,7 @@
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets'))" />
   </Target>

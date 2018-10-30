@@ -11,6 +11,7 @@ namespace TcarSystem.Model
         private string _carNo;
         private string _pwd;
         private string _identity;
+        private string _outlet;
 
         public int UserId
         {
@@ -25,5 +26,6 @@ namespace TcarSystem.Model
         public string CarNo { get => _carNo; set => _carNo = value; }
         public string UserName { get => _userName; set => _userName = value; }
         public string Identity { get => _identity; set => _identity = value; }
+        public string outlet { get => _outlet; set => _outlet = value; }
     }
 }

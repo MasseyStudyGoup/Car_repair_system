@@ -10,21 +10,24 @@ using System.Windows.Forms;
 
 namespace TcarSystem
 {
-    public partial class HpdeskMDI : Form
+    public partial class NewJobForm : Form
     {
-        private int childFormNumber = 0;
-
-        public HpdeskMDI()
+        public NewJobForm()
         {
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void menuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NewJobForm_Load(object sender, EventArgs e)
         {
 
         }
