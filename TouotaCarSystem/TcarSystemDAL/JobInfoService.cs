@@ -30,9 +30,11 @@ namespace TcarSystem.DAL
                     job.jobStatus = (JobStatus) int.Parse(dt.Rows[i]["jobStatus"].ToString());
                     job.priority = (Priority)int.Parse(dt.Rows[i]["priority"].ToString());
                     job.resolve = (ResolveStatus)int.Parse(dt.Rows[i]["resovle"].ToString());
-                    job.desk = null;
-                    job.manager = null;
-                    job.worker = null;
+                    //outer key
+                    job.desk = Sys_roleService.GetUserByiId(int.Parse(dt.Rows[i]["desk"].ToString()));
+                    job.manager = Sys_roleService.GetUserByiId(int.Parse(dt.Rows[i]["manager"].ToString()));
+                    job.worker = Sys_roleService.GetUserByiId(int.Parse(dt.Rows[i]["worker"].ToString()));
+
                     job.closedate = new DateTime(long.Parse(dt.Rows[i]["closedate"].ToString()));
                     job.comment = dt.Rows[i]["comment"].ToString();
                     jobs.Add(job);
