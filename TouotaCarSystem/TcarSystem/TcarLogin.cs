@@ -18,6 +18,9 @@ namespace TcarSystem
         public TcarLogin()
         {
             InitializeComponent();
+            textBoxName.Text = "zoe";
+            textBoxPassword.Text = "zoe";
+
         }
 
         private void textBoxName_TextChanged(object sender, EventArgs e)
@@ -68,7 +71,7 @@ namespace TcarSystem
             else if (userid == "hpdesk")
             {
                 this.Hide();
-                HpdeskMDI mdhp = new HpdeskMDI();
+                helpDeskForm mdhp = new helpDeskForm();
                 mdhp.Show();
             }
             else if (userid == "work")

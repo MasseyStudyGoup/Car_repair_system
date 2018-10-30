@@ -10,7 +10,7 @@ namespace TcarSystem.DAL
 {
     public class JobInfoService
     {
-        private static IList<JobInfo> GetJobsBySQL(string strsql)
+        public static IList<JobInfo> GetJobsBySQL(string strsql)
         {
             IList<JobInfo> jobs = new List<JobInfo>();
             DataTable dt = SqliteHelper.ExecuteTable(strsql);
@@ -29,11 +29,19 @@ namespace TcarSystem.DAL
                     job.createdate = new DateTime (long.Parse(dt.Rows[i]["createdate"].ToString()));
                     job.jobStatus = (JobStatus) int.Parse(dt.Rows[i]["jobStatus"].ToString());
                     job.priority = (Priority)int.Parse(dt.Rows[i]["priority"].ToString());
-                    job.resolve = (ResolveStatus)int.Parse(dt.Rows[i]["resovle"].ToString());
+                    job.resolve = (ResolveStatus)int.Parse(dt.Rows[i]["resolve"].ToString());
                     //outer key
-                    job.desk = Sys_roleService.GetUserByiId(int.Parse(dt.Rows[i]["desk"].ToString()));
-                    job.manager = Sys_roleService.GetUserByiId(int.Parse(dt.Rows[i]["manager"].ToString()));
-                    job.worker = Sys_roleService.GetUserByiId(int.Parse(dt.Rows[i]["worker"].ToString()));
+                    string deskId = dt.Rows[i]["desk"].ToString();
+                    if (deskId != null && deskId.Length > 0)
+                        job.desk = Sys_roleService.GetUserByiId(int.Parse(deskId));
+
+                    string managerId = dt.Rows[i]["manager"].ToString();
+                    if (managerId != null && managerId.Length > 0)
+                        job.manager = Sys_roleService.GetUserByiId(int.Parse(managerId));
+
+                    string workerId = dt.Rows[i]["worker"].ToString();
+                    if (workerId != null && workerId.Length > 0)
+                        job.worker = Sys_roleService.GetUserByiId(int.Parse(workerId));
 
                     job.closedate = new DateTime(long.Parse(dt.Rows[i]["closedate"].ToString()));
                     job.comment = dt.Rows[i]["comment"].ToString();
@@ -46,20 +54,24 @@ namespace TcarSystem.DAL
              
         }
 
-
         /// <summary>
         /// get all jobs
         /// </summary>
         /// <param name="strsql">sql sentence</param>
         /// <returns>a list of jobs</returns>
-        public static IList<JobInfo> GetAllJobInfos()
+        public static IList<JobInfo> GetAllJobInfos(string outletId)
         {
-            
-            string strsql = "select * from jobs";
+
+            string strsql = string.Format("select * from jobs where outlet ='{0}'", outletId);
 
             return GetJobsBySQL(strsql);
         }
 
+        public static IList<JobInfo> GetAllJobInfoByUser(int userId)
+        {
+            string strsql = string.Format("select * from jobs where userId ={0}", userId);
+            return null;
+        }
 
         /// <summary>
         /// get a particular jobs

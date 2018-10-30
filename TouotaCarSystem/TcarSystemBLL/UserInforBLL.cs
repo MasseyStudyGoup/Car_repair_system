@@ -4,25 +4,27 @@ using System.Text;
 using System.Linq;
 using TcarSystem.DAL;
 using TcarSystem.Model;
-using System.Data.SQLite;
+//using System.Data.SQLite;
+using System.Data;
 
 namespace TcarSystem.BLL
 {
     public class UserInforBLL
     {
         UserInforDAL dal = new UserInforDAL();
-        
+        private static UserInfor _user = null;
+
         public bool IsLoginByLoginName(string loginName, string Userpwd, out string msg)
         {
             bool flag = false;
-            UserInfor user = dal.IsLoginByLoginName(loginName);//get name object
+            _user = dal.IsLoginByLoginName(loginName);//get name object
 
-            if (user!=null)
+            if (_user != null)
             {
-                if (Userpwd == user.User_password)
+                if (Userpwd == _user.User_password)
                 {
                     flag = true;
-                    msg = "Welcome" +  " " +user.UserName + "!";
+                    msg = "Welcome" +  " " + _user.UserName + "!";
                 }
                 else
                 {
@@ -41,6 +43,10 @@ namespace TcarSystem.BLL
             string gettype = user.Identity;
 
             return gettype;
+        }
+        public static UserInfor CurrentUser
+        {
+            get => _user;
         }
     }
 }
