@@ -87,7 +87,7 @@ namespace TcarSystem.DAL
         public static int AddJob(JobInfo job)
         {
            
-            string strsql = string.Format("INSERT INTO `jobs`(`createdate`,`carNo`,`desk`,`manager`,`worker`,`jobDescription`,`priority`,`outlet`,`customer`) VALUES (0,'','',NULL,NULL,NULL,'',0,NULL,NULL)", job.createdate,job.assigndate, job.carNo,job.desk.UserId, job.manager.UserId, job.worker.UserId,job.jobDescription,job.priority,job.outlet,job.customer,);
+            string strsql = string.Format("INSERT INTO `jobs`(`createdate`,`carNo`,`desk`,`manager`,`worker`,`jobDescription`,`priority`,`outlet`,`customer`) VALUES (0,'','',NULL,NULL,NULL,'',0,NULL,NULL)", job.createdate,job.assigndate, job.carNo,job.desk.UserId, job.manager.UserId, job.worker.UserId,job.jobDescription,job.priority,job.outlet,job.customer);
             return SqliteHelper.ExecuteNoneQuery(strsql);
             
         }
