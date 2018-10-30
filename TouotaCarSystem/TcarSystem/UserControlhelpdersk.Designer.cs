@@ -19,7 +19,7 @@
             }
             base.Dispose(disposing);
         }
-
+        //
         #region Component Designer generated code
 
         /// <summary> 
@@ -32,10 +32,11 @@
             // 
             // UserControlhelpdersk
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "UserControlhelpdersk";
-            this.Size = new System.Drawing.Size(458, 366);
+            this.Size = new System.Drawing.Size(458, 338);
+            this.Load += new System.EventHandler(this.UserControlhelpdersk_Load);
             this.ResumeLayout(false);
 
         }

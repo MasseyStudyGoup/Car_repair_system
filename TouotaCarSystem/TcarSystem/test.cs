@@ -26,5 +26,10 @@ namespace TcarSystem
         {
             
         }
+
+        private void test_Load(object sender, EventArgs e)
+        {
+            //
+        }
     }
 }

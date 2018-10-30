@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TcarSystem.BLL;
 using TcarSystem.Model;
-
+//
 namespace TcarSystem
 {
     public partial class TcarLogin : Form
@@ -110,6 +110,11 @@ namespace TcarSystem
         {
             SignForm signin = new SignForm();
             signin.Show();
+        }
+
+        private void TcarLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

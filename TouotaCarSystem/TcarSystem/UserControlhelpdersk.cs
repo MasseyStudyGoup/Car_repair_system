@@ -16,5 +16,10 @@ namespace TcarSystem
         {
             InitializeComponent();
         }
+
+        private void UserControlhelpdersk_Load(object sender, EventArgs e)
+        {
+            //
+        }
     }
 }

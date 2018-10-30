@@ -33,9 +33,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(116, 22);
+            this.button1.Location = new System.Drawing.Point(116, 20);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 21);
             this.button1.TabIndex = 0;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
@@ -43,12 +43,13 @@
             // 
             // test
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(696, 261);
+            this.ClientSize = new System.Drawing.Size(696, 241);
             this.Controls.Add(this.button1);
             this.Name = "test";
             this.Text = "test";
+            this.Load += new System.EventHandler(this.test_Load);
             this.ResumeLayout(false);
 
         }

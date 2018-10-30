@@ -101,6 +101,7 @@
             this.Name = "TcarLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Toyota Login";
+            this.Load += new System.EventHandler(this.TcarLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

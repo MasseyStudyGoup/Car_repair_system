@@ -29,7 +29,7 @@ namespace TcarSystem
 
         private void NewJobForm_Load(object sender, EventArgs e)
         {
-
+            //qq
         }
     }
 }
