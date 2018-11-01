@@ -16,5 +16,34 @@ namespace TcarSystem
         {
             InitializeComponent();
         }
+
+
+        private void btn_checkStatus_Click(object sender, EventArgs e)
+        {
+            userControlCheckReport1.Show();
+            userControlCheckReport1.BringToFront();
+            userControlAddReport1.Hide();
+        }
+
+        private void btn_addReport_Click(object sender, EventArgs e)
+        {
+            //panelAddReport.BringToFront();
+            userControlAddReport1.Show();
+            userControlAddReport1.BringToFront();
+            userControlCheckReport1.Hide();
+
+
+        }
+
+        private void userpage_Load(object sender, EventArgs e)
+        {
+            userControlAddReport1.Hide();
+            userControlCheckReport1.Show();
+
+            //load welcome infor;
+            labelWelcome.Text = "Welcome";
+        }
+
+
     }
 }
