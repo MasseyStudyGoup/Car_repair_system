@@ -16,5 +16,10 @@ namespace TcarSystem
         {
             InitializeComponent();
         }
+
+        private void userpage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

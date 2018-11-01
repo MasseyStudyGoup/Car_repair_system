@@ -24,12 +24,18 @@ namespace TcarSystem.DAL
                     JobInfo job = new JobInfo();
                     job.id = dt.Rows[i]["id"].ToString();
                     job.carNo = dt.Rows[i]["carNo"].ToString();
-                    job.customer = dt.Rows[i]["customer"].ToString();
+
+                    string customerId = dt.Rows[i]["customer"].ToString();
+                    if (customerId != null && customerId.Length > 0)
+                        job.customer = Sys_roleService.GetUserByiId(int.Parse(customerId));
                     job.jobDescription = dt.Rows[i]["jobDescription"].ToString();
                     job.createdate = new DateTime (long.Parse(dt.Rows[i]["createdate"].ToString()));
-                    job.jobStatus = (JobStatus) int.Parse(dt.Rows[i]["jobStatus"].ToString());
+                    job.jobStatus = (JobStatus)int.Parse(dt.Rows[i]["jobStatus"].ToString());
                     job.priority = (Priority)int.Parse(dt.Rows[i]["priority"].ToString());
-                    job.resolve = (ResolveStatus)int.Parse(dt.Rows[i]["resolve"].ToString());
+
+                    string resolve = dt.Rows[i]["resolve"].ToString();
+                    if (resolve != null && resolve.Length > 0)
+                        job.resolve = (ResolveStatus)int.Parse(resolve);
                     //outer key
                     string deskId = dt.Rows[i]["desk"].ToString();
                     if (deskId != null && deskId.Length > 0)
