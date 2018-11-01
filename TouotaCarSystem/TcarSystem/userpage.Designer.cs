@@ -108,12 +108,14 @@
             this.Controls.Add(this.btn_addReport);
             this.Controls.Add(this.btn_checkStatus);
             this.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "userpage";
             this.Text = "Welcome Toyota Car Repair Report System";
+
             this.Load += new System.EventHandler(this.userpage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

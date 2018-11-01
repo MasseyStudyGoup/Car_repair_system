@@ -22,15 +22,28 @@ namespace TcarSystem
         private void helpDeskForm_Load(object sender, EventArgs e)
         {
             IList<JobInfo> jobs = JobInfoManager.GetAllJobInfos();
-            foreach(JobInfo job in jobs)
-            {
-                deskJobList.Rows.Add(new string[] {
-                    job.id,
-                    job.carNo
-                });
-            }
-        }
 
+            if (jobs != null )
+            {
+                foreach (JobInfo job in jobs)
+                {
+                    deskJobList.Rows.Add(new string[] {
+                    job.id,
+                    job.carNo,
+                    job.customer.UserName,
+                    //job.desk.UserName,
+                    job.jobDescription,
+                    //job.jobStatus.ToString(),
+                    //job.resolve.ToString(),
+                    job.comment,
+                    job.createdate.ToString()
+                    
+                });
+                }
+            }
+            
+        }
+       
         private void deskJobList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             

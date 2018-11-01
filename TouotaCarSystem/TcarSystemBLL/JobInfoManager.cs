@@ -15,11 +15,21 @@ namespace TcarSystem.BLL
             if (user.Identity == "mananger")
             {
                 sql = string.Format("select * from jobs where outlet ='{0}'", user.outlet);
-//                return TcarSystem.DAL.JobInfoService.GetAllJobInfos(UserInforBLL.CurrentUser.outlet);
+                //                return TcarSystem.DAL.JobInfoService.GetAllJobInfos(UserInforBLL.CurrentUser.outlet);
             }
-            else 
+            else if (user.Identity == "hpdesk")
             {
-                sql = string.Format("select * from jobs where userid ={0}", user.UserId);
+                sql = string.Format("select * from jobs where jobStatus = 0");
+            }
+
+            else if (user.Identity == "worker")
+            {
+                sql = string.Format("select * from jobs where worker = '{0}'", user.UserId);
+            }
+
+            else
+            {
+                sql = string.Format("select * from jobs where customer = '{0}'", user.UserId);
             }
             return TcarSystem.DAL.JobInfoService.GetJobsBySQL(sql);
 
