@@ -110,17 +110,17 @@
     <Compile Include="TcarMain.Designer.cs">
       <DependentUpon>TcarMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="test.Designer.cs">
-      <DependentUpon>test.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControlhelpdersk.cs">
+    <Compile Include="UserControlAddReport.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlhelpdersk.Designer.cs">
-      <DependentUpon>UserControlhelpdersk.cs</DependentUpon>
+    <Compile Include="UserControlAddReport.Designer.cs">
+      <DependentUpon>UserControlAddReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlCheckReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlCheckReport.Designer.cs">
+      <DependentUpon>UserControlCheckReport.cs</DependentUpon>
     </Compile>
     <Compile Include="UserMDI.cs">
       <SubType>Form</SubType>
@@ -170,11 +170,11 @@
     <EmbeddedResource Include="TcarMain.resx">
       <DependentUpon>TcarMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="test.resx">
-      <DependentUpon>test.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlAddReport.resx">
+      <DependentUpon>UserControlAddReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlhelpdersk.resx">
-      <DependentUpon>UserControlhelpdersk.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlCheckReport.resx">
+      <DependentUpon>UserControlCheckReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserMDI.resx">
       <DependentUpon>UserMDI.cs</DependentUpon>
@@ -218,7 +218,7 @@
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets'))" />
   </Target>
