@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using TcarSystem.Model;
+using TcarSystem.BLL;
 namespace TcarSystem
 {
     public partial class userpage : Form
@@ -27,7 +28,7 @@ namespace TcarSystem
 
         private void btn_addReport_Click(object sender, EventArgs e)
         {
-            //panelAddReport.BringToFront();
+            userControlAddReport1.BringToFront();
             userControlAddReport1.Show();
             userControlAddReport1.BringToFront();
             userControlCheckReport1.Hide();
@@ -39,9 +40,9 @@ namespace TcarSystem
         {
             userControlAddReport1.Hide();
             userControlCheckReport1.Show();
-
+            UserInfor user = UserInforBLL.CurrentUser;
             //load welcome infor;
-            labelWelcome.Text = "Welcome";
+            labelWelcome.Text = "Welcome" + " " + user.UserName + "!";
         }
 
     }

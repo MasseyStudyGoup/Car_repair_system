@@ -48,6 +48,10 @@ namespace TcarSystem.DAL
                     string workerId = dt.Rows[i]["worker"].ToString();
                     if (workerId != null && workerId.Length > 0)
                         job.worker = Sys_roleService.GetUserByiId(int.Parse(workerId));
+                    //add outlet key
+                    string outletID = dt.Rows[i]["outlet"].ToString();
+                    if (outletID != null && outletID.Length > 0)
+                        job.outlet = sys_outletService.GetOutletbyotID(int.Parse(outletID));
 
                     job.closedate = new DateTime(long.Parse(dt.Rows[i]["closedate"].ToString()));
                     job.comment = dt.Rows[i]["comment"].ToString();
