@@ -1,0 +1,1 @@
+INSERT INTO `jobs`(`closedate`,`createdate`,`carNo`,`desk`,`manager`,`worker`,`jobDescription`,`resolve`,`priority`,`comment`,`outlet`,`customer`,`jobStatus`,`opendate`,`assigndate`) VALUES ('','1541035846','NZT123',NULL,NULL,NULL,'Engin broke',NULL,1,NULL,NULL,2,0,NULL,NULL);
