@@ -42,7 +42,10 @@ namespace TcarSystem
             }
         }
 
-
+        private void UserControlCheckReport_Load(object sender, EventArgs e)
+        {
+            
+        }
 
         private void dataGridUserCheckReport_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
