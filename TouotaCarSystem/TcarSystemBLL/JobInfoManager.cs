@@ -13,7 +13,7 @@ namespace TcarSystem.BLL
             UserInfor user = UserInforBLL.CurrentUser;
             //Outlet outlets = new Outlet();
             string sql = "";
-            if (user.Identity == "mananger")
+            if (user.Identity == "manager")
             {
                 sql = string.Format("select * from jobs where outlet ='{0}'", user.outlet);
                 //                return TcarSystem.DAL.JobInfoService.GetAllJobInfos(UserInforBLL.CurrentUser.outlet);
@@ -25,7 +25,7 @@ namespace TcarSystem.BLL
 
             else if (user.Identity == "worker")
             {
-                sql = string.Format("select * from jobs where worker = '{0}'", user.UserId);
+                sql = string.Format("select * from jobs where worker = '{0}' and jobStatus = 1", user.UserId);
             }
 
             else
@@ -35,6 +35,38 @@ namespace TcarSystem.BLL
             return TcarSystem.DAL.JobInfoService.GetJobsBySQL(sql);
 
         }
+
+
+        public static IList<JobInfo> GetAllJobByUid()
+        {
+            string sql = "";
+            UserInfor user = UserInforBLL.CurrentUser;
+            if (user.Identity == "worker")
+            {
+                sql = string.Format("select * from jobs where worker = '{0}'", user.UserId);
+            }
+
+            else if (user.Identity == "hpdesk")
+            {
+                sql = string.Format("select * from jobs where desk = '{0}'", user.UserId);
+            }
+
+            else if (user.Identity == "mananger")
+            {
+                sql = string.Format("select * from jobs where mananger = '{0}'", user.UserId);
+            }
+
+
+            return TcarSystem.DAL.JobInfoService.GetJobsBySQL(sql);
+        }
+
+
+        public static IList<JobInfo> SearchJobInfos(string sql)
+        {
+          
+            return TcarSystem.DAL.JobInfoService.GetJobsBySQL(sql);
+        }
+
 
         /// <summary>
         /// get outlet information by outlet id in sys_outletService
