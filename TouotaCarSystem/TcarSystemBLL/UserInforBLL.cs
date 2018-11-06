@@ -53,5 +53,10 @@ namespace TcarSystem.BLL
         {
             get => _outlet;
         }
+
+        public static UserInfor GetUserByName(string name)
+        {
+            return Sys_roleService.GetUserByName(name);
+        }
     }
 }

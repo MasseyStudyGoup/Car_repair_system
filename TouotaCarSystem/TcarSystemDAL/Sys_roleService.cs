@@ -54,8 +54,21 @@ namespace TcarSystem.DAL
            
         }
 
-        
+        public static UserInfor GetUserByName(string name)
+        {
+            string strsql = string.Format("select * from {0} where user_name ='{1}'", "user", name);
 
-         
+            try
+            {
+                return GetUsersBySQL(strsql)[0];
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
+
     }
 }

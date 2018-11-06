@@ -48,18 +48,15 @@ namespace TcarSystem
             
         }
        
-        private void deskJobList_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
+        
 
         public event EventHandler evtMember;
 
         //ShowFrmUpdataCreate 1 == add job 2 == updata jobs
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //NewJobForm jobForm = new NewJobForm();
-            //jobForm.ShowDialog();
+            addJob jobForm = new addJob();
+            jobForm.ShowDialog();
             ShowFrmUpdataCreate(1);
 
         }
@@ -87,7 +84,7 @@ namespace TcarSystem
         MyEventArgs meg = new MyEventArgs();//For pass value
         public void ShowFrmUpdataCreate(int numb)
         {
-            NewJobForm inforfrm = new NewJobForm();
+            addJob inforfrm = new addJob();
             this.evtMember += new EventHandler(inforfrm.SetText);
             meg.Temp = numb;
             if(this.evtMember != null)
@@ -103,6 +100,12 @@ namespace TcarSystem
         private void inforfrm_FormClosed(object sender, FormClosedEventArgs e)
         {
 
+        }
+
+        private void hd_search_Click(object sender, EventArgs e)
+        {
+            hd_search jobForm = new hd_search();
+            jobForm.ShowDialog();
         }
     }
 }
