@@ -72,24 +72,24 @@
     <Compile Include="addJob.Designer.cs">
       <DependentUpon>addJob.cs</DependentUpon>
     </Compile>
+    <Compile Include="hd_search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hd_search.designer.cs">
+      <DependentUpon>hd_search.cs</DependentUpon>
+    </Compile>
     <Compile Include="helpDeskForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="helpDeskForm.Designer.cs">
       <DependentUpon>helpDeskForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HpdeskMDI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HpdeskMDI.Designer.cs">
-      <DependentUpon>HpdeskMDI.cs</DependentUpon>
-    </Compile>
     <Compile Include="ItemData.cs" />
-    <Compile Include="ManagerMDI.cs">
+    <Compile Include="ManagerFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerMDI.Designer.cs">
-      <DependentUpon>ManagerMDI.cs</DependentUpon>
+    <Compile Include="ManagerFrm.Designer.cs">
+      <DependentUpon>ManagerFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="MyEventArgs.cs" />
     <Compile Include="NewJobForm.cs">
@@ -112,12 +112,6 @@
     <Compile Include="TcarLogin.Designer.cs">
       <DependentUpon>TcarLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="TcarMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TcarMain.Designer.cs">
-      <DependentUpon>TcarMain.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControlAddReport.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -130,23 +124,17 @@
     <Compile Include="UserControlCheckReport.Designer.cs">
       <DependentUpon>UserControlCheckReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserMDI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserMDI.Designer.cs">
-      <DependentUpon>UserMDI.cs</DependentUpon>
-    </Compile>
     <Compile Include="userpage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="userpage.Designer.cs">
       <DependentUpon>userpage.cs</DependentUpon>
     </Compile>
-    <Compile Include="WorkerMDI.cs">
+    <Compile Include="WorkerFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WorkerMDI.Designer.cs">
-      <DependentUpon>WorkerMDI.cs</DependentUpon>
+    <Compile Include="WorkerFrm.Designer.cs">
+      <DependentUpon>WorkerFrm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="addJob.resx">
       <DependentUpon>addJob.cs</DependentUpon>
@@ -154,11 +142,8 @@
     <EmbeddedResource Include="helpDeskForm.resx">
       <DependentUpon>helpDeskForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HpdeskMDI.resx">
-      <DependentUpon>HpdeskMDI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerMDI.resx">
-      <DependentUpon>ManagerMDI.cs</DependentUpon>
+    <EmbeddedResource Include="ManagerFrm.resx">
+      <DependentUpon>ManagerFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewJobForm.resx">
       <DependentUpon>NewJobForm.cs</DependentUpon>
@@ -178,23 +163,17 @@
     <EmbeddedResource Include="TcarLogin.resx">
       <DependentUpon>TcarLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TcarMain.resx">
-      <DependentUpon>TcarMain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControlAddReport.resx">
       <DependentUpon>UserControlAddReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlCheckReport.resx">
       <DependentUpon>UserControlCheckReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserMDI.resx">
-      <DependentUpon>UserMDI.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="userpage.resx">
       <DependentUpon>userpage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WorkerMDI.resx">
-      <DependentUpon>WorkerMDI.cs</DependentUpon>
+    <EmbeddedResource Include="WorkerFrm.resx">
+      <DependentUpon>WorkerFrm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

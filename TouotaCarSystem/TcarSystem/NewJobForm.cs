@@ -23,7 +23,7 @@ namespace TcarSystem
 
         private void NewJobForm_Load(object sender, EventArgs e)
         {
-            JobInfoManager jobdetaile = new JobInfoManager();
+            //JobInfoManager jobdetaile = new JobInfoManager();
             //MyEventArgs mag = new MyEventArgs();
 
             //List<JobInfo> jobinf = JobInfoManager.GetAllJobInfos
