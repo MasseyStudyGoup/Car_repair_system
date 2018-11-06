@@ -14,6 +14,7 @@ namespace TcarSystem
 {
     public partial class helpDeskForm : Form
     {
+        private Dictionary<string, JobInfo> m_jobDict = new Dictionary<string, JobInfo>();
         public helpDeskForm()
         {
             InitializeComponent();
@@ -23,12 +24,15 @@ namespace TcarSystem
         private void helpDeskForm_Load(object sender, EventArgs e)
         {
             deskJobList.Rows.Clear();
+            m_jobDict.Clear();
             IList<JobInfo> jobs = JobInfoManager.GetAllJobInfos();
 
             if (jobs != null )
             {
                 foreach (JobInfo job in jobs)
                 {
+                    m_jobDict.Add("" + job.id, job);
+
                     deskJobList.Rows.Add(new string[] {
                     job.id,
                     job.carNo,
@@ -65,23 +69,25 @@ namespace TcarSystem
 
         private void btnUpdataJob_Click(object sender, EventArgs e)
         {
-            if(deskJobList.SelectedRows.Count>0)
-            {
-                int id = Convert.ToInt32(deskJobList.SelectedRows[0].Cells[0].Value.ToString());
+            EditJob();
+            
+            //if (deskJobList.SelectedRows.Count>0)
+            //{
+            //    int id = Convert.ToInt32(deskJobList.SelectedRows[0].Cells[0].Value.ToString());
 
-                JobInfo job = JobInfoManager.GetJobById(id);
-                meg.obj = job;
+            //    JobInfo job = JobInfoManager.GetJobById(id);
+            //    meg.obj = job;
 
-                //ShowFrmUpdataCreate(2);
-                //NewJobForm jobForm = new NewJobForm();
-                addJob jobForm = new addJob();
-                helpDeskForm_Load(null, null);
-                //jobForm.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Please select which line you want change!");
-            }
+            //    //ShowFrmUpdataCreate(2);
+            //    //NewJobForm jobForm = new NewJobForm();
+            //    addJob jobForm = new addJob();
+            //    helpDeskForm_Load(null, null);
+            //    //jobForm.ShowDialog();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Please select which line you want change!");
+            //}
 
             
         }
@@ -112,7 +118,19 @@ namespace TcarSystem
             jobForm.ShowDialog();
         }
 
-        private void deskJobList_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void EditJob()
+        {
+            JobInfo job = m_jobDict[deskJobList.SelectedRows[0].Cells[0].Value.ToString()];
+            if (job != null)
+            {
+                addJob jobForm = new addJob(job);
+                jobForm.ShowDialog();
+                helpDeskForm_Load(null, null);
+
+            }
+        }
+
+        private void deskJobList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             EditJob();
         }

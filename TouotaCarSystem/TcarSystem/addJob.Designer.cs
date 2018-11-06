@@ -151,6 +151,7 @@ namespace TcarSystem
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "addJob";
             this.Text = "addJob";
+            this.Load += new System.EventHandler(this.addJob_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

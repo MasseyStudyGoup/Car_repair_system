@@ -108,7 +108,7 @@ namespace TcarSystem.BLL
         /// </summary>
         /// <param name="strsql">sql sentence</param>
         /// <returns>0 or 1</returns>
-        public static bool ModifyJob(JobInfo job)
+        public static bool UpdateJob(JobInfo job)
         {
 
             return TcarSystem.DAL.JobInfoService.ModifyJob(job)>0;

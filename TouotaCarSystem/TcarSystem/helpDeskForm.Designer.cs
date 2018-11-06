@@ -67,7 +67,7 @@
             this.deskJobList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.deskJobList.Size = new System.Drawing.Size(1214, 432);
             this.deskJobList.TabIndex = 0;
-            this.deskJobList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.deskJobList_CellContentClick);
+            this.deskJobList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.deskJobList_CellDoubleClick);
             // 
             // JobId
             // 
