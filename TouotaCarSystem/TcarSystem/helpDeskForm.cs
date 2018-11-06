@@ -85,7 +85,7 @@ namespace TcarSystem
         public void ShowFrmUpdataCreate(int numb)
         {
             addJob inforfrm = new addJob();
-            this.evtMember += new EventHandler(inforfrm.SetText);
+            //this.evtMember += new EventHandler(inforfrm.SetText);
             meg.Temp = numb;
             if(this.evtMember != null)
             {

@@ -63,7 +63,14 @@ namespace TcarSystem.DAL
                     if (outletID != null && outletID.Length > 0)
                         job.outlet = sys_outletService.GetOutletbyotID(int.Parse(outletID));
 
-                    job.closedate = DateTime.Parse(dt.Rows[i]["closedate"].ToString());
+                    try
+                    {
+                        job.closedate = DateTime.Parse(dt.Rows[i]["closedate"].ToString());
+                    }
+                    catch
+                    {
+                        job.closedate = DateTime.Now;
+                    }
 
                     job.comment = dt.Rows[i]["comment"].ToString();
                     jobs.Add(job);
