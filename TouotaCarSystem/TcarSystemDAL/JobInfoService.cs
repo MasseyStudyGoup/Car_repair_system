@@ -29,7 +29,7 @@ namespace TcarSystem.DAL
                     if (customerId != null && customerId.Length > 0)
                         job.customer = Sys_roleService.GetUserByiId(int.Parse(customerId));
                     job.jobDescription = dt.Rows[i]["jobDescription"].ToString();
-                    job.createdate = new DateTime (long.Parse(dt.Rows[i]["createdate"].ToString()));
+                    job.createdate = DateTime.Parse(dt.Rows[i]["createdate"].ToString());
                     job.jobStatus = (JobStatus)int.Parse(dt.Rows[i]["jobStatus"].ToString());
                     job.priority = (Priority)int.Parse(dt.Rows[i]["priority"].ToString());
 
@@ -53,7 +53,8 @@ namespace TcarSystem.DAL
                     if (outletID != null && outletID.Length > 0)
                         job.outlet = sys_outletService.GetOutletbyotID(int.Parse(outletID));
 
-                    job.closedate = new DateTime(long.Parse(dt.Rows[i]["closedate"].ToString()));
+                    job.closedate = DateTime.Parse(dt.Rows[i]["closedate"].ToString());
+
                     job.comment = dt.Rows[i]["comment"].ToString();
                     jobs.Add(job);
 
