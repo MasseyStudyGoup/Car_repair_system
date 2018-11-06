@@ -3,13 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcarSystemModel", "TcarSystemModel\TcarSystemModel.csproj", "{700F5177-DB52-47E7-B9C8-1A88023D7C1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TcarSystemModel", "TcarSystemModel\TcarSystemModel.csproj", "{700F5177-DB52-47E7-B9C8-1A88023D7C1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcarSystemDAL", "TcarSystemDAL\TcarSystemDAL.csproj", "{6A50E33B-A1ED-466D-A0F9-A5E2D93F7CD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TcarSystemDAL", "TcarSystemDAL\TcarSystemDAL.csproj", "{6A50E33B-A1ED-466D-A0F9-A5E2D93F7CD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcarSystemBLL", "TcarSystemBLL\TcarSystemBLL.csproj", "{EFE8ECE9-D7F2-4D7E-B0D6-698C08783E6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TcarSystemBLL", "TcarSystemBLL\TcarSystemBLL.csproj", "{EFE8ECE9-D7F2-4D7E-B0D6-698C08783E6E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcarSystem", "TcarSystem\TcarSystem.csproj", "{50614518-1896-4AAB-961C-89407F3AD406}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DE2BBF16-75F0-48EF-9FAB-48FF2EFA0551}"
+	ProjectSection(SolutionItems) = preProject
+		packages\System.Data.SQLite.Core.1.0.109.2\build\net40\x64\SQLite.Interop.dll = packages\System.Data.SQLite.Core.1.0.109.2\build\net40\x64\SQLite.Interop.dll
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
