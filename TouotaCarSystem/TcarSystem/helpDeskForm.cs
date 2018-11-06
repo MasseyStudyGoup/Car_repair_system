@@ -31,11 +31,15 @@ namespace TcarSystem
                     job.id,
                     job.carNo,
                     job.customer.UserName,
-                    //job.desk.UserName,
+                    job.outlet.Name,
+                    //job.priority.ToString(),
+                    //job.jobStatus.ToString(),
                     job.jobDescription,
+                    //job.desk.UserName,
+                    //job.resove,
                     //job.jobStatus.ToString(),
                     //job.resolve.ToString(),
-                    job.comment,
+                    //job.comment,
                     job.createdate.ToString()
                     
                 });
@@ -49,10 +53,55 @@ namespace TcarSystem
             
         }
 
+        public event EventHandler evtMember;
+
+        //ShowFrmUpdataCreate 1 == add job 2 == updata jobs
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            NewJobForm jobForm = new NewJobForm();
-            jobForm.ShowDialog();
+            //NewJobForm jobForm = new NewJobForm();
+            //jobForm.ShowDialog();
+            ShowFrmUpdataCreate(1);
+
+        }
+
+        private void btnUpdataJob_Click(object sender, EventArgs e)
+        {
+            if(deskJobList.SelectedRows.Count>0)
+            {
+                int id = Convert.ToInt32(deskJobList.SelectedRows[0].Cells[0].Value.ToString());
+
+                JobInfo job = JobInfoManager.GetJobById(id);
+                meg.obj = job;
+
+                ShowFrmUpdataCreate(2);
+                //NewJobForm jobForm = new NewJobForm();
+                //jobForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please select which line you want change!");
+            }
+
+            
+        }
+        MyEventArgs meg = new MyEventArgs();//For pass value
+        public void ShowFrmUpdataCreate(int numb)
+        {
+            NewJobForm inforfrm = new NewJobForm();
+            this.evtMember += new EventHandler(inforfrm.SetText);
+            meg.Temp = numb;
+            if(this.evtMember != null)
+            {
+                this.evtMember(this, meg);
+                inforfrm.FormClosed += new FormClosedEventHandler(inforfrm_FormClosed);
+                inforfrm.ShowDialog();
+            }
+            
+                 
+        }
+
+        private void inforfrm_FormClosed(object sender, FormClosedEventArgs e)
+        {
 
         }
     }

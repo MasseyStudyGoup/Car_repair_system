@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace TcarSystem
 {
-    public partial class TcarMain : Form
+    public partial class WorkerFrm : Form
     {
-        public TcarMain()
+        public WorkerFrm()
         {
-            //InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
+            InitializeComponent();
         }
     }
 }

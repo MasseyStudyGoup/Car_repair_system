@@ -23,6 +23,7 @@ namespace TcarSystem.Model
 
         private string _comment;
         private Outlet _outlet;
+        private string _jobType;
 
         public string id
         {
@@ -129,6 +130,12 @@ namespace TcarSystem.Model
         {
             get { return _closedate; }
             set { _closedate = value; }
+
+        }
+        public string jobType
+        {
+            get { return _jobType; }
+            set { _jobType = value; }
 
         }
 

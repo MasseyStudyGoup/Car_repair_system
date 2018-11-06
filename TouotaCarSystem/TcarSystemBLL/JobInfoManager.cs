@@ -11,6 +11,7 @@ namespace TcarSystem.BLL
         public static IList<JobInfo> GetAllJobInfos()
         {
             UserInfor user = UserInforBLL.CurrentUser;
+            //Outlet outlets = new Outlet();
             string sql = "";
             if (user.Identity == "mananger")
             {
@@ -33,6 +34,16 @@ namespace TcarSystem.BLL
             }
             return TcarSystem.DAL.JobInfoService.GetJobsBySQL(sql);
 
+        }
+
+        /// <summary>
+        /// get outlet information by outlet id in sys_outletService
+        /// </summary>
+        /// <param name="id">outlet id</param>
+        /// <returns></returns>
+        public static List<Outlet> GetOutlets(int id)
+        {
+            return TcarSystem.DAL.sys_outletService.GetAlloutlet(id);
         }
 
 

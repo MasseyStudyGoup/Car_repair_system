@@ -64,6 +64,7 @@ namespace TcarSystem.DAL
              
         }
 
+
         /// <summary>
         /// get all jobs
         /// </summary>
@@ -76,6 +77,7 @@ namespace TcarSystem.DAL
 
             return GetJobsBySQL(strsql);
         }
+
 
         public static IList<JobInfo> GetAllJobInfoByUser(int userId)
         {
@@ -215,8 +217,6 @@ namespace TcarSystem.DAL
             SqliteHelper.ExecuteNoneQuery(strsql);
             return SqliteHelper.ExecuteNoneQuery(strsql1);
         }
-
-
 
     }
 }

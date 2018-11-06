@@ -66,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addJob.Designer.cs">
+      <DependentUpon>addJob.cs</DependentUpon>
+    </Compile>
     <Compile Include="helpDeskForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,12 +84,14 @@
     <Compile Include="HpdeskMDI.Designer.cs">
       <DependentUpon>HpdeskMDI.cs</DependentUpon>
     </Compile>
+    <Compile Include="ItemData.cs" />
     <Compile Include="ManagerMDI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManagerMDI.Designer.cs">
       <DependentUpon>ManagerMDI.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyEventArgs.cs" />
     <Compile Include="NewJobForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +148,9 @@
     <Compile Include="WorkerMDI.Designer.cs">
       <DependentUpon>WorkerMDI.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="addJob.resx">
+      <DependentUpon>addJob.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="helpDeskForm.resx">
       <DependentUpon>helpDeskForm.cs</DependentUpon>
     </EmbeddedResource>

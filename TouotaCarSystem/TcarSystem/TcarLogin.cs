@@ -18,8 +18,8 @@ namespace TcarSystem
         public TcarLogin()
         {
             InitializeComponent();
-            textBoxName.Text = "zoe";
-            textBoxPassword.Text = "zoe";
+           // textBoxName.Text = "zoe";
+            //textBoxPassword.Text = "zoe";
 
         }
 
@@ -58,9 +58,9 @@ namespace TcarSystem
         {
             //this.DialogResult = System.Windows.Forms.DialogResult.OK;
             UserInforBLL bll = new UserInforBLL();
-            string userid = bll.checkUtype(textBoxName.Text);
+            string usertype = bll.checkUtype(textBoxName.Text);
 
-            if (userid == "user")
+            if (usertype == "user")
             {
                 this.Hide();
                 //UserMDI mdu = new UserMDI();
@@ -68,22 +68,23 @@ namespace TcarSystem
                 userpage usp = new userpage();
                 usp.Show();
             }
-            else if (userid == "hpdesk")
+            else if (usertype == "hpdesk")
             {
                 this.Hide();
                 helpDeskForm mdhp = new helpDeskForm();
+
                 mdhp.Show();
             }
-            else if (userid == "work")
+            else if (usertype == "work")
             {
                 this.Hide();
-                WorkerMDI mdwk = new WorkerMDI();
+                WorkerFrm mdwk = new WorkerFrm();
                 mdwk.Show();
             }
             else
             {
                 this.Hide();
-                ManagerMDI mdm = new ManagerMDI();
+                ManagerFrm mdm = new ManagerFrm();
                 mdm.Show();
             }
 

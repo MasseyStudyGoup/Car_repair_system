@@ -39,5 +39,12 @@ namespace TcarSystem.DAL
 
             return GetOutlets(sql)[0];
         }
+
+        public static List<Outlet> GetAlloutlet(int id)
+        {
+            string sql = "select * from outlets where otID =" + id;
+
+            return GetOutlets(sql);
+        }
     }
 }
