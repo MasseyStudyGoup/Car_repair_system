@@ -6,6 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Sqlite.Interop.Net46.x64" Version="1.0.109" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.109.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TcarSystemModel\TcarSystemModel.csproj" />
   </ItemGroup>
 
