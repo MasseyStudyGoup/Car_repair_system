@@ -137,23 +137,24 @@ namespace TcarSystem.DAL
             sb.Append("'").Append((job.closedate == null) ? "" : job.closedate.ToString(DATE_FORMAT)).Append("'");
             sb.Append("'").Append(job.createdate.ToString(DATE_FORMAT)).Append("'");
             sb.Append("'").Append(job.carNo).Append("'");
-            sb.Append("'").Append(job.desk).Append("'");
-            sb.Append("'").Append(job.manager).Append("'");
-            sb.Append("'").Append(job.worker).Append("'");
+            sb.Append("'").Append(job.desk.UserId).Append("'");
+            sb.Append("'").Append(job.manager.UserId).Append("'");
+            sb.Append("'").Append(job.worker.UserId).Append("'");
             sb.Append("'").Append((job.jobDescription == null) ? "" : job.jobDescription).Append("'");
             sb.Append("'").Append(job.resolve).Append("'");
             sb.Append("'").Append(job.priority).Append("'");
             sb.Append("'").Append((job.comment == null) ? "" : job.comment).Append("'");
-            sb.Append("'").Append(job.outlet).Append("'");
-            sb.Append("'").Append(job.customer).Append("'");
+            sb.Append("'").Append(job.outlet.Id).Append("'");
+            sb.Append("'").Append(job.customer.UserId).Append("'");
             sb.Append("'").Append(job.jobStatus).Append("'");
             sb.Append("'").Append((job.opendate == null) ? "" : job.assigndate.ToString(DATE_FORMAT)).Append("'");
             sb.Append("'").Append((job.assigndate== null)?"":job.assigndate.ToString(DATE_FORMAT)).Append("'");
             sb.Append("'").Append((job.jobType == null) ? "" : job.jobType).Append("'");
             sb.Append("'").Append((job.jobHistory == null) ? "" : job.jobHistory).Append("'");
+            //JobStatus foo = (JobStatus)Enum.ToObject(typeof(JobStatus) , yourInt);
 
 
-            string strsql = string.Format("INSERT INTO jobs ({0}) VALUES ({1})", string.Join(",",job.COLUMNS), sb.ToString()); 
+            string strsql = string.Format("INSERT INTO jobs ({0}) VALUES ({1})", string.Join(",",JobInfo.COLUMNS), sb.ToString()); 
                 
             return SqliteHelper.ExecuteNoneQuery(strsql);
             
