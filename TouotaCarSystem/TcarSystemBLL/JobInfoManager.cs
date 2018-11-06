@@ -23,7 +23,7 @@ namespace TcarSystem.BLL
                 sql = string.Format("select * from jobs where jobStatus = 0");
             }
 
-            else if (user.Identity == "worker")
+            else if (user.Identity == "work")
             {
                 sql = string.Format("select * from jobs where worker = '{0}' and jobStatus = 1", user.UserId);
             }

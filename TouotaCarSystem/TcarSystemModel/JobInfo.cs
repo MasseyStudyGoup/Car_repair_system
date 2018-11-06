@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace TcarSystem.Model
 {
@@ -24,7 +26,9 @@ namespace TcarSystem.Model
         private string _comment;
         private Outlet _outlet;
         private string _jobType;
-
+        private string _jobHistory;
+        public static string[] COLUMNS = { "id", "closedate", "createdate", "carNo", "desk", "manager", "worker", "jobDescription", "resolve", "priority", "comment", "outlet", "customer", "jobStatus", "opendate", "assigndate", "jobType", "jobHistory" };
+         
         public string id
         {
             get { return _id; }
@@ -138,7 +142,12 @@ namespace TcarSystem.Model
             set { _jobType = value; }
 
         }
+        public string jobHistory
+        {
+            get { return _jobHistory; }
+            set { _jobHistory = value; }
 
+        }
     }
 
 

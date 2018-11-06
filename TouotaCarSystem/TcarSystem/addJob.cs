@@ -36,7 +36,10 @@ namespace TcarSystem
             m_job.desk = user;
             m_job.createdate = DateTime.Now;
 
-            
+            JobInfoManager.AddJob(m_job);
+
+
+
 
 
         }

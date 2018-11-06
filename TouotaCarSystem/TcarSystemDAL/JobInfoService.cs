@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using TcarSystem.Model;
 using System.Data;
+using System.IO;
+using System.Linq;
 
 //
 
@@ -130,8 +132,29 @@ namespace TcarSystem.DAL
         /// <returns>0 or 1</returns>
         public static int AddJob(JobInfo job)
         {
-           
-            string strsql = string.Format("INSERT INTO `jobs`(`createdate`,`carNo`,`desk`,`manager`,`worker`,`jobDescription`,`priority`,`outlet`,`customer`) VALUES (0,'','',NULL,NULL,NULL,'',0,NULL,NULL)", job.createdate,job.assigndate, job.carNo,job.desk.UserId, job.manager.UserId, job.worker.UserId,job.jobDescription,job.priority,job.outlet,job.customer);
+            const string DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
+            StringBuilder sb = new StringBuilder();
+            sb.Append("'").Append((job.closedate == null) ? "" : job.closedate.ToString(DATE_FORMAT)).Append("'");
+            sb.Append("'").Append(job.createdate.ToString(DATE_FORMAT)).Append("'");
+            sb.Append("'").Append(job.carNo).Append("'");
+            sb.Append("'").Append(job.desk).Append("'");
+            sb.Append("'").Append(job.manager).Append("'");
+            sb.Append("'").Append(job.worker).Append("'");
+            sb.Append("'").Append((job.jobDescription == null) ? "" : job.jobDescription).Append("'");
+            sb.Append("'").Append(job.resolve).Append("'");
+            sb.Append("'").Append(job.priority).Append("'");
+            sb.Append("'").Append((job.comment == null) ? "" : job.comment).Append("'");
+            sb.Append("'").Append(job.outlet).Append("'");
+            sb.Append("'").Append(job.customer).Append("'");
+            sb.Append("'").Append(job.jobStatus).Append("'");
+            sb.Append("'").Append((job.opendate == null) ? "" : job.assigndate.ToString(DATE_FORMAT)).Append("'");
+            sb.Append("'").Append((job.assigndate== null)?"":job.assigndate.ToString(DATE_FORMAT)).Append("'");
+            sb.Append("'").Append((job.jobType == null) ? "" : job.jobType).Append("'");
+            sb.Append("'").Append((job.jobHistory == null) ? "" : job.jobHistory).Append("'");
+
+
+            string strsql = string.Format("INSERT INTO jobs ({0}) VALUES ({1})", string.Join(",",job.COLUMNS), sb.ToString()); 
+                
             return SqliteHelper.ExecuteNoneQuery(strsql);
             
         }
@@ -172,10 +195,9 @@ namespace TcarSystem.DAL
         {
 
             string strsql = string.Format("UPDATE `jobs` SET `desk`=0 WHERE id = 2",  job.desk.UserId);
-            string strsql1 = string.Format("INSERT INTO `job_history`(`jobid`,`jobStatus`,`assigndate`,`closedate`,`opendate`,`resolve`,`comment`) VALUES (0,0,0,0,0,0,'')", job.id, job.jobStatus, job.assigndate, job.closedate, job.opendate, job.resolve, job.comment);
-
-            SqliteHelper.ExecuteNoneQuery(strsql);
-            return SqliteHelper.ExecuteNoneQuery(strsql1);
+           
+            return SqliteHelper.ExecuteNoneQuery(strsql);
+           
         }
 
 
@@ -188,10 +210,9 @@ namespace TcarSystem.DAL
         {
 
             string strsql = string.Format("UPDATE `jobs` SET `desk`=0,`manager`=0 WHERE id = 2", job.desk, job.manager);
-            string strsql1 = string.Format("INSERT INTO `job_history`(`jobid`,`jobStatus`,`assigndate`,`closedate`,`opendate`,`resolve`,`comment`) VALUES (0,0,0,0,0,0,'')", job.id, job.jobStatus, job.assigndate, job.closedate, job.opendate, job.resolve, job.comment);
-
-            SqliteHelper.ExecuteNoneQuery(strsql);
-            return SqliteHelper.ExecuteNoneQuery(strsql1);
+           
+           
+            return SqliteHelper.ExecuteNoneQuery(strsql);
         }
 
         /// <summary>
