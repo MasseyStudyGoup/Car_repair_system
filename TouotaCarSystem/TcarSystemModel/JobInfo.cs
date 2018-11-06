@@ -28,7 +28,15 @@ namespace TcarSystem.Model
         private string _jobType;
         private string _jobHistory;
         public static string[] COLUMNS = { "id", "closedate", "createdate", "carNo", "desk", "manager", "worker", "jobDescription", "resolve", "priority", "comment", "outlet", "customer", "jobStatus", "opendate", "assigndate", "jobType", "jobHistory" };
-         
+        public static string[] COLUMNS_NO_ID = { "closedate", "createdate", "carNo", "desk", "manager", "worker", "jobDescription", "resolve", "priority", "comment", "outlet", "customer", "jobStatus", "opendate", "assigndate", "jobType", "jobHistory" };
+
+        public JobInfo()
+        {
+            _closedate = DateTime.Now;
+            _createdate = DateTime.Now;
+            _assingdate = DateTime.Now;
+        }
+
         public string id
         {
             get { return _id; }

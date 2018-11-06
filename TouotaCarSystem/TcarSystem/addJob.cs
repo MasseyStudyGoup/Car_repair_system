@@ -14,14 +14,15 @@ namespace TcarSystem
 {
     public partial class addJob : Form
     {
-        private JobInfo m_job;
+        private JobInfo m_job = new JobInfo();
         UserInfor user = UserInforBLL.CurrentUser;
 
         public addJob()
         {
             InitializeComponent();
+            this.CancelButton = btn_cancel;
+            this.CancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
         }
-
        
 
         private void btn_Submit_Click(object sender, EventArgs e)
@@ -32,13 +33,15 @@ namespace TcarSystem
             m_job.customer = UserInforBLL.GetUserByName(textBoxCName.Text);
             m_job.jobType = cbType.Text;
             m_job.jobDescription = jobDes.Text;
-            m_job.priority = 0;
+            m_job.priority = Priority.Normal;
+            m_job.resolve = ResolveStatus.Unresolved;
+            m_job.jobStatus = JobStatus.Open;
             m_job.desk = user;
             m_job.createdate = DateTime.Now;
 
             JobInfoManager.AddJob(m_job);
 
-
+            DialogResult = System.Windows.Forms.DialogResult.OK;
 
 
 

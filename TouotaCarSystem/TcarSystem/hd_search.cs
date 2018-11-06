@@ -30,19 +30,19 @@ namespace TcarSystem
                 foreach (JobInfo job in jobs)
                 {
                     dhSearcjJobList.Rows.Add(new string[] {
+                      
                     job.id,
                     job.carNo,
-                    job.customer.UserName,
-                    job.outlet.Name,
+                    (job.customer==null)?"":job.customer.UserName,
+                    (job.outlet==null)?"":job.outlet.Name,
+                    (job.jobType==null)?"":job.jobType,
                     //job.priority.ToString(),
-                    //job.jobStatus.ToString(),
+                    job.jobStatus.ToString(),
                     job.jobDescription,
-                    //job.desk.UserName,
-                    //job.resove,
-                    //job.jobStatus.ToString(),
-                    //job.resolve.ToString(),
-                    //job.comment,
-                    job.createdate.ToString()
+                    (job.desk==null)?"":job.desk.UserName,
+                    job.resolve.ToString(),
+                    job.comment,
+                    job.createdate.ToString("yyyy-MM-dd HH:mm:ss")
 
                 });
                 }

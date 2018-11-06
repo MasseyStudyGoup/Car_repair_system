@@ -62,12 +62,12 @@
             this.JobRes,
             this.JobComment,
             this.JobCreate});
-            this.deskJobList.Location = new System.Drawing.Point(13, 98);
+            this.deskJobList.Location = new System.Drawing.Point(13, 90);
             this.deskJobList.Name = "deskJobList";
             this.deskJobList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.deskJobList.Size = new System.Drawing.Size(1214, 468);
+            this.deskJobList.Size = new System.Drawing.Size(1214, 432);
             this.deskJobList.TabIndex = 0;
-       
+            this.deskJobList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.deskJobList_CellContentClick);
             // 
             // JobId
             // 
@@ -126,9 +126,9 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(26, 35);
+            this.btnAdd.Location = new System.Drawing.Point(26, 32);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(82, 33);
+            this.btnAdd.Size = new System.Drawing.Size(82, 30);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -136,9 +136,9 @@
             // 
             // btnUpdataJob
             // 
-            this.btnUpdataJob.Location = new System.Drawing.Point(134, 35);
+            this.btnUpdataJob.Location = new System.Drawing.Point(134, 32);
             this.btnUpdataJob.Name = "btnUpdataJob";
-            this.btnUpdataJob.Size = new System.Drawing.Size(82, 33);
+            this.btnUpdataJob.Size = new System.Drawing.Size(82, 30);
             this.btnUpdataJob.TabIndex = 2;
             this.btnUpdataJob.Text = "Modify";
             this.btnUpdataJob.UseVisualStyleBackColor = true;
@@ -146,9 +146,9 @@
             // 
             // hd_search
             // 
-            this.hd_search.Location = new System.Drawing.Point(244, 35);
+            this.hd_search.Location = new System.Drawing.Point(244, 32);
             this.hd_search.Name = "hd_search";
-            this.hd_search.Size = new System.Drawing.Size(86, 33);
+            this.hd_search.Size = new System.Drawing.Size(86, 30);
             this.hd_search.TabIndex = 3;
             this.hd_search.Text = "Search";
             this.hd_search.UseVisualStyleBackColor = true;
@@ -156,9 +156,9 @@
             // 
             // helpDeskForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1239, 606);
+            this.ClientSize = new System.Drawing.Size(1239, 559);
             this.Controls.Add(this.hd_search);
             this.Controls.Add(this.btnUpdataJob);
             this.Controls.Add(this.btnAdd);

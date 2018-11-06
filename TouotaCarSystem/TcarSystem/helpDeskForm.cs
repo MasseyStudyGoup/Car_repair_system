@@ -17,10 +17,12 @@ namespace TcarSystem
         public helpDeskForm()
         {
             InitializeComponent();
+            
         }
         //
         private void helpDeskForm_Load(object sender, EventArgs e)
         {
+            deskJobList.Rows.Clear();
             IList<JobInfo> jobs = JobInfoManager.GetAllJobInfos();
 
             if (jobs != null )
@@ -30,18 +32,17 @@ namespace TcarSystem
                     deskJobList.Rows.Add(new string[] {
                     job.id,
                     job.carNo,
-                    job.customer.UserName,
-                    job.outlet.Name,
+                    (job.customer==null)?"":job.customer.UserName,
+                    (job.outlet==null)?"":job.outlet.Name,
+                    (job.jobType==null)?"":job.jobType,
                     //job.priority.ToString(),
-                    //job.jobStatus.ToString(),
+                    job.jobStatus.ToString(),
                     job.jobDescription,
-                    //job.desk.UserName,
-                    //job.resove,
-                    //job.jobStatus.ToString(),
-                    //job.resolve.ToString(),
-                    //job.comment,
-                    job.createdate.ToString()
-                    
+                    (job.desk==null)?"":job.desk.UserName,
+                    job.resolve.ToString(),
+                    job.comment,
+                    job.createdate.ToString("yyyy-MM-dd HH:mm:ss")
+
                 });
                 }
             }
@@ -57,7 +58,8 @@ namespace TcarSystem
         {
             addJob jobForm = new addJob();
             jobForm.ShowDialog();
-            ShowFrmUpdataCreate(1);
+            helpDeskForm_Load(null, null);
+           // ShowFrmUpdataCreate(1);
 
         }
 
@@ -70,8 +72,10 @@ namespace TcarSystem
                 JobInfo job = JobInfoManager.GetJobById(id);
                 meg.obj = job;
 
-                ShowFrmUpdataCreate(2);
+                //ShowFrmUpdataCreate(2);
                 //NewJobForm jobForm = new NewJobForm();
+                addJob jobForm = new addJob();
+                helpDeskForm_Load(null, null);
                 //jobForm.ShowDialog();
             }
             else
@@ -106,6 +110,11 @@ namespace TcarSystem
         {
             hd_search jobForm = new hd_search();
             jobForm.ShowDialog();
+        }
+
+        private void deskJobList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            EditJob();
         }
     }
 }

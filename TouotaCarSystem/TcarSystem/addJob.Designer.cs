@@ -49,7 +49,6 @@ namespace TcarSystem
             this.textBoxCName.Name = "textBoxCName";
             this.textBoxCName.Size = new System.Drawing.Size(176, 29);
             this.textBoxCName.TabIndex = 49;
-            this.textBoxCName.TextChanged += new System.EventHandler(this.textBoxCName_TextChanged);
             // 
             // textBoxCarNo
             // 
@@ -57,11 +56,10 @@ namespace TcarSystem
             this.textBoxCarNo.Name = "textBoxCarNo";
             this.textBoxCarNo.Size = new System.Drawing.Size(176, 29);
             this.textBoxCarNo.TabIndex = 48;
-            this.textBoxCarNo.TextChanged += new System.EventHandler(this.textBoxCarNo_TextChanged);
             // 
             // btn_cancel
             // 
-            this.btn_cancel.Location = new System.Drawing.Point(174, 460);
+            this.btn_cancel.Location = new System.Drawing.Point(144, 460);
             this.btn_cancel.Margin = new System.Windows.Forms.Padding(5);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(138, 45);
@@ -86,7 +84,6 @@ namespace TcarSystem
             this.jobDes.Name = "jobDes";
             this.jobDes.Size = new System.Drawing.Size(379, 151);
             this.jobDes.TabIndex = 31;
-       
             // 
             // labelType
             // 
@@ -161,12 +158,12 @@ namespace TcarSystem
 
         private void textBoxCarNo_TextChanged(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+
         }
 
         private void textBoxCName_TextChanged(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+
         }
 
         #endregion

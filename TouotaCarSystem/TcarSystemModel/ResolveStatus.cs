@@ -7,6 +7,7 @@ namespace TcarSystem.Model
     public enum ResolveStatus
     {
         Invalid,
+        Unresolved,
         Solved
     }
 }

@@ -134,27 +134,27 @@ namespace TcarSystem.DAL
         {
             const string DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
             StringBuilder sb = new StringBuilder();
-            sb.Append("'").Append((job.closedate == null) ? "" : job.closedate.ToString(DATE_FORMAT)).Append("'");
-            sb.Append("'").Append(job.createdate.ToString(DATE_FORMAT)).Append("'");
-            sb.Append("'").Append(job.carNo).Append("'");
-            sb.Append("'").Append(job.desk.UserId).Append("'");
-            sb.Append("'").Append(job.manager.UserId).Append("'");
-            sb.Append("'").Append(job.worker.UserId).Append("'");
-            sb.Append("'").Append((job.jobDescription == null) ? "" : job.jobDescription).Append("'");
-            sb.Append("'").Append(job.resolve).Append("'");
-            sb.Append("'").Append(job.priority).Append("'");
-            sb.Append("'").Append((job.comment == null) ? "" : job.comment).Append("'");
-            sb.Append("'").Append(job.outlet.Id).Append("'");
-            sb.Append("'").Append(job.customer.UserId).Append("'");
-            sb.Append("'").Append(job.jobStatus).Append("'");
-            sb.Append("'").Append((job.opendate == null) ? "" : job.assigndate.ToString(DATE_FORMAT)).Append("'");
-            sb.Append("'").Append((job.assigndate== null)?"":job.assigndate.ToString(DATE_FORMAT)).Append("'");
-            sb.Append("'").Append((job.jobType == null) ? "" : job.jobType).Append("'");
+            sb.Append("'").Append((job.closedate == null) ? "" : job.closedate.ToString(DATE_FORMAT)).Append("',");
+            sb.Append("'").Append(job.createdate.ToString(DATE_FORMAT)).Append("',");
+            sb.Append("'").Append(job.carNo).Append("',");
+            sb.Append("'").Append((job.desk == null)?"":""+job.desk.UserId).Append("',");
+            sb.Append("'").Append((job.manager == null)?"":""+job.manager.UserId).Append("',");
+            sb.Append("'").Append((job.worker == null)?"":""+job.worker.UserId).Append("',");
+            sb.Append("'").Append((job.jobDescription == null) ? "" : job.jobDescription).Append("',");
+            sb.Append("'").Append((int)job.resolve).Append("',");
+            sb.Append("'").Append((int)job.priority).Append("',");
+            sb.Append("'").Append((job.comment == null) ? "" : job.comment).Append("',");
+            sb.Append("'").Append((job.desk == null)?"":""+job.desk.outlet).Append("',");
+            sb.Append("'").Append((job.customer == null)?"":""+job.customer.UserId).Append("',");
+            sb.Append("'").Append((int)job.jobStatus).Append("',");
+            sb.Append("'").Append((job.opendate == null) ? "" : job.assigndate.ToString(DATE_FORMAT)).Append("',");
+            sb.Append("'").Append((job.assigndate== null)?"":job.assigndate.ToString(DATE_FORMAT)).Append("',");
+            sb.Append("'").Append((job.jobType == null) ? "" : job.jobType).Append("',");
             sb.Append("'").Append((job.jobHistory == null) ? "" : job.jobHistory).Append("'");
             //JobStatus foo = (JobStatus)Enum.ToObject(typeof(JobStatus) , yourInt);
 
 
-            string strsql = string.Format("INSERT INTO jobs ({0}) VALUES ({1})", string.Join(",",JobInfo.COLUMNS), sb.ToString()); 
+            string strsql = string.Format("INSERT INTO jobs ({0}) VALUES ({1})", string.Join(",",JobInfo.COLUMNS_NO_ID), sb.ToString()); 
                 
             return SqliteHelper.ExecuteNoneQuery(strsql);
             

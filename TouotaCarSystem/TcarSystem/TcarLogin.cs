@@ -18,8 +18,8 @@ namespace TcarSystem
         public TcarLogin()
         {
             InitializeComponent();
-           // textBoxName.Text = "zoe";
-            //textBoxPassword.Text = "zoe";
+            textBoxName.Text = "zoe";
+           textBoxPassword.Text = "zoe";
 
         }
 
