@@ -29,8 +29,18 @@ namespace TcarSystem.DAL
                     if (customerId != null && customerId.Length > 0)
                         job.customer = Sys_roleService.GetUserByiId(int.Parse(customerId));
                     job.jobDescription = dt.Rows[i]["jobDescription"].ToString();
-                    job.createdate = DateTime.Parse(dt.Rows[i]["createdate"].ToString());
+                    try
+                    {
+                        job.createdate = DateTime.Parse(dt.Rows[i]["createdate"].ToString());
+                    }
+                    catch
+                    {
+                        job.createdate = DateTime.Now;
+
+                    }
+
                     job.jobStatus = (JobStatus)int.Parse(dt.Rows[i]["jobStatus"].ToString());
+                    
                     job.priority = (Priority)int.Parse(dt.Rows[i]["priority"].ToString());
 
                     string resolve = dt.Rows[i]["resolve"].ToString();
