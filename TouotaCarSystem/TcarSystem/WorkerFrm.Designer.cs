@@ -41,6 +41,9 @@
             this.JobComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.JobCreate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelWelcome = new System.Windows.Forms.Label();
+            this.btn_Msearch = new System.Windows.Forms.Button();
+            this.cbJobStatus = new System.Windows.Forms.ComboBox();
+            this.cbResolve = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.WorkJobList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,15 +134,43 @@
             this.labelWelcome.TabIndex = 3;
             this.labelWelcome.Text = "Welcome";
             // 
+            // btn_Msearch
+            // 
+            this.btn_Msearch.Location = new System.Drawing.Point(421, 91);
+            this.btn_Msearch.Name = "btn_Msearch";
+            this.btn_Msearch.Size = new System.Drawing.Size(86, 33);
+            this.btn_Msearch.TabIndex = 8;
+            this.btn_Msearch.Text = "Search";
+            this.btn_Msearch.UseVisualStyleBackColor = true;
+            // 
+            // cbJobStatus
+            // 
+            this.cbJobStatus.FormattingEnabled = true;
+            this.cbJobStatus.Location = new System.Drawing.Point(41, 91);
+            this.cbJobStatus.Name = "cbJobStatus";
+            this.cbJobStatus.Size = new System.Drawing.Size(121, 29);
+            this.cbJobStatus.TabIndex = 9;
+            // 
+            // cbResolve
+            // 
+            this.cbResolve.FormattingEnabled = true;
+            this.cbResolve.Location = new System.Drawing.Point(216, 91);
+            this.cbResolve.Name = "cbResolve";
+            this.cbResolve.Size = new System.Drawing.Size(121, 29);
+            this.cbResolve.TabIndex = 10;
+            // 
             // WorkerFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1219, 584);
+            this.Controls.Add(this.cbResolve);
+            this.Controls.Add(this.cbJobStatus);
+            this.Controls.Add(this.btn_Msearch);
             this.Controls.Add(this.labelWelcome);
             this.Controls.Add(this.WorkJobList);
-            this.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "WorkerFrm";
             this.Text = "WorkerFrm";
             this.Load += new System.EventHandler(this.WorkerFrm_Load);
@@ -164,5 +195,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn JobComment;
         private System.Windows.Forms.DataGridViewTextBoxColumn JobCreate;
         private System.Windows.Forms.Label labelWelcome;
+        private System.Windows.Forms.Button btn_Msearch;
+        private System.Windows.Forms.ComboBox cbJobStatus;
+        private System.Windows.Forms.ComboBox cbResolve;
     }
 }
