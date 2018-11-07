@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgStatistic = new System.Windows.Forms.DataGridView();
             this.worker = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unsolveJob = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelTotalJob = new System.Windows.Forms.Label();
             this.btn_Close = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgStatistic)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgStatistic
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgStatistic.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgStatistic.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgStatistic.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.worker,
             this.unsolveJob});
-            this.dataGridView1.Location = new System.Drawing.Point(-2, 83);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(652, 479);
-            this.dataGridView1.TabIndex = 0;
+            this.dgStatistic.Location = new System.Drawing.Point(-2, 83);
+            this.dgStatistic.Margin = new System.Windows.Forms.Padding(5);
+            this.dgStatistic.Name = "dgStatistic";
+            this.dgStatistic.RowTemplate.Height = 23;
+            this.dgStatistic.Size = new System.Drawing.Size(652, 479);
+            this.dgStatistic.TabIndex = 0;
             // 
             // worker
             // 
@@ -85,13 +85,13 @@
             this.ClientSize = new System.Drawing.Size(649, 561);
             this.Controls.Add(this.btn_Close);
             this.Controls.Add(this.labelTotalJob);
-            this.Controls.Add(this.dataGridView1);
-            this.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Controls.Add(this.dgStatistic);
+            this.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "JobStatistic";
             this.Text = "JobStatistic";
             this.Load += new System.EventHandler(this.JobStatistic_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgStatistic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,7 +99,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgStatistic;
         private System.Windows.Forms.DataGridViewTextBoxColumn worker;
         private System.Windows.Forms.DataGridViewTextBoxColumn unsolveJob;
         private System.Windows.Forms.Label labelTotalJob;

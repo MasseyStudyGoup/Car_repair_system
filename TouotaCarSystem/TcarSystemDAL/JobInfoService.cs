@@ -291,10 +291,34 @@ namespace TcarSystem.DAL
             return SqliteHelper.ExecuteNoneQuery(strsql);
         }
 
-      
+
+        public IList<JobStatistic> GetJobStatistic()
+        {
+            IList<JobStatistic> totailwork = new List<JobStatistic>();
+            string sql = "SELECT COUNT(id), worker FROM jobs WHERE jobStatus <> '{0}'  group by worker" + JobStatus.Closed.ToString();
+            DataTable dt = SqliteHelper.ExecuteTable(sql);
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    //totailwork = GetTotailWork(dr);
+                    string workerId = dr["worker"].ToString();
+                    totailwork.Worker = Sys_roleService.GetUserByiId(int.Parse(workerId));
+                    int Close = Convert.ToInt32(dr["count"]);
+
+                    JobStatistic js = new JobStatistic
+                    {
+                        Worker = workerId,
+                        Closed = Close,
+                    };
+                    totailwork.Add(js);
+                    return totailwork;
+                }
+            }
+            return totailwork;
+        }
 
 
-        
 
     }
 }
