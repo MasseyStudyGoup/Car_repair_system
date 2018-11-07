@@ -59,7 +59,7 @@
             this.cbPriority.FormattingEnabled = true;
             this.cbPriority.Location = new System.Drawing.Point(142, 87);
             this.cbPriority.Name = "cbPriority";
-            this.cbPriority.Size = new System.Drawing.Size(134, 29);
+            this.cbPriority.Size = new System.Drawing.Size(159, 29);
             this.cbPriority.TabIndex = 2;
             // 
             // cbWoker
@@ -67,13 +67,13 @@
             this.cbWoker.FormattingEnabled = true;
             this.cbWoker.Location = new System.Drawing.Point(142, 171);
             this.cbWoker.Name = "cbWoker";
-            this.cbWoker.Size = new System.Drawing.Size(134, 29);
+            this.cbWoker.Size = new System.Drawing.Size(159, 29);
             this.cbWoker.TabIndex = 3;
             this.cbWoker.SelectedIndexChanged += new System.EventHandler(this.cbWoker_SelectedIndexChanged);
             // 
             // btn_submit
             // 
-            this.btn_submit.Location = new System.Drawing.Point(190, 275);
+            this.btn_submit.Location = new System.Drawing.Point(223, 275);
             this.btn_submit.Name = "btn_submit";
             this.btn_submit.Size = new System.Drawing.Size(99, 35);
             this.btn_submit.TabIndex = 4;
@@ -83,7 +83,7 @@
             // 
             // btn_cancel
             // 
-            this.btn_cancel.Location = new System.Drawing.Point(36, 275);
+            this.btn_cancel.Location = new System.Drawing.Point(60, 275);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(99, 35);
             this.btn_cancel.TabIndex = 5;

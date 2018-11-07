@@ -39,7 +39,8 @@ namespace TcarSystem
 
         private void btn_cancel_Click(object sender, EventArgs e)
         {
-
+            this.CancelButton = btn_cancel;
+            this.CancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
         }
 
         private void btn_submit_Click(object sender, EventArgs e)
@@ -48,8 +49,10 @@ namespace TcarSystem
             jobcurrent.priority = (Priority)Enum.Parse(typeof(Priority), cbPriority.Text);
 
             //get worker in sys_roleService
-            //IList<UserInfor> userlist = new List<UserInfor>();
-              //UserInforBLL.GetAllWorkers();
+            if(cbWoker.SelectedItem != null)
+            {
+                jobcurrent.worker = (UserInfor)((ItemData)cbWoker.SelectedItem).Value;
+            }
 
             jobcurrent.assigndate = DateTime.Now;
             jobcurrent.jobStatus = JobStatus.Assigned;
@@ -64,11 +67,29 @@ namespace TcarSystem
             //Get and set priority value 
             cbPriority.DataSource = System.Enum.GetNames(typeof(Priority));
             cbPriority.Text = jobcurrent.priority.ToString();
-            
 
-            
             //Get and set worker value
+            IList<UserInfor> userlist = UserInforBLL.GetAllWorkers(user.outlet);
+            foreach (UserInfor worker in userlist)
+            {
+
+                 ItemData item = new ItemData(worker.UserName, worker);
+                 cbWoker.Items.Add(item);
+                 if (jobcurrent.worker != null && jobcurrent.worker.UserId == worker.UserId)
+                 {
+                     cbWoker.SelectedItem = item;
+                 }
+
+            }
             
+            if(jobcurrent.worker != null)
+            {
+                cbWoker.Text = jobcurrent.worker.UserName.ToString();
+            }
+            else
+            {
+                cbWoker.Text = "Plese select";
+            }
 
         }
 

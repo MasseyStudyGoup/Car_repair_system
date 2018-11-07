@@ -43,6 +43,7 @@
             this.JobCreate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Msearch = new System.Windows.Forms.Button();
             this.btnAssgin = new System.Windows.Forms.Button();
+            this.btn_Jobstatistic = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ManagerJobList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -153,16 +154,27 @@
             this.btnAssgin.UseVisualStyleBackColor = true;
             this.btnAssgin.Click += new System.EventHandler(this.btnAssgin_Click);
             // 
+            // btn_Jobstatistic
+            // 
+            this.btn_Jobstatistic.Location = new System.Drawing.Point(246, 60);
+            this.btn_Jobstatistic.Name = "btn_Jobstatistic";
+            this.btn_Jobstatistic.Size = new System.Drawing.Size(108, 33);
+            this.btn_Jobstatistic.TabIndex = 7;
+            this.btn_Jobstatistic.Text = "Job Statistic";
+            this.btn_Jobstatistic.UseVisualStyleBackColor = true;
+            this.btn_Jobstatistic.Click += new System.EventHandler(this.btn_Jobstatistic_Click);
+            // 
             // ManagerFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1218, 587);
+            this.Controls.Add(this.btn_Jobstatistic);
             this.Controls.Add(this.btn_Msearch);
             this.Controls.Add(this.btnAssgin);
             this.Controls.Add(this.ManagerJobList);
             this.Controls.Add(this.labelWelcome);
-            this.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ManagerFrm";
             this.Text = "ManagerFrm";
@@ -190,5 +202,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn JobCreate;
         private System.Windows.Forms.Button btn_Msearch;
         private System.Windows.Forms.Button btnAssgin;
+        private System.Windows.Forms.Button btn_Jobstatistic;
     }
 }

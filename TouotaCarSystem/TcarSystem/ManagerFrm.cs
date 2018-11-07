@@ -43,7 +43,8 @@ namespace TcarSystem
                     job.carNo,
                     (job.customer==null)?"":job.customer.UserName,
                     (job.outlet==null)?"":job.outlet.Name,
-                    (job.jobType==null)?"":job.jobType,
+                    job.jobType.ToString(),
+                    //(job.jobType==null)?"":job.jobType,
                     //job.priority.ToString(),
                     job.jobStatus.ToString(),
                     job.jobDescription,
@@ -82,6 +83,12 @@ namespace TcarSystem
                 assginfrm.ShowDialog();
                 ManagerFrm_Load(null, null);
             }
+        }
+
+        private void btn_Jobstatistic_Click(object sender, EventArgs e)
+        {
+            JobStatistic jobStatistic = new JobStatistic();
+            jobStatistic.ShowDialog();
         }
     }
 }
