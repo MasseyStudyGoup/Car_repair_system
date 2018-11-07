@@ -40,9 +40,9 @@
             this.JobRes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.JobComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.JobCreate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbStatus = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbResolve = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.hdSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dhSearcjJobList)).BeginInit();
@@ -125,13 +125,14 @@
             this.JobCreate.HeaderText = "CreateDate";
             this.JobCreate.Name = "JobCreate";
             // 
-            // comboBox1
+            // cbStatus
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(126, 47);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(108, 21);
-            this.comboBox1.TabIndex = 2;
+            this.cbStatus.FormattingEnabled = true;
+            this.cbStatus.Location = new System.Drawing.Point(126, 47);
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.Size = new System.Drawing.Size(108, 21);
+            this.cbStatus.TabIndex = 2;
+           
             // 
             // label1
             // 
@@ -142,13 +143,14 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "JobStatus";
             // 
-            // comboBox2
+            // cbResolve
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(381, 47);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 4;
+            this.cbResolve.FormattingEnabled = true;
+            this.cbResolve.Location = new System.Drawing.Point(381, 47);
+            this.cbResolve.Name = "cbResolve";
+            this.cbResolve.Size = new System.Drawing.Size(121, 21);
+            this.cbResolve.TabIndex = 4;
+     
             // 
             // label2
             // 
@@ -176,9 +178,9 @@
             this.ClientSize = new System.Drawing.Size(1242, 619);
             this.Controls.Add(this.hdSearch);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cbResolve);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbStatus);
             this.Controls.Add(this.dhSearcjJobList);
             this.Name = "hd_search";
             this.Text = "hd_search";
@@ -203,9 +205,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn JobRes;
         private System.Windows.Forms.DataGridViewTextBoxColumn JobComment;
         private System.Windows.Forms.DataGridViewTextBoxColumn JobCreate;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbStatus;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbResolve;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button hdSearch;
     }

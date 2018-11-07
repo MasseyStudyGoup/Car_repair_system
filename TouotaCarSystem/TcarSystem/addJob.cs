@@ -38,8 +38,9 @@ namespace TcarSystem
             {
                 textBoxCarNo.Text = m_job.carNo;
                 textBoxCName.Text = (m_job.customer == null) ? "" : m_job.customer.UserName;
-                cbType.Text = m_job.jobType;
+                cbType.SelectedText = m_job.jobType.ToString();
                 jobDes.Text = m_job.jobDescription;
+                
 
             }
             else
@@ -53,15 +54,15 @@ namespace TcarSystem
         private void btn_Submit_Click(object sender, EventArgs e)
         {
 
-            
+            cbType.DataSource = System.Enum.GetNames(typeof(JobType));
             m_job.carNo = textBoxCarNo.Text;
             m_job.customer = UserInforBLL.GetUserByName(textBoxCName.Text);
-            m_job.jobType = cbType.Text;
+            m_job.jobType = (JobType)Enum.Parse(typeof(JobType), cbType.Text);
             m_job.jobDescription = jobDes.Text;
             m_job.priority = Priority.Normal;
             
-            
-            
+
+
             if (m_job.id == null)
                 m_job.jobStatus = JobStatus.Open;
             else
@@ -93,6 +94,9 @@ namespace TcarSystem
 
         }
 
-      
+        private void cbType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

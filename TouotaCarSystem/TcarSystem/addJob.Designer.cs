@@ -104,6 +104,8 @@ namespace TcarSystem
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(226, 29);
             this.cbType.TabIndex = 38;
+            this.cbType.Text = "Please select a job type";
+            this.cbType.SelectedIndexChanged += new System.EventHandler(this.cbType_SelectedIndexChanged);
             // 
             // labelName
             // 
@@ -143,9 +145,9 @@ namespace TcarSystem
             "Closed"});
             this.cbOpen.Location = new System.Drawing.Point(200, 386);
             this.cbOpen.Name = "cbOpen";
-            this.cbOpen.Size = new System.Drawing.Size(176, 29);
+            this.cbOpen.Size = new System.Drawing.Size(226, 29);
             this.cbOpen.TabIndex = 50;
-            this.cbOpen.Text = "Please select";
+            this.cbOpen.Text = "Please select one option";
             this.cbOpen.VisibleChanged += new System.EventHandler(this.addJob_Load);
             // 
             // label1
@@ -165,7 +167,6 @@ namespace TcarSystem
             this.lbopen.TabIndex = 52;
             this.lbopen.Text = "Open it";
             this.lbopen.VisibleChanged += new System.EventHandler(this.addJob_Load);
-      
             // 
             // addJob
             // 
