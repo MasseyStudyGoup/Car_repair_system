@@ -33,7 +33,7 @@ namespace TcarSystem
                 foreach (JobInfo job in jobs)
                 {
                     ManagerJobList.Rows.Add(new string[] {
-                    job.id,
+                    job.id.ToString(),
                     job.carNo,
                     (job.customer==null)?"":job.customer.UserName,
                     (job.outlet==null)?"":job.outlet.Name,

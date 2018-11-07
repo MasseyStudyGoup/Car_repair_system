@@ -12,6 +12,9 @@ namespace TcarSystem.DAL
 {
     public class JobInfoService
     {
+        private static string SQL_COLUMN_VALUE_FMT = "{0}='{1}'";
+
+
         public static IList<JobInfo> GetJobsBySQL(string strsql)
         {
             IList<JobInfo> jobs = new List<JobInfo>();
@@ -167,8 +170,31 @@ namespace TcarSystem.DAL
         /// <returns>0 or 1</returns>
         public static int ModifyJob(JobInfo job)
         {
-            
-            string strsql = string.Format("UPDATE `jobs` SET `createdate`=0,`carNo`='0',`desk`=0,`manager`=0,`worker`=0,`jobDescription`='0',`priority`=0,`outlet`='0',`customer`='0', WHERE id = 2",  job.createdate,  job.carNo, job.desk.UserId, job.manager.UserId, job.worker.UserId, job.jobDescription, job.priority, job.outlet, job.customer);
+
+            //JobInfo origin= GetJobById(job.id);
+
+            const string DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
+            StringBuilder sb = new StringBuilder();
+            sb.Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[0], (job.closedate == null) ? "" : job.closedate.ToString(DATE_FORMAT)));
+            sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[1], job.createdate.ToString(DATE_FORMAT)));
+            sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[2], job.carNo));
+            sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[3], (job.desk == null) ? "" : "" + job.desk.UserId));
+            sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[4], (job.manager == null) ? "" : "" + job.manager.UserId));
+            sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[5], (job.worker == null) ? "" : "" + job.worker.UserId));
+            sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[6], (job.jobDescription == null) ? "" : job.jobDescription));
+            sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[7], (int)job.resolve));
+            sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[8], (int)job.priority));
+            sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[9], (job.comment == null) ? "" : job.comment));
+            sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[10], (job.desk == null) ? "" : "" + job.desk.outlet));
+            sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[11], (job.customer == null) ? "" : "" + job.customer.UserId));
+            sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[12], (int)job.jobStatus));
+            sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[13], (job.opendate == null) ? "" : job.assigndate.ToString(DATE_FORMAT)));
+            sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[14], (job.assigndate == null) ? "" : job.assigndate.ToString(DATE_FORMAT)));
+            sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[15], (job.jobType == null) ? "" : job.jobType));
+            sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[16], (job.jobHistory == null) ? "" : job.jobHistory));
+ 
+
+            string strsql = string.Format("UPDATE jobs SET {0} WHERE id = {1}", sb.ToString(),job.id);
 
             return SqliteHelper.ExecuteNoneQuery(strsql);
         }

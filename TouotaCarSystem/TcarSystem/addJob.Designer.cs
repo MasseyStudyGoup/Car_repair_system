@@ -40,19 +40,21 @@ namespace TcarSystem
             this.labelName = new System.Windows.Forms.Label();
             this.labelCarNo = new System.Windows.Forms.Label();
             this.btn_Submit = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxCName
             // 
             this.textBoxCName.Font = new System.Drawing.Font("微软雅黑 Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBoxCName.Location = new System.Drawing.Point(174, 122);
+            this.textBoxCName.Location = new System.Drawing.Point(200, 91);
             this.textBoxCName.Name = "textBoxCName";
             this.textBoxCName.Size = new System.Drawing.Size(176, 29);
             this.textBoxCName.TabIndex = 49;
             // 
             // textBoxCarNo
             // 
-            this.textBoxCarNo.Location = new System.Drawing.Point(174, 74);
+            this.textBoxCarNo.Location = new System.Drawing.Point(200, 43);
             this.textBoxCarNo.Name = "textBoxCarNo";
             this.textBoxCarNo.Size = new System.Drawing.Size(176, 29);
             this.textBoxCarNo.TabIndex = 48;
@@ -70,7 +72,7 @@ namespace TcarSystem
             // labelDescb
             // 
             this.labelDescb.AutoSize = true;
-            this.labelDescb.Location = new System.Drawing.Point(35, 245);
+            this.labelDescb.Location = new System.Drawing.Point(61, 214);
             this.labelDescb.Name = "labelDescb";
             this.labelDescb.Size = new System.Drawing.Size(127, 21);
             this.labelDescb.TabIndex = 46;
@@ -78,7 +80,7 @@ namespace TcarSystem
             // 
             // jobDes
             // 
-            this.jobDes.Location = new System.Drawing.Point(174, 242);
+            this.jobDes.Location = new System.Drawing.Point(200, 211);
             this.jobDes.Margin = new System.Windows.Forms.Padding(5);
             this.jobDes.Multiline = true;
             this.jobDes.Name = "jobDes";
@@ -88,7 +90,7 @@ namespace TcarSystem
             // labelType
             // 
             this.labelType.AutoSize = true;
-            this.labelType.Location = new System.Drawing.Point(63, 183);
+            this.labelType.Location = new System.Drawing.Point(89, 152);
             this.labelType.Name = "labelType";
             this.labelType.Size = new System.Drawing.Size(46, 21);
             this.labelType.TabIndex = 41;
@@ -97,7 +99,7 @@ namespace TcarSystem
             // cbType
             // 
             this.cbType.FormattingEnabled = true;
-            this.cbType.Location = new System.Drawing.Point(174, 180);
+            this.cbType.Location = new System.Drawing.Point(200, 149);
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(226, 29);
             this.cbType.TabIndex = 38;
@@ -105,7 +107,7 @@ namespace TcarSystem
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.Location = new System.Drawing.Point(63, 122);
+            this.labelName.Location = new System.Drawing.Point(89, 91);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(56, 21);
             this.labelName.TabIndex = 34;
@@ -114,7 +116,7 @@ namespace TcarSystem
             // labelCarNo
             // 
             this.labelCarNo.AutoSize = true;
-            this.labelCarNo.Location = new System.Drawing.Point(63, 74);
+            this.labelCarNo.Location = new System.Drawing.Point(89, 43);
             this.labelCarNo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelCarNo.Name = "labelCarNo";
             this.labelCarNo.Size = new System.Drawing.Size(67, 21);
@@ -132,11 +134,34 @@ namespace TcarSystem
             this.btn_Submit.UseVisualStyleBackColor = true;
             this.btn_Submit.Click += new System.EventHandler(this.btn_Submit_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Open",
+            "Close"});
+            this.comboBox1.Location = new System.Drawing.Point(200, 386);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 29);
+            this.comboBox1.TabIndex = 50;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(85, 388);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 21);
+            this.label1.TabIndex = 51;
+            this.label1.Text = "open job";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // addJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(696, 580);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBoxCName);
             this.Controls.Add(this.textBoxCarNo);
             this.Controls.Add(this.btn_cancel);
@@ -179,5 +204,7 @@ namespace TcarSystem
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelCarNo;
         private System.Windows.Forms.Button btn_Submit;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
