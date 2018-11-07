@@ -14,12 +14,14 @@ namespace TcarSystem
 {
     public partial class addJob : Form
     {
-        private JobInfo m_job = new JobInfo();
-        UserInfor user = UserInforBLL.CurrentUser;
-        UserInfor manager = UserInforBLL.GetManager(UserInforBLL.CurrentOutlet);
+        private JobInfo m_job;
+        private static UserInfor user = UserInforBLL.CurrentUser;
+        //private Outlet outlet = UserInforBLL.CurrentOutlet;
+        private UserInfor manager = UserInforBLL.GetManager(user.outlet);
 
         public addJob()
         {
+            m_job = new JobInfo();
             InitializeComponent();
             this.CancelButton = btn_cancel;
             this.CancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -27,15 +29,18 @@ namespace TcarSystem
 
         public addJob(JobInfo currentJob)
         {
+            m_job = currentJob;
             InitializeComponent();
             this.CancelButton = btn_cancel;
             this.CancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            m_job = currentJob;
+    
         }
         private void addJob_Load(object sender, EventArgs e)
         {
+            cbType.DataSource = System.Enum.GetNames(typeof(JobType));
             if (m_job.id != null)
             {
+                
                 textBoxCarNo.Text = m_job.carNo;
                 textBoxCName.Text = (m_job.customer == null) ? "" : m_job.customer.UserName;
                 cbType.SelectedText = m_job.jobType.ToString();
@@ -71,12 +76,12 @@ namespace TcarSystem
             m_job.desk = user;
             m_job.createdate = DateTime.Now;
 
-            if (m_job.jobStatus.CompareTo(JobStatus.Closed) == 1)
+            if (m_job.jobStatus == JobStatus.Closed)
                 m_job.resolve = ResolveStatus.Invalid;
             else
                 m_job.resolve = ResolveStatus.Unresolved;
 
-            if (m_job.jobStatus.CompareTo(JobStatus.Open) == 1)
+            if (m_job.jobStatus == JobStatus.Open)
             {
                 m_job.opendate = DateTime.Now;
                 m_job.manager = manager;

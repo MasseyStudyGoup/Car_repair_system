@@ -14,6 +14,8 @@ namespace TcarSystem
 {
     public partial class WorkerFrm : Form
     {
+        private Dictionary<string, JobInfo> m_jobDict = new Dictionary<string, JobInfo>();
+
         public WorkerFrm()
         {
             InitializeComponent();
@@ -21,6 +23,9 @@ namespace TcarSystem
 
         private void WorkerFrm_Load(object sender, EventArgs e)
         {
+            WorkJobList.Rows.Clear();
+            m_jobDict.Clear();
+
             UserInfor user = UserInforBLL.CurrentUser;
             labelWelcome.Text = "Welcome" + " " + user.UserName + "!";
 
@@ -31,6 +36,7 @@ namespace TcarSystem
             {
                 foreach (JobInfo job in jobs)
                 {
+                    m_jobDict.Add("" + job.id, job);
                     WorkJobList.Rows.Add(new string[] {
                     job.id,
                     job.carNo,
@@ -48,6 +54,30 @@ namespace TcarSystem
 
                 });
                 }
+            }
+        }
+
+
+
+        private void btClose_Click(object sender, EventArgs e)
+        {
+            CloseJob();
+        }
+
+        private void WorkJobList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            CloseJob();
+        }
+
+        private void CloseJob()
+        {
+            JobInfo job = m_jobDict[WorkJobList.SelectedRows[0].Cells[0].Value.ToString()];
+            if (job != null)
+            {
+                closeJob jobForm = new closeJob(job);
+                jobForm.ShowDialog();
+                WorkerFrm_Load(null, null);
+
             }
         }
     }

@@ -22,8 +22,16 @@ namespace TcarSystem
 
         private void hd_search_Load(object sender, EventArgs e)
         {
-            cbStatus.DataSource = System.Enum.GetNames(typeof(JobStatus));
-            cbResolve.DataSource = System.Enum.GetNames(typeof(ResolveStatus));
+            string[] status = System.Enum.GetNames(typeof(JobStatus));
+            cbStatus.Items.Add("All status");
+            foreach (string s in status)
+                cbStatus.Items.Add(s);
+            cbStatus.SelectedIndex = 0;
+            string[] resolve = System.Enum.GetNames(typeof(ResolveStatus));
+            cbResolve.Items.Add("All");
+            foreach (string r in resolve)
+                cbResolve.Items.Add(r);
+            cbResolve.SelectedIndex = 0;
 
 
            // string sql = ""
@@ -40,10 +48,25 @@ namespace TcarSystem
         private void hdSearch_Click(object sender, EventArgs e)
         {
 
-            JobStatus status = (JobStatus)Enum.Parse(typeof(JobStatus), cbStatus.Text);
-            ResolveStatus resolve = (ResolveStatus)Enum.Parse(typeof(ResolveStatus), cbResolve.Text);
-           
-            IList<JobInfo> myJobs = JobInfoManager.GetMyJobshd((int)status, (int)resolve);
+            int status = -1;
+            try
+            {
+                status = (int)((JobStatus)Enum.Parse(typeof(JobStatus), cbStatus.Text));
+            }
+            catch
+            {
+                //do nothing
+            }
+            int resolve = -1;
+            try
+            {
+                resolve = (int)(ResolveStatus)Enum.Parse(typeof(ResolveStatus), cbResolve.Text);
+            }
+            catch
+            {
+
+            }
+            IList<JobInfo> myJobs = JobInfoManager.GetMyJobshd(status, resolve);
             RefreshJobList(myJobs);
         }
 

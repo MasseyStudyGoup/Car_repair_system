@@ -220,6 +220,20 @@ namespace TcarSystem.DAL
             return SqliteHelper.ExecuteNoneQuery(strsql);
         }
 
+        public static int closeByWorker(JobInfo job)
+        {
+            const string DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
+            StringBuilder sb = new StringBuilder();
+            sb.Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[0], (job.closedate == null) ? "" : job.closedate.ToString(DATE_FORMAT)));
+            sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[7], (int)job.resolve));
+            sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[9], (job.comment == null) ? "" : job.comment));
+            sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[12], (int)job.jobStatus));
+
+
+            string strsql = string.Format("UPDATE jobs SET {0} WHERE id = {1}", sb.ToString(), job.id);
+
+            return SqliteHelper.ExecuteNoneQuery(strsql);
+        }
 
         /// <summary>
         /// delete a job
@@ -280,19 +294,7 @@ namespace TcarSystem.DAL
       
 
 
-        /// <summary>
-        /// close a job by worker
-        /// </summary>
-        /// <param name="strsql">sql sentence</param>
-        /// <returns>0 or 1</returns>
-        public static int closeByWorker(JobInfo job)
-        {
-
-            string strsql = string.Format("UPDATE `jobs` SET `worker`=0 WHERE id = 2",  job.worker);
-            string strsql1 = string.Format("INSERT INTO `job_history`(`jobid`,`jobStatus`,`assigndate`,`closedate`,`opendate`,`resolve`,`comment`) VALUES (0,0,0,0,0,0,'')", job.id, job.jobStatus, job.assigndate, job.closedate, job.opendate, job.resolve, job.comment);
-            SqliteHelper.ExecuteNoneQuery(strsql);
-            return SqliteHelper.ExecuteNoneQuery(strsql1);
-        }
+        
 
     }
 }

@@ -55,7 +55,7 @@ namespace TcarSystem
        
         
 
-        public event EventHandler evtMember;
+      //  public event EventHandler evtMember;
 
         //ShowFrmUpdataCreate 1 == add job 2 == updata jobs
         private void btnAdd_Click(object sender, EventArgs e)
@@ -71,41 +71,8 @@ namespace TcarSystem
         {
             EditJob();
             
-            //if (deskJobList.SelectedRows.Count>0)
-            //{
-            //    int id = Convert.ToInt32(deskJobList.SelectedRows[0].Cells[0].Value.ToString());
-
-            //    JobInfo job = JobInfoManager.GetJobById(id);
-            //    meg.obj = job;
-
-            //    //ShowFrmUpdataCreate(2);
-            //    //NewJobForm jobForm = new NewJobForm();
-            //    addJob jobForm = new addJob();
-            //    helpDeskForm_Load(null, null);
-            //    //jobForm.ShowDialog();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Please select which line you want change!");
-            //}
-
-            
         }
-        MyEventArgs meg = new MyEventArgs();//For pass value
-        public void ShowFrmUpdataCreate(int numb)
-        {
-            addJob inforfrm = new addJob();
-            //this.evtMember += new EventHandler(inforfrm.SetText);
-            meg.Temp = numb;
-            if(this.evtMember != null)
-            {
-                this.evtMember(this, meg);
-                inforfrm.FormClosed += new FormClosedEventHandler(inforfrm_FormClosed);
-                inforfrm.ShowDialog();
-            }
-            
-                 
-        }
+        
 
         private void inforfrm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -118,6 +85,14 @@ namespace TcarSystem
             jobForm.ShowDialog();
         }
 
+        
+
+        private void deskJobList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EditJob();
+        }
+
+
         private void EditJob()
         {
             JobInfo job = m_jobDict[deskJobList.SelectedRows[0].Cells[0].Value.ToString()];
@@ -128,11 +103,6 @@ namespace TcarSystem
                 helpDeskForm_Load(null, null);
 
             }
-        }
-
-        private void deskJobList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            EditJob();
         }
     }
 }

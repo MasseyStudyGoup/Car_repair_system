@@ -65,9 +65,21 @@ namespace TcarSystem.BLL
             string sql = "";
 
             UserInfor user = UserInforBLL.CurrentUser;
-
-            sql = string.Format("select * from jobs where desk = '{0}' and jobStatus = '{1}' and resolve = '{2}' ", user.UserId,status,resolve);
-
+            if (status >= 0 && resolve >= 0)
+            {
+                sql = string.Format("select * from jobs where desk = '{0}' and jobStatus = '{1}' and resolve = '{2}' ", user.UserId, status, resolve);
+            }
+            else if (status < 0 && resolve < 0)
+            {
+                sql = string.Format("select * from jobs where desk = '{0}'", user.UserId);
+            }
+            else
+            {
+                if (status == -1)
+                    sql = string.Format("select * from jobs where desk = '{0}' and resolve = '{1}' ", user.UserId, resolve);
+                else
+                    sql = string.Format("select * from jobs where desk = '{0}' and jobStatus = '{1}' ", user.UserId, status);
+            }
             return TcarSystem.DAL.JobInfoService.GetJobsBySQL(sql);
         }
 
@@ -141,53 +153,11 @@ namespace TcarSystem.BLL
             return TcarSystem.DAL.JobInfoService.ModifyJob(job)>0;
         }
 
-        /// <summary>
-        /// delete a job
-        /// </summary>
-        /// <param name="strsql">sql sentence</param>
-        /// <returns>0 or 1</returns>
-        public static bool DelJob(int id)
-        {
-
-            return TcarSystem.DAL.JobInfoService.DelJob(id)>0;
-        }
+       
+        
 
         /// <summary>
-        /// close a job by Desk
-        /// </summary>
-        /// <param name="strsql">sql sentence</param>
-        /// <returns>0 or 1</returns>
-        public static bool closeByDesk(JobInfo job)
-        {
-
-            return TcarSystem.DAL.JobInfoService.closeByDesk(job)>0;
-        }
-
-
-        /// <summary>
-        /// confirm a job
-        /// </summary>
-        /// <param name="strsql">sql sentence</param>
-        /// <returns>0 or 1</returns>
-        public static bool confirmById(JobInfo job)
-        {
-
-            return TcarSystem.DAL.JobInfoService.confirmById(job) > 0;
-        }
-
-        /// <summary>
-        /// set a job's priority
-        /// </summary>
-        /// <param name="strsql">sql sentence</param>
-        /// <returns>0 or 1</returns>
-        public static bool setPriority(JobInfo job)
-        {
-
-            return TcarSystem.DAL.JobInfoService.setPriority(job) > 0;
-        }
-
-        /// <summary>
-        /// assign a job
+        /// assign a job---used by Manager
         /// </summary>
         /// <param name="strsql">sql sentence</param>
         /// <returns>0 or 1</returns>
@@ -197,17 +167,20 @@ namespace TcarSystem.BLL
             return TcarSystem.DAL.JobInfoService.assign(job)>0;
         }
 
-
         /// <summary>
-        /// close a job by worker
+        /// close a job---used by Worker
         /// </summary>
         /// <param name="strsql">sql sentence</param>
         /// <returns>0 or 1</returns>
-        public static bool closeByWorker(JobInfo job)
+        public static bool close(JobInfo job)
         {
 
-            return TcarSystem.DAL.JobInfoService.closeByDesk(job)>0;
+            return TcarSystem.DAL.JobInfoService.closeByWorker(job) > 0;
         }
+        
+
+
+        
 
 
     }

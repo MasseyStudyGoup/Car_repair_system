@@ -50,6 +50,8 @@
             // 
             // dhSearcjJobList
             // 
+            this.dhSearcjJobList.AllowUserToAddRows = false;
+            this.dhSearcjJobList.AllowUserToDeleteRows = false;
             this.dhSearcjJobList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dhSearcjJobList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dhSearcjJobList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -64,10 +66,10 @@
             this.JobRes,
             this.JobComment,
             this.JobCreate});
-            this.dhSearcjJobList.Location = new System.Drawing.Point(12, 131);
+            this.dhSearcjJobList.Location = new System.Drawing.Point(12, 121);
             this.dhSearcjJobList.Name = "dhSearcjJobList";
             this.dhSearcjJobList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dhSearcjJobList.Size = new System.Drawing.Size(1214, 468);
+            this.dhSearcjJobList.Size = new System.Drawing.Size(1214, 432);
             this.dhSearcjJobList.TabIndex = 1;
             // 
             // JobId
@@ -128,44 +130,42 @@
             // cbStatus
             // 
             this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.Location = new System.Drawing.Point(126, 47);
+            this.cbStatus.Location = new System.Drawing.Point(126, 43);
             this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(108, 21);
+            this.cbStatus.Size = new System.Drawing.Size(108, 20);
             this.cbStatus.TabIndex = 2;
-           
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(53, 50);
+            this.label1.Location = new System.Drawing.Point(53, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.Size = new System.Drawing.Size(59, 12);
             this.label1.TabIndex = 3;
             this.label1.Text = "JobStatus";
             // 
             // cbResolve
             // 
             this.cbResolve.FormattingEnabled = true;
-            this.cbResolve.Location = new System.Drawing.Point(381, 47);
+            this.cbResolve.Location = new System.Drawing.Point(381, 43);
             this.cbResolve.Name = "cbResolve";
-            this.cbResolve.Size = new System.Drawing.Size(121, 21);
+            this.cbResolve.Size = new System.Drawing.Size(121, 20);
             this.cbResolve.TabIndex = 4;
-     
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(327, 50);
+            this.label2.Location = new System.Drawing.Point(327, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 13);
+            this.label2.Size = new System.Drawing.Size(47, 12);
             this.label2.TabIndex = 5;
             this.label2.Text = "Resolve";
             // 
             // hdSearch
             // 
-            this.hdSearch.Location = new System.Drawing.Point(582, 47);
+            this.hdSearch.Location = new System.Drawing.Point(582, 43);
             this.hdSearch.Name = "hdSearch";
-            this.hdSearch.Size = new System.Drawing.Size(75, 23);
+            this.hdSearch.Size = new System.Drawing.Size(75, 21);
             this.hdSearch.TabIndex = 6;
             this.hdSearch.Text = "Search";
             this.hdSearch.UseVisualStyleBackColor = true;
@@ -173,9 +173,9 @@
             // 
             // hd_search
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1242, 619);
+            this.ClientSize = new System.Drawing.Size(1242, 571);
             this.Controls.Add(this.hdSearch);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbResolve);
