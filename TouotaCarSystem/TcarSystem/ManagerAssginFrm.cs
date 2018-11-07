@@ -39,18 +39,13 @@ namespace TcarSystem
 
         private void ManagerAssginFrm_Load(object sender, EventArgs e)
         {
-            //cbPriority.DataSource = System.Enum.GetNames()
+            cbPriority.DataSource = System.Enum.GetNames(typeof(Priority));
+            Priority penum = Priority.High;
+
+            cbPriority.SelectedIndex = this.cbPriority.FindString();
 
 
         }
 
-        public void bindCbox()
-        {
-            IList<Priority> priority = new List<Priority>();
-            //priority.Add(new Priority("Hight"));
-
-
-            cbPriority.DataSource = priority;
-        }
     }
 }
