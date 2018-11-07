@@ -25,7 +25,7 @@ namespace TcarSystem.Model
 
         private string _comment;
         private Outlet _outlet;
-        private string _jobType;
+        private JobType _jobType;
         private string _jobHistory;
         public static string[] COLUMNS = { "id", "closedate", "createdate", "carNo", "desk", "manager", "worker", "jobDescription", "resolve", "priority", "comment", "outlet", "customer", "jobStatus", "opendate", "assigndate", "jobType", "jobHistory" };
         public static string[] COLUMNS_NO_ID = { "closedate", "createdate", "carNo", "desk", "manager", "worker", "jobDescription", "resolve", "priority", "comment", "outlet", "customer", "jobStatus", "opendate", "assigndate", "jobType", "jobHistory" };
@@ -144,7 +144,7 @@ namespace TcarSystem.Model
             set { _closedate = value; }
 
         }
-        public string jobType
+        public JobType jobType
         {
             get { return _jobType; }
             set { _jobType = value; }

@@ -152,7 +152,7 @@ namespace TcarSystem.DAL
             sb.Append("'").Append((int)job.jobStatus).Append("',");
             sb.Append("'").Append((job.opendate == null) ? "" : job.assigndate.ToString(DATE_FORMAT)).Append("',");
             sb.Append("'").Append((job.assigndate== null)?"":job.assigndate.ToString(DATE_FORMAT)).Append("',");
-            sb.Append("'").Append((job.jobType == null) ? "" : job.jobType).Append("',");
+            sb.Append("'").Append((int)job.jobType).Append("',");
             sb.Append("'").Append((job.jobHistory == null) ? "" : job.jobHistory).Append("'");
             //JobStatus foo = (JobStatus)Enum.ToObject(typeof(JobStatus) , yourInt);
 
@@ -190,7 +190,7 @@ namespace TcarSystem.DAL
             sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[12], (int)job.jobStatus));
             sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[13], (job.opendate == null) ? "" : job.assigndate.ToString(DATE_FORMAT)));
             sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[14], (job.assigndate == null) ? "" : job.assigndate.ToString(DATE_FORMAT)));
-            sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[15], (job.jobType == null) ? "" : job.jobType));
+            sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[15], ((int)job.jobType)));
             sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[16], (job.jobHistory == null) ? "" : job.jobHistory));
  
 

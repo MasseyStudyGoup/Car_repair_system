@@ -60,10 +60,37 @@ namespace TcarSystem.BLL
             return TcarSystem.DAL.JobInfoService.GetJobsBySQL(sql);
         }
 
+        public static IList<JobInfo> GetMyJobshd(int status, int resolve)
+        {
+            string sql = "";
+
+            UserInfor user = UserInforBLL.CurrentUser;
+
+            sql = string.Format("select * from jobs where desk = '{0}' and jobStatus = '{1}' and resolve = '{2}' ", user.UserId,status,resolve);
+
+            return TcarSystem.DAL.JobInfoService.GetJobsBySQL(sql);
+        }
+
+
+        public static IList<JobInfo> GetMyJobsManager(int status, int resolve, int workerid)
+        {
+            string sql = "";
+
+            UserInfor user = UserInforBLL.CurrentUser;
+
+            sql = string.Format("select * from jobs where manager = '{0}' and jobStatus = '{1}' and resolve = '{2}' and worker = '{3}'", user.UserId, status, resolve ,workerid);
+
+            return TcarSystem.DAL.JobInfoService.GetJobsBySQL(sql);
+        }
+
+
+
+
 
         public static IList<JobInfo> SearchJobInfos(string sql)
         {
-          
+
+            
             return TcarSystem.DAL.JobInfoService.GetJobsBySQL(sql);
         }
 

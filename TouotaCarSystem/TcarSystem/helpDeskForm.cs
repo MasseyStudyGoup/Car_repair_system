@@ -38,7 +38,7 @@ namespace TcarSystem
                     job.carNo,
                     (job.customer==null)?"":job.customer.UserName,
                     (job.outlet==null)?"":job.outlet.Name,
-                    (job.jobType==null)?"":job.jobType,
+                    job.jobType.ToString(),
                     //job.priority.ToString(),
                     job.jobStatus.ToString(),
                     job.jobDescription,
