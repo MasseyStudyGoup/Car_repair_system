@@ -16,6 +16,7 @@ namespace TcarSystem
     {
         private JobInfo m_job = new JobInfo();
         UserInfor user = UserInforBLL.CurrentUser;
+        UserInfor manager = UserInforBLL.GetManager(UserInforBLL.CurrentOutlet);
 
         public addJob()
         {
@@ -60,6 +61,7 @@ namespace TcarSystem
             m_job.priority = Priority.Normal;
             
             
+            
             if (m_job.id == null)
                 m_job.jobStatus = JobStatus.Open;
             else
@@ -74,7 +76,11 @@ namespace TcarSystem
                 m_job.resolve = ResolveStatus.Unresolved;
 
             if (m_job.jobStatus.CompareTo(JobStatus.Open) == 1)
+            {
                 m_job.opendate = DateTime.Now;
+                m_job.manager = manager;
+            }
+                
 
             if (m_job.id == null)
                 JobInfoManager.AddJob(m_job);

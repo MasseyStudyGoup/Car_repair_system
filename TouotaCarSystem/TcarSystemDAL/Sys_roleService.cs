@@ -69,6 +69,33 @@ namespace TcarSystem.DAL
 
         }
 
+        public static UserInfor GetManagerByOut(Outlet outlet)
+        {
+            string strsql = string.Format("select * from {0} where Outlet ='{1}' and identity is 'manager'", "user", outlet.Id);
+            try
+            {
+                return GetUsersBySQL(strsql)[0];
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+        public static IList<UserInfor> GetAllWorkers(Outlet outlet)
+        {
+            string strsql = string.Format("select * from {0} where Outlet ='{1}' and identity is 'work' ", "user", outlet.Id);
+            try
+            {
+                return GetUsersBySQL(strsql);
+            }
+            catch
+            {
+                return null;
+            }
+            
+        }
+
 
     }
 }

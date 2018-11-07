@@ -13,7 +13,7 @@ namespace TcarSystem.BLL
     {
         UserInforDAL dal = new UserInforDAL();
         private static UserInfor _user = null;
-        private static UserInfor _outlet = null;
+        private static Outlet _outlet = null;
 
         public bool IsLoginByLoginName(string loginName, string Userpwd, out string msg)
         {
@@ -49,7 +49,7 @@ namespace TcarSystem.BLL
         {
             get => _user;
         }
-        public static UserInfor CurrentOutlet
+        public static Outlet CurrentOutlet
         {
             get => _outlet;
         }
@@ -58,5 +58,10 @@ namespace TcarSystem.BLL
         {
             return Sys_roleService.GetUserByName(name);
         }
+        public static UserInfor GetManager(Outlet outlet)
+        {
+            return Sys_roleService.GetManagerByOut(outlet);
+        }
+        
     }
 }

@@ -5,6 +5,7 @@ using System.Linq;
 using TcarSystem.Model;
 using System.Data.SQLite;
 using System.Data;
+using TcarSystem.DAL;
 
 
 namespace TcarSystem.DAL
@@ -45,7 +46,8 @@ namespace TcarSystem.DAL
             user.CarNo = dr["carNo"].ToString();
             user.User_password = dr["user_password"].ToString();
             user.Identity = dr["identity"].ToString();
-            user.outlet = Convert.ToInt32(dr["Outlet"]);
+           
+            user.outlet = sys_outletService.GetOutletbyotID(int.Parse(dr["Outlet"].ToString()));
 
             return user;
             //throw new NotImplementedException();
