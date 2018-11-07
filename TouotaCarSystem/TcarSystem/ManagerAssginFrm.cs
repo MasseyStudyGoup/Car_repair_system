@@ -42,7 +42,7 @@ namespace TcarSystem
             cbPriority.DataSource = System.Enum.GetNames(typeof(Priority));
             Priority penum = Priority.High;
 
-            cbPriority.SelectedIndex = this.cbPriority.FindString();
+         //   cbPriority.SelectedIndex = this.cbPriority.FindString();
 
 
         }
