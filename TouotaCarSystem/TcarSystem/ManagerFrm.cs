@@ -14,6 +14,7 @@ namespace TcarSystem
 {
     public partial class ManagerFrm : Form
     {
+        private Dictionary<string, JobInfo> m_jobDict = new Dictionary<string, JobInfo>();
         public ManagerFrm()
         {
             InitializeComponent();
@@ -22,6 +23,9 @@ namespace TcarSystem
         //Loading datagraid
         private void ManagerFrm_Load(object sender, EventArgs e)
         {
+            ManagerJobList.Rows.Clear();//load clean 
+            m_jobDict.Clear();
+
             UserInfor user = UserInforBLL.CurrentUser;
             labelWelcome.Text = "Welcome" + " " + user.UserName + "!";
 
@@ -32,6 +36,8 @@ namespace TcarSystem
             {
                 foreach (JobInfo job in jobs)
                 {
+                    m_jobDict.Add("" + job.id, job);
+
                     ManagerJobList.Rows.Add(new string[] {
                     job.id.ToString(),
                     job.carNo,
@@ -54,15 +60,28 @@ namespace TcarSystem
 
         private void btnAssgin_Click(object sender, EventArgs e)
         {
-            ManagerAssginFrm assgin = new ManagerAssginFrm();
-            assgin.ShowDialog();
-            ManagerFrm_Load(null, null);
+            //ManagerAssginFrm assgin = new ManagerAssginFrm();
+            //assgin.ShowDialog();
+            //ManagerFrm_Load(null, null);
+            Editinfor();
+
         }
 
         private void btn_Msearch_Click(object sender, EventArgs e)
         {
             ManagerSearchFrm search = new ManagerSearchFrm();
             search.ShowDialog();
+        }
+
+        public void Editinfor()
+        {
+            JobInfo job = m_jobDict[ManagerJobList.SelectedRows[0].Cells[0].Value.ToString()];
+            if(job !=null)
+            {
+                ManagerAssginFrm assginfrm = new ManagerAssginFrm(job);
+                assginfrm.ShowDialog();
+                ManagerFrm_Load(null, null);
+            }
         }
     }
 }

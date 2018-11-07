@@ -57,10 +57,6 @@
             // cbPriority
             // 
             this.cbPriority.FormattingEnabled = true;
-            this.cbPriority.Items.AddRange(new object[] {
-            "Hight",
-            "Middle",
-            "Low"});
             this.cbPriority.Location = new System.Drawing.Point(142, 87);
             this.cbPriority.Name = "cbPriority";
             this.cbPriority.Size = new System.Drawing.Size(134, 29);
@@ -106,8 +102,8 @@
             this.Controls.Add(this.cbPriority);
             this.Controls.Add(this.labelWoker);
             this.Controls.Add(this.labelPriority);
-            this.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ManagerAssginFrm";

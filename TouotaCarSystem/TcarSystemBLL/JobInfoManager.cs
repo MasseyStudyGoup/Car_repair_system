@@ -15,7 +15,7 @@ namespace TcarSystem.BLL
             string sql = "";
             if (user.Identity == "manager")
             {
-                sql = string.Format("select * from jobs where outlet ='{0}'", user.outlet);
+                sql = string.Format("select * from jobs where outlet ='{0}'", user.outlet.Id);
                 //                return TcarSystem.DAL.JobInfoService.GetAllJobInfos(UserInforBLL.CurrentUser.outlet);
             }
             else if (user.Identity == "hpdesk")

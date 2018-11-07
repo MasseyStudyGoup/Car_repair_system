@@ -19,7 +19,7 @@ namespace TcarSystem.BLL
         {
             bool flag = false;
             _user = dal.IsLoginByLoginName(loginName);//get name object
-            _outlet = dal.IsLoginByLoginName(loginName);
+            //_outlet = dal.IsLoginByLoginName(loginName);
             if (_user != null)
             {
                 if (Userpwd == _user.User_password)
@@ -62,6 +62,9 @@ namespace TcarSystem.BLL
         {
             return Sys_roleService.GetManagerByOut(outlet);
         }
-        
+        public static IList<UserInfor> GetAllWorkers(Outlet outlet)
+        {
+            return Sys_roleService.GetAllWorkers(outlet);
+        }
     }
 }
