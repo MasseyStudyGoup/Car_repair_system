@@ -40,13 +40,14 @@ namespace TcarSystem
             this.labelName = new System.Windows.Forms.Label();
             this.labelCarNo = new System.Windows.Forms.Label();
             this.btn_Submit = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbOpen = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbopen = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxCName
             // 
-            this.textBoxCName.Font = new System.Drawing.Font("微软雅黑 Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBoxCName.Font = new System.Drawing.Font("Microsoft YaHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBoxCName.Location = new System.Drawing.Point(200, 91);
             this.textBoxCName.Name = "textBoxCName";
             this.textBoxCName.Size = new System.Drawing.Size(176, 29);
@@ -134,34 +135,46 @@ namespace TcarSystem
             this.btn_Submit.UseVisualStyleBackColor = true;
             this.btn_Submit.Click += new System.EventHandler(this.btn_Submit_Click);
             // 
-            // comboBox1
+            // cbOpen
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbOpen.FormattingEnabled = true;
+            this.cbOpen.Items.AddRange(new object[] {
             "Open",
-            "Close"});
-            this.comboBox1.Location = new System.Drawing.Point(200, 386);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 29);
-            this.comboBox1.TabIndex = 50;
+            "Closed"});
+            this.cbOpen.Location = new System.Drawing.Point(200, 386);
+            this.cbOpen.Name = "cbOpen";
+            this.cbOpen.Size = new System.Drawing.Size(176, 29);
+            this.cbOpen.TabIndex = 50;
+            this.cbOpen.Text = "Please select";
+            this.cbOpen.VisibleChanged += new System.EventHandler(this.addJob_Load);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(85, 388);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 21);
+            this.label1.Size = new System.Drawing.Size(0, 21);
             this.label1.TabIndex = 51;
-            this.label1.Text = "open job";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // lbopen
+            // 
+            this.lbopen.AutoSize = true;
+            this.lbopen.Location = new System.Drawing.Point(91, 389);
+            this.lbopen.Name = "lbopen";
+            this.lbopen.Size = new System.Drawing.Size(67, 21);
+            this.lbopen.TabIndex = 52;
+            this.lbopen.Text = "Open it";
+            this.lbopen.VisibleChanged += new System.EventHandler(this.addJob_Load);
+      
             // 
             // addJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(696, 580);
+            this.Controls.Add(this.lbopen);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbOpen);
             this.Controls.Add(this.textBoxCName);
             this.Controls.Add(this.textBoxCarNo);
             this.Controls.Add(this.btn_cancel);
@@ -172,7 +185,7 @@ namespace TcarSystem
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.labelCarNo);
             this.Controls.Add(this.btn_Submit);
-            this.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "addJob";
             this.Text = "addJob";
@@ -204,7 +217,8 @@ namespace TcarSystem
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelCarNo;
         private System.Windows.Forms.Button btn_Submit;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbOpen;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbopen;
     }
 }

@@ -199,6 +199,28 @@ namespace TcarSystem.DAL
             return SqliteHelper.ExecuteNoneQuery(strsql);
         }
 
+
+        /// <summary>
+        /// assign a job
+        /// </summary>
+        /// <param name="strsql">sql sentence</param>
+        /// <returns>0 or 1</returns>
+        public static int assign(JobInfo job)
+        {
+            const string DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
+            StringBuilder sb = new StringBuilder();
+            sb.Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[5], (job.worker == null) ? "" : "" + job.worker.UserId));
+            sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[8], (int)job.priority));
+            sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[12], (int)job.jobStatus));
+            sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[14], (job.assigndate == null) ? "" : job.assigndate.ToString(DATE_FORMAT)));
+
+
+            string strsql = string.Format("UPDATE jobs SET {0} WHERE id = {1}", sb.ToString(), job.id);
+            
+            return SqliteHelper.ExecuteNoneQuery(strsql);
+        }
+
+
         /// <summary>
         /// delete a job
         /// </summary>
@@ -255,19 +277,7 @@ namespace TcarSystem.DAL
             return SqliteHelper.ExecuteNoneQuery(strsql);
         }
 
-        /// <summary>
-        /// assign a job
-        /// </summary>
-        /// <param name="strsql">sql sentence</param>
-        /// <returns>0 or 1</returns>
-        public static int assign(JobInfo job)
-        {
-
-            string strsql = string.Format("UPDATE `jobs` SET `worker`=0 WHERE id = 2",  job.worker);
-            string strsql1 = string.Format("INSERT INTO `job_history`(`jobid`,`jobStatus`,`assigndate`,`closedate`,`opendate`,`resolve`,`comment`) VALUES (0,0,0,0,0,0,'')", job.id, job.jobStatus, job.assigndate, job.closedate, job.opendate, job.resolve, job.comment);
-            SqliteHelper.ExecuteNoneQuery(strsql);
-            return SqliteHelper.ExecuteNoneQuery(strsql1);
-        }
+      
 
 
         /// <summary>

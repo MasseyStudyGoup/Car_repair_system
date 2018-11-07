@@ -40,23 +40,41 @@ namespace TcarSystem
                 cbType.Text = m_job.jobType;
                 jobDes.Text = m_job.jobDescription;
 
-
             }
+            else
+            {
+                lbopen.Hide();
+                cbOpen.Hide();
+            }
+
         }
 
         private void btn_Submit_Click(object sender, EventArgs e)
         {
 
-
+            
             m_job.carNo = textBoxCarNo.Text;
             m_job.customer = UserInforBLL.GetUserByName(textBoxCName.Text);
             m_job.jobType = cbType.Text;
             m_job.jobDescription = jobDes.Text;
             m_job.priority = Priority.Normal;
-            m_job.resolve = ResolveStatus.Unresolved;
-            m_job.jobStatus = JobStatus.Open;
+            
+            
+            if (m_job.id == null)
+                m_job.jobStatus = JobStatus.Open;
+            else
+                m_job.jobStatus = (JobStatus)Enum.Parse(typeof(JobStatus), cbOpen.Text);
+
             m_job.desk = user;
             m_job.createdate = DateTime.Now;
+
+            if (m_job.jobStatus.CompareTo(JobStatus.Closed) == 1)
+                m_job.resolve = ResolveStatus.Invalid;
+            else
+                m_job.resolve = ResolveStatus.Unresolved;
+
+            if (m_job.jobStatus.CompareTo(JobStatus.Open) == 1)
+                m_job.opendate = DateTime.Now;
 
             if (m_job.id == null)
                 JobInfoManager.AddJob(m_job);
@@ -69,9 +87,6 @@ namespace TcarSystem
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }
