@@ -57,6 +57,10 @@
             // cbPriority
             // 
             this.cbPriority.FormattingEnabled = true;
+            this.cbPriority.Items.AddRange(new object[] {
+            "Hight",
+            "Middle",
+            "Low"});
             this.cbPriority.Location = new System.Drawing.Point(142, 87);
             this.cbPriority.Name = "cbPriority";
             this.cbPriority.Size = new System.Drawing.Size(134, 29);
@@ -69,6 +73,7 @@
             this.cbWoker.Name = "cbWoker";
             this.cbWoker.Size = new System.Drawing.Size(134, 29);
             this.cbWoker.TabIndex = 3;
+            this.cbWoker.SelectedIndexChanged += new System.EventHandler(this.cbWoker_SelectedIndexChanged);
             // 
             // btn_submit
             // 
@@ -78,6 +83,7 @@
             this.btn_submit.TabIndex = 4;
             this.btn_submit.Text = "Submit";
             this.btn_submit.UseVisualStyleBackColor = true;
+            this.btn_submit.Click += new System.EventHandler(this.btn_submit_Click);
             // 
             // btn_cancel
             // 
@@ -87,6 +93,7 @@
             this.btn_cancel.TabIndex = 5;
             this.btn_cancel.Text = "Cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // ManagerAssginFrm
             // 
@@ -106,6 +113,7 @@
             this.Name = "ManagerAssginFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManagerAssginFrm";
+            this.Load += new System.EventHandler(this.ManagerAssginFrm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

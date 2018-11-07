@@ -7,14 +7,50 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TcarSystem.BLL;
+using TcarSystem.Model;
 
 namespace TcarSystem
 {
     public partial class ManagerAssginFrm : Form
     {
+        IList<JobInfo> joblist = JobInfoManager.GetAllJobByUid();
+        UserInfor user = UserInforBLL.CurrentUser;
+        
         public ManagerAssginFrm()
         {
             InitializeComponent();
+        }
+
+        private void cbWoker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_submit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ManagerAssginFrm_Load(object sender, EventArgs e)
+        {
+            //cbPriority.DataSource = System.Enum.GetNames()
+
+
+        }
+
+        public void bindCbox()
+        {
+            IList<Priority> priority = new List<Priority>();
+            //priority.Add(new Priority("Hight"));
+
+
+            cbPriority.DataSource = priority;
         }
     }
 }
