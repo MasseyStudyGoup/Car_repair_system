@@ -36,6 +36,7 @@ CREATE TABLE jobs (
 	opendate TEXT DEFAULT '',
 	assigndate TEXT DEFAULT '',
 	jobType TEXT DEFAULT '',
+	jobHistory TEXT DEFAULT '',
 	FOREIGN KEY(customer) REFERENCES user(userId),
 	FOREIGN KEY(worker) REFERENCES user(userId),
 	FOREIGN KEY(manager) REFERENCES user(userId),
@@ -48,24 +49,33 @@ CREATE TABLE jobs (
 -- add outlets;
 INSERT INTO Outlets (otAddress, otName) VALUES ('Albany', 'Albany');
 INSERT INTO Outlets (otAddress, otName) VALUES ('Glenfield', 'Glenfield');
+INSERT INTO Outlets (otAddress, otName) VALUES ('BrownsBay', 'BrownsBay');
+INSERT INTO Outlets (otAddress, otName) VALUES ('NorthShore', 'NorthShore');
+
 
 --add users;
-INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('jay','jj334','jay1234','user',1);
-INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('zoe','AE86','zoe','hpdesk',1);
-INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('xian','BNT67','xian','user',1);
-INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('happy','75214aa','happybirthday','work',1);
-INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('worry','8585ss','123456sd','manager',1);
-INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('R','HTZ123','r123','manager',2);
-INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('Rtest','HTZ123','r123','user',);
-INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('user1','U111','r123','user',NULL);
-INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('user2','U111','r123','user',NULL);
-INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('user3','U333','r123','user',NULL);
-INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('user3','U444','r123','user',NULL);
-INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('user4','U444','r123','user',NULL);
-INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('user5','U555','r123','user',NULL);
-INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('Rde',' ','r123','hpdesk',2);
-INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('Rma',' ','r123','manager',2);
-INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('Rwo',' ','r123','work',2);
+INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('manager1','8585ss','123','manager',1);
+INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('desk1','AE86','123','hpdesk',1);
+INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('desk2','AE86','123','hpdesk',1);
+INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('desk3','AE86','123','hpdesk',1);
+INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('desk4','AE86','123','hpdesk',1);
+INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('worker1','75214aa','123','work',1);
+INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('worker2','8585ss','123','work',1);
+INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('worker3','8585ss','123','work',1);
+INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('worker4','8585ss','123','work',1);
+INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('userA','HTZ123','123','user',NULL);
+INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('userB','XXX111','123','user',NULL);
+INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('userC','YYY123','123','user',NULL);
+INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('userD','ZZZ345','r123','user',NULL);
+INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('userE','AAA123','r123','user',NULL);
+INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('desk22',' ','123','hpdesk',2);
+INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('worker22',' ','123','work',2);
+INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('manager2','HTZ123','123','manager',2);
+INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('manager3','HTZ123','123','manager',3);
+INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('manager4','HTZ123','123','manager',4);
+
+
+
 
 --add jobs;
 INSERT INTO jobs ( closedate, createdate, carNo, desk, manager, worker, jobDescription, resolve, priority, comment, outlet,customer,jobStatus,opendate,assigndate)
