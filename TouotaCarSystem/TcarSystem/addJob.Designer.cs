@@ -52,6 +52,7 @@ namespace TcarSystem
             this.textBoxCName.Name = "textBoxCName";
             this.textBoxCName.Size = new System.Drawing.Size(176, 29);
             this.textBoxCName.TabIndex = 49;
+           
             // 
             // textBoxCarNo
             // 

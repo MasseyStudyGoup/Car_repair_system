@@ -102,8 +102,8 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1438, 709);
             this.Controls.Add(this.labelWelcome);
-            this.Controls.Add(this.userControlAddReport1);
-            this.Controls.Add(this.userControlCheckReport1);
+//            this.Controls.Add(this.userControlAddReport1);
+//            this.Controls.Add(this.userControlCheckReport1);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.btn_addReport);
             this.Controls.Add(this.btn_checkStatus);
