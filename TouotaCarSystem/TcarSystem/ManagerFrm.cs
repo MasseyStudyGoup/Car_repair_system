@@ -77,7 +77,7 @@ namespace TcarSystem
         public void Editinfor()
         {
             JobInfo job = m_jobDict[ManagerJobList.SelectedRows[0].Cells[0].Value.ToString()];
-            if(job !=null)
+            if (job != null)
             {
                 ManagerAssginFrm assginfrm = new ManagerAssginFrm(job);
                 assginfrm.ShowDialog();
@@ -96,8 +96,8 @@ namespace TcarSystem
 
         private void ManagerJobList_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            if (e.ColumnIndex == 1 )
+
+            if (e.ColumnIndex == 1)
             {
                 SearchByCarNoFrm searchByCarNo = new SearchByCarNoFrm();
                 searchByCarNo.ShowDialog();
@@ -117,3 +117,5 @@ namespace TcarSystem
 
         }
     }
+
+}

@@ -84,8 +84,9 @@ namespace TcarSystem
             m_job.createdate = DateTime.Now;
             m_job.customer = user;
             m_job.outlet = (Outlet)((ItemData)cbOutlet.SelectedItem).Value;
-            m_job.jobStatus = JobStatus.Unconfirmed;
-            m_job.resolve = ResolveStatus.Unresolved;
+            if (m_job.id == null)
+                m_job.jobStatus = JobStatus.Unconfirmed;
+             m_job.resolve = ResolveStatus.Unresolved;
 
 
             if (m_job.id == null)
@@ -94,6 +95,7 @@ namespace TcarSystem
                 JobInfoManager.UpdateJob(m_job);
             else 
             {
+                JobStatus temp = m_job.jobStatus;
                 MessageBox.Show("Sorry, cannot modify the job!");
                 //System.Windows.Forms.DialogResult.Cancel;
             }
