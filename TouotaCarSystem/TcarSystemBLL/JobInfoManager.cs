@@ -84,6 +84,29 @@ namespace TcarSystem.BLL
         }
 
 
+        public static IList<JobInfo> GetMyJobsWorker(int status, int resolve)
+        {
+            string sql = "";
+
+            UserInfor user = UserInforBLL.CurrentUser;
+            if (status >= 0 && resolve >= 0)
+            {
+                sql = string.Format("select * from jobs where worker = '{0}' and jobStatus = '{1}' and resolve = '{2}' ", user.UserId, status, resolve);
+            }
+            else if (status < 0 && resolve < 0)
+            {
+                sql = string.Format("select * from jobs where worker = '{0}'", user.UserId);
+            }
+            else
+            {
+                if (status == -1)
+                    sql = string.Format("select * from jobs where worker = '{0}' and resolve = '{1}' ", user.UserId, resolve);
+                else
+                    sql = string.Format("select * from jobs where worker = '{0}' and jobStatus = '{1}' ", user.UserId, status);
+            }
+            return TcarSystem.DAL.JobInfoService.GetJobsBySQL(sql);
+        }
+
         public static IList<JobInfo> GetMyJobsManager(int status, int resolve, int workerid)
         {
             string sql = "";
@@ -112,7 +135,7 @@ namespace TcarSystem.BLL
         /// </summary>
         /// <param name="id">outlet id</param>
         /// <returns></returns>
-        public static List<Outlet> GetOutlets(int id)
+        public static IList<Outlet> GetOutlets(int id)
         {
             return TcarSystem.DAL.sys_outletService.GetAlloutlet(id);
         }
@@ -177,10 +200,15 @@ namespace TcarSystem.BLL
 
             return TcarSystem.DAL.JobInfoService.closeByWorker(job) > 0;
         }
-        
 
 
-        
+        public static IList<Outlet> getAllOutletsBycus()
+        {
+
+            return TcarSystem.DAL.sys_outletService.GetOutlets();
+        }
+
+
 
 
     }
