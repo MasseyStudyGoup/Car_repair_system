@@ -13,9 +13,9 @@ namespace TcarSystem.DAL
         /// </summary>
         /// <param name="outletsql">pass the sql query in fucntion</param>
         /// <returns></returns>
-        public static List<Outlet> GetOutlets(string outletsql)
+        public static IList<Outlet> GetOutlets(string outletsql)
         {
-            List<Outlet> outlets = new List<Outlet>();
+            IList<Outlet> outlets = new List<Outlet>();
 
             DataTable dt = SqliteHelper.ExecuteTable(outletsql);
             if (dt != null)
@@ -40,9 +40,17 @@ namespace TcarSystem.DAL
             return GetOutlets(sql)[0];
         }
 
-        public static List<Outlet> GetAlloutlet(int id)
+        public static IList<Outlet> GetAlloutlet(int id)
         {
             string sql = "select * from outlets where otID =" + id;
+
+            return GetOutlets(sql);
+        }
+
+        public static IList<Outlet> GetOutlets()
+        {
+            string sql = "";
+            sql = string.Format("select * from {0} ", "outlets");
 
             return GetOutlets(sql);
         }

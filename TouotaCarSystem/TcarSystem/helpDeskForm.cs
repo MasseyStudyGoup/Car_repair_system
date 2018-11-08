@@ -36,13 +36,11 @@ namespace TcarSystem
                     deskJobList.Rows.Add(new string[] {
                     job.id.ToString(),
                     job.carNo,
-                    (job.customer==null)?"":job.customer.UserName,
                     (job.outlet==null)?"":job.outlet.Name,
                     job.jobType.ToString(),
                     //job.priority.ToString(),
                     job.jobStatus.ToString(),
                     job.jobDescription,
-                    (job.desk==null)?"":job.desk.UserName,
                     job.resolve.ToString(),
                     job.comment,
                     job.createdate.ToString("yyyy-MM-dd HH:mm:ss")

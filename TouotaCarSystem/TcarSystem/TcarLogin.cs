@@ -65,7 +65,7 @@ namespace TcarSystem
                 this.Hide();
                 //UserMDI mdu = new UserMDI();
                 //mdu.Show();
-                userpage usp = new userpage();
+                customerForm usp = new customerForm();
                 usp.Show();
             }
             else if (usertype == "hpdesk")
