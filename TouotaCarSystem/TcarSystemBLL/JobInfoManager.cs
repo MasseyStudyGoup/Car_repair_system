@@ -210,7 +210,7 @@ namespace TcarSystem.BLL
 
 
         /// <summary>
-        /// get job statistic from JobInfoManager DAL
+        /// Get job statistic from JobInfoManager DAL
         /// </summary>
         /// <returns></returns>
         public static IList<JobStatistic> GetJobStatistics()
