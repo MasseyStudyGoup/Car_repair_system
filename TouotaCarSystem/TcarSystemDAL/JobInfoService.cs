@@ -292,28 +292,22 @@ namespace TcarSystem.DAL
         }
 
 
-        public IList<JobStatistic> GetJobStatistic()
+        public static IList<JobStatistic> GetJobStatistic()
         {
             IList<JobStatistic> totailwork = new List<JobStatistic>();
-            string sql = "SELECT COUNT(id), worker FROM jobs WHERE jobStatus <> '{0}'  group by worker" + JobStatus.Closed.ToString();
+            string sql = "SELECT COUNT(id), worker FROM jobs WHERE jobStatus = 1 group by worker";
             DataTable dt = SqliteHelper.ExecuteTable(sql);
             if (dt.Rows.Count > 0)
             {
-                foreach (DataRow dr in dt.Rows)
+                for(int i = 0; i < dt.Rows.Count; i++)
                 {
-                    //totailwork = GetTotailWork(dr);
-                    string workerId = dr["worker"].ToString();
-                    totailwork.Worker = Sys_roleService.GetUserByiId(int.Parse(workerId));
-                    int Close = Convert.ToInt32(dr["count"]);
-
-                    JobStatistic js = new JobStatistic
-                    {
-                        Worker = workerId,
-                        Closed = Close,
-                    };
+                    JobStatistic js = new JobStatistic();
+                    string workerId = dt.Rows[i][1].ToString();
+                    if (workerId != null && workerId.Length > 0)
+                        js.Worker = Sys_roleService.GetUserByiId(int.Parse(workerId));
+                    js.ClosedJob = Convert.ToInt32(dt.Rows[i][0]);
                     totailwork.Add(js);
-                    return totailwork;
-                }
+                }       
             }
             return totailwork;
         }

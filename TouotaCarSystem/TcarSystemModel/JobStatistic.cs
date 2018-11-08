@@ -11,7 +11,7 @@ namespace TcarSystem.Model
         private int _open;
 
         public UserInfor Worker { get => _worker; set => _worker = value; }
-        public int Closed { get => _closed; set => _closed = value; }
+        public int ClosedJob { get => _closed; set => _closed = value; }
         public int Open { get => _open; set => _open = value; }
     }
 }

@@ -86,8 +86,11 @@ namespace TcarSystem
         }
 
         private void btn_Jobstatistic_Click(object sender, EventArgs e)
+
         {
-            JobStatistic jobStatistic = new JobStatistic();
+            IList<JobStatistic> jobstatus = JobInfoManager.GetJobStatistics();
+
+            JobStatisticFrm jobStatistic = new JobStatisticFrm(jobstatus);
             jobStatistic.ShowDialog();
         }
     }
