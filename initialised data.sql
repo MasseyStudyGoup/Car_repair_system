@@ -78,44 +78,75 @@ INSERT INTO user(user_name,carNo,user_password,identity,Outlet) VALUES ('manager
 
 
 --add jobs;
-INSERT INTO jobs ( closedate, createdate, carNo, desk, manager, worker, jobDescription, resolve, priority, comment, outlet,customer,jobStatus,opendate,assigndate)
-VALUES('2018-10-10','2018-5-10','jj334',NULL,NULL,NULL,'repair',NULL,2,NULL,1,2,0,NULL,NULL);
-
-INSERT INTO jobs ( closedate, createdate, carNo, desk, manager, worker, jobDescription, resolve, priority, comment, outlet,customer,jobStatus,opendate,assigndate)
-VALUES('2018-10-10','1541035846','NZT123',NULL,NULL,NULL,'Engin broke',NULL,1,NULL,1,4,0,NULL,NULL);
-
-INSERT INTO jobs ( closedate, createdate, carNo, desk, manager, worker, jobDescription, resolve, priority, comment, outlet,customer,jobStatus,opendate,assigndate)
-VALUES('','2018-11-06','HTZ123',NULL,NULL,NULL,'Rear door broke',NULL,1,NULL,2,9,0,NULL,NULL);
-
-INSERT INTO jobs ( closedate, createdate, carNo, desk, manager, worker, jobDescription, resolve, priority, comment, outlet,customer,jobStatus,opendate,assigndate)
-VALUES('','2018-11-06','U111',NULL,NULL,NULL,'Rear door broke',NULL,1,NULL,2,10,0,NULL,NULL);
-
-INSERT INTO jobs ( closedate, createdate, carNo, desk, manager, worker, jobDescription, resolve, priority, comment, outlet,customer,jobStatus,opendate,assigndate)
-VALUES('','2018-11-06','U111',NULL,NULL,NULL,'Rear door broke',NULL,1,NULL,2,11,0,NULL,NULL);
-
-INSERT INTO jobs ( closedate, createdate, carNo, desk, manager, worker, jobDescription, resolve, priority, comment, outlet,customer,jobStatus,opendate,assigndate)
-VALUES('','2018-11-06','U111',12,13,NULL,'Rear door broke',NULL,1,NULL,2,11,1,'2018-11-06',NULL);
-
-INSERT INTO jobs ( closedate, createdate, carNo, desk, manager, worker, jobDescription, resolve, priority, comment, outlet,customer,jobStatus,opendate,assigndate)
-VALUES('','2018-11-06','U111',12,13,NULL,'window broke',NULL,1,NULL,2,11,1,'2018-11-06',NULL);
-
-INSERT INTO jobs ( closedate, createdate, carNo, desk, manager, worker, jobDescription, resolve, priority, comment, outlet,customer,jobStatus,opendate,assigndate)
-VALUES('','2018-11-06','U444',12,13,NULL,'back window broke',NULL,1,NULL,2,15,1,'2018-11-06',NULL);
-
-INSERT INTO jobs ( closedate, createdate, carNo, desk, manager, worker, jobDescription, resolve, priority, comment, outlet,customer,jobStatus,opendate,assigndate)
-VALUES('','2018-11-06','U555',12,13,NULL,'back window broke',NULL,1,NULL,2,16,1,'2018-11-06',NULL);
-
-INSERT INTO jobs ( closedate, createdate, carNo, desk, manager, worker, jobDescription, resolve, priority, comment, outlet,customer,jobStatus,opendate,assigndate)
-VALUES('','2018-11-06','U666',12,13,14,'back seat broke',NULL,1,NULL,2,17,1,'2018-11-06','2018-11-06');
-
-INSERT INTO jobs ( closedate, createdate, carNo, desk, manager, worker, jobDescription, resolve, priority, comment, outlet,customer,jobStatus,opendate,assigndate)
-VALUES('','2018-11-06','U667',12,13,14,'back seat broke',NULL,1,NULL,2,18,1,'2018-11-06','2018-11-06');
-
-INSERT INTO jobs ( closedate, createdate, carNo, desk, manager, worker, jobDescription, resolve, priority, comment, outlet,customer,jobStatus,opendate,assigndate)
-VALUES('','2018-11-06','U668',12,13,14,'back seat broke',NULL,1,NULL,2,18,1,'2018-11-06','2018-11-06');
-
-INSERT INTO jobs ( closedate, createdate, carNo, desk, manager, worker, jobDescription, resolve, priority, comment, outlet,customer,jobStatus,opendate,assigndate)
-VALUES('','2018-11-06','U669',12,13,14,'back seat broke',NULL,1,NULL,2,16,1,'2018-11-06','2018-11-06');
-
 
       
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 00:03:46', '2018-11-09 00:25:23', 'TTT123', '99', '97', '103', 'teteresret', '1', '2', '', '1', '106', '2', '2018-11-09 00:25:09', '2018-11-09 00:26:35', '0', '');
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 00:03:46', '2018-11-09 00:25:23', 'AAA123', '99', '97', '103', 'teteresret', '1', '2', '', '1', '106', '2', '2018-11-09 00:25:09', '2018-11-09 00:26:35', '0', '');
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 00:03:46', '2018-11-09 00:25:23', 'bbb123', '99', '97', '103', 'teteresret', '1', '2', '', '1', '106', '2', '2018-11-09 00:25:09', '2018-11-09 00:26:35', '0', '');
+
+
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory )
+ VALUES ('2018-11-09 00:04:02', '2018-11-09 00:25:30', 'aaa001', '99', '', '', '3434343', '0', '1', '', '1', '106', '3', '2018-11-09 00:25:23', '2018-11-09 00:25:23', '0', '');
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory )
+ VALUES ('2018-11-09 00:04:02', '2018-11-09 00:25:30', 'bbb001', '99', '', '', '3434343', '0', '1', '', '1', '106', '3', '2018-11-09 00:25:23', '2018-11-09 00:25:23', '0', '');
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory )
+ VALUES ('2018-11-09 00:04:02', '2018-11-09 00:25:30', 'ccc001', '99', '', '', '3434343', '0', '1', '', '1', '106', '3', '2018-11-09 00:25:23', '2018-11-09 00:25:23', '0', '');
+
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 00:05:42', '2018-11-09 00:05:57', 'eee34', '', '', '', '343433434', '1', '1', '', '1', '107', '0', '2018-11-09 00:05:52', '2018-11-09 00:05:52', '1', '');
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 00:05:42', '2018-11-09 00:05:57', 'ddd34', '', '', '', '343433434', '1', '1', '', '1', '107', '0', '2018-11-09 00:05:52', '2018-11-09 00:05:52', '1', '');
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 00:05:42', '2018-11-09 00:05:57', 'fff34', '', '', '', '343433434', '1', '1', '', '1', '107', '0', '2018-11-09 00:05:52', '2018-11-09 00:05:52', '1', '');
+
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 00:59:42', '2018-11-09 00:59:56', '2345', '98', '97', '103', 'eeeeee', '1', '1', '', '1', '106', '2', '2018-11-09 00:59:42', '2018-11-09 01:12:47', '1', '');
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 00:59:42', '2018-11-09 00:59:56', 'qqq2345', '98', '97', '103', 'eeeeee', '1', '1', '', '1', '106', '2', '2018-11-09 00:59:42', '2018-11-09 01:12:47', '1', '');
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 00:59:42', '2018-11-09 00:59:56', 'www2345', '98', '97', '103', 'eeeeee', '1', '1', '', '1', '106', '2', '2018-11-09 00:59:42', '2018-11-09 01:12:47', '1', '');
+
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 01:13:21', '2018-11-09 01:00:04', '4444', '98', '97', '102', '44444', '2', '1', '', '1', '109', '3', '2018-11-09 00:59:59', '2018-11-09 01:12:52', '0', '');
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 01:13:21', '2018-11-09 01:00:04', 'eee4444', '98', '97', '102', '44444', '2', '1', '', '1', '109', '3', '2018-11-09 00:59:59', '2018-11-09 01:12:52', '0', '');
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 01:13:21', '2018-11-09 01:00:04', 'tttt4444', '98', '97', '102', '44444', '2', '1', '', '1', '109', '3', '2018-11-09 00:59:59', '2018-11-09 01:12:52', '0', '');
+
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 01:00:15', '2018-11-09 01:00:22', 'uuu343', '98', '97', '', '3434343', '1', '1', '', '1', '107', '1', '2018-11-09 01:00:15', '2018-11-09 01:00:15', '0', '');
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 01:00:15', '2018-11-09 01:00:22', 'iii343', '98', '97', '', '3434343', '1', '1', '', '1', '107', '1', '2018-11-09 01:00:15', '2018-11-09 01:00:15', '0', '');
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 01:00:15', '2018-11-09 01:00:22', 'ooo343', '98', '97', '', '3434343', '1', '1', '', '1', '107', '1', '2018-11-09 01:00:15', '2018-11-09 01:00:15', '0', '');
+
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 01:01:36', '2018-11-09 01:01:45', '23232', '99', '97', '', '23232', '1', '1', '', '1', '110', '1', '2018-11-09 01:01:36', '2018-11-09 01:01:36', '0', '');
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 01:01:36', '2018-11-09 01:01:45', 'ert123', '99', '97', '', '23232', '1', '1', '', '1', '110', '1', '2018-11-09 01:01:36', '2018-11-09 01:01:36', '0', '');
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 01:01:36', '2018-11-09 01:01:45', 'tt232', '99', '97', '', '23232', '1', '1', '', '1', '110', '1', '2018-11-09 01:01:36', '2018-11-09 01:01:36', '0', '');
+
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 01:01:54', '2018-11-09 01:02:01', 'yyy4545', '99', '97', '', '454545', '1', '1', '', '1', '106', '1', '2018-11-09 01:01:54', '2018-11-09 01:01:54', '0', '');
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 01:01:54', '2018-11-09 01:02:01', 'uuu545', '99', '97', '', '454545', '1', '1', '', '1', '106', '1', '2018-11-09 01:01:54', '2018-11-09 01:01:54', '0', '');
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 01:01:54', '2018-11-09 01:02:01', 'www545', '99', '97', '', '454545', '1', '1', '', '1', '106', '1', '2018-11-09 01:01:54', '2018-11-09 01:01:54', '0', '');
+
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 01:06:27', '2018-11-09 01:06:32', 'uio3434', '98', '97', '', '34343', '1', '1', '', '1', '108', '1', '2018-11-09 01:06:27', '2018-11-09 01:06:27', '0', '');
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 01:06:27', '2018-11-09 01:06:32', 'pp3434', '98', '97', '', '34343', '1', '1', '', '1', '108', '1', '2018-11-09 01:06:27', '2018-11-09 01:06:27', '0', '');
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 01:06:27', '2018-11-09 01:06:32', 'zzz3434', '98', '97', '', '34343', '1', '1', '', '1', '108', '1', '2018-11-09 01:06:27', '2018-11-09 01:06:27', '0', '');
+
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 01:17:03', '2018-11-09 01:17:11', 'uuu43', '', '', '', '3434', '1', '1', '', '1', '110', '0', '2018-11-09 01:17:03', '2018-11-09 01:17:03', '1', '');
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 01:17:03', '2018-11-09 01:17:11', 'ooo343', '', '', '', '3434', '1', '1', '', '1', '110', '0', '2018-11-09 01:17:03', '2018-11-09 01:17:03', '1', '');
+INSERT INTO  jobs  (  closedate ,  createdate ,  carNo ,  desk ,  manager ,  worker ,  jobDescription ,  resolve ,  priority ,  comment ,  outlet ,  customer ,  jobStatus ,  opendate ,  assigndate ,  jobType ,  jobHistory ) 
+VALUES ('2018-11-09 01:17:03', '2018-11-09 01:17:11', 'nn43', '', '', '', '3434', '1', '1', '', '1', '110', '0', '2018-11-09 01:17:03', '2018-11-09 01:17:03', '1', '');
