@@ -38,19 +38,20 @@ namespace TcarSystem
                 {
                     m_jobDict.Add("" + job.id, job);
                     WorkJobList.Rows.Add(new string[] {
-                    job.id,
+                    job.id.ToString(),
                     job.carNo,
-                    job.customer.UserName,
-                    job.outlet.Name,
-                    //job.priority.ToString(),
-                    //job.jobStatus.ToString(),
+                    (job.customer==null)?"":job.customer.UserName,
+                    job.priority.ToString(),
+                    //(job.outlet==null)?"":job.outlet.Name,
+                    job.jobType.ToString(),
+                    job.jobStatus.ToString(),
                     job.jobDescription,
                     //job.desk.UserName,
-                    //job.resove,
-                    //job.jobStatus.ToString(),
-                    //job.resolve.ToString(),
-                    //job.comment,
-                    job.createdate.ToString()
+                    
+                    job.resolve.ToString(),
+                    job.comment,
+                    job.createdate.ToString("yyyy-MM-dd HH:mm:ss"),
+                    job.assigndate.ToString("yyyy-MM-dd HH:mm:ss")
 
                 });
                 }
@@ -83,6 +84,9 @@ namespace TcarSystem
 
         private void btWsearch_Click(object sender, EventArgs e)
         {
+            wSearch jobForm = new wSearch();
+            jobForm.ShowDialog();
+           
 
         }
     }

@@ -41,7 +41,7 @@ namespace TcarSystem.BLL
         {
             string sql = "";
             UserInfor user = UserInforBLL.CurrentUser;
-            if (user.Identity == "worker")
+            if (user.Identity == "work")
             {
                 sql = string.Format("select * from jobs where worker = '{0}'", user.UserId);
             }
@@ -209,7 +209,14 @@ namespace TcarSystem.BLL
         }
 
 
-
+        /// <summary>
+        /// get job statistic from JobInfoManager DAL
+        /// </summary>
+        /// <returns></returns>
+        public static IList<JobStatistic> GetJobStatistics()
+        {
+            return TcarSystem.DAL.JobInfoService.GetJobStatistic();
+        }
 
     }
 }

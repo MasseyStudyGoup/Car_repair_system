@@ -48,6 +48,11 @@ namespace TcarSystem.DAL
                     
                     job.priority = (Priority)int.Parse(dt.Rows[i]["priority"].ToString());
 
+                    string type = dt.Rows[i]["jobType"].ToString();
+                    if (type != null && type.Length > 0)
+                        job.jobType = (JobType)int.Parse(type);
+
+
                     string resolve = dt.Rows[i]["resolve"].ToString();
                     if (resolve != null && resolve.Length > 0)
                         job.resolve = (ResolveStatus)int.Parse(resolve);
@@ -147,7 +152,7 @@ namespace TcarSystem.DAL
             sb.Append("'").Append((int)job.resolve).Append("',");
             sb.Append("'").Append((int)job.priority).Append("',");
             sb.Append("'").Append((job.comment == null) ? "" : job.comment).Append("',");
-            sb.Append("'").Append((job.desk == null)?"":""+job.desk.outlet.Id).Append("',");
+            sb.Append("'").Append((job.outlet == null) ? "" : "" + job.outlet.Id).Append("',");
             sb.Append("'").Append((job.customer == null)?"":""+job.customer.UserId).Append("',");
             sb.Append("'").Append((int)job.jobStatus).Append("',");
             sb.Append("'").Append((job.opendate == null) ? "" : job.assigndate.ToString(DATE_FORMAT)).Append("',");
@@ -185,7 +190,7 @@ namespace TcarSystem.DAL
             sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[7], (int)job.resolve));
             sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[8], (int)job.priority));
             sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[9], (job.comment == null) ? "" : job.comment));
-            sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[10], (job.desk == null) ? "" : "" + job.desk.outlet.Id));
+            sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[10], (job.outlet == null) ? "" : "" + job.outlet.Id));
             sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[11], (job.customer == null) ? "" : "" + job.customer.UserId));
             sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[12], (int)job.jobStatus));
             sb.Append(", ").Append(string.Format(SQL_COLUMN_VALUE_FMT, JobInfo.COLUMNS_NO_ID[13], (job.opendate == null) ? "" : job.assigndate.ToString(DATE_FORMAT)));

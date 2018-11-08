@@ -50,7 +50,7 @@ namespace TcarSystem
                 
                 textBoxCarNo.Text = m_job.carNo;
                 //cbCus.Text = (m_job.customer == null) ? "" : m_job.customer.UserName;
-                cbType.SelectedText = m_job.jobType.ToString();
+                cbType.Text = m_job.jobType.ToString();
                 jobDes.Text = m_job.jobDescription;
                 
 

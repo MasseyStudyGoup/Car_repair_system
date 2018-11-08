@@ -34,6 +34,7 @@ namespace TcarSystem
             //cbOutlet.SelectedValue = outlet.Id;
 
 
+
         }
 
         private int TP { get; set; }
@@ -41,11 +42,11 @@ namespace TcarSystem
 
         private void LoadOutlet(int numb)
         {
-            List<Outlet> getOutlet = JobInfoManager.GetOutlets(numb);
-            getOutlet.Insert(0, new Outlet() { Id = -1, Name = "Plese select outlet"});
-            cbOutlet.DataSource = getOutlet;
-            cbOutlet.DisplayMember = "Name";
-            cbOutlet.ValueMember = "Id";
+            //IList<Outlet> getOutlet = JobInfoManager.getAllOutletsBycus(numb);
+            //getOutlet.Insert(0, new Outlet() { Id = -1, Name = "Plese select outlet"});
+            //cbOutlet.DataSource = getOutlet;
+            //cbOutlet.DisplayMember = "Name";
+            //cbOutlet.ValueMember = "Id";
 
         }
 

@@ -42,7 +42,7 @@ namespace TcarSystem
 
         private void RefreshJobList(IList<JobInfo> jobs)
         {
-            workerSearcjJobList.Rows.Clear();
+            WorkJobList.Rows.Clear();
             m_jobDict.Clear();
 
 
@@ -51,21 +51,21 @@ namespace TcarSystem
                 foreach (JobInfo job in jobs)
                 {
                     m_jobDict.Add("" + job.id, job);
-                    workerSearcjJobList.Rows.Add(new string[] {
-
+                    WorkJobList.Rows.Add(new string[] {
                     job.id.ToString(),
                     job.carNo,
                     (job.customer==null)?"":job.customer.UserName,
-                    (job.outlet==null)?"":job.outlet.Name,
+                    job.priority.ToString(),
+                    //(job.outlet==null)?"":job.outlet.Name,
                     job.jobType.ToString(),
-                    //(job.jobType==null)?"":job.jobType.ToString(),
-                    //job.priority.ToString(),
                     job.jobStatus.ToString(),
                     job.jobDescription,
-                    (job.desk==null)?"":job.desk.UserName,
+                    //job.desk.UserName,
+                    
                     job.resolve.ToString(),
                     job.comment,
-                    job.createdate.ToString("yyyy-MM-dd HH:mm:ss")
+                    job.createdate.ToString("yyyy-MM-dd HH:mm:ss"),
+                    job.assigndate.ToString("yyyy-MM-dd HH:mm:ss")
 
                 });
                 }

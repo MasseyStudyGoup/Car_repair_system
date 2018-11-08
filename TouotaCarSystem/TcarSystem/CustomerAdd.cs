@@ -36,6 +36,7 @@ namespace TcarSystem
         private void CustomerAdd_Load(object sender, EventArgs e)
         {
             cbType.DataSource = System.Enum.GetNames(typeof(JobType));
+            //cbType.Text = m_job.jobType.ToString();
             foreach (Outlet o in JobInfoManager.getAllOutletsBycus())
             {
                 ItemData item = new ItemData(o.Name, o);
@@ -43,14 +44,15 @@ namespace TcarSystem
                 if (m_job.outlet != null && o.Id == m_job.outlet.Id)
                     cbOutlet.SelectedItem = item;
             }
-            cbType.DataSource = System.Enum.GetNames(typeof(JobType));
+            
             if (m_job.id != null)
             {
 
                 txCarNo.Text = m_job.carNo;
-               // cbOutlet.Text = (m_job.outlet == null) ? "" : m_job.outlet.Name;
-                cbType.SelectedText = m_job.jobType.ToString();
+                cbOutlet.Text = (m_job.outlet == null) ? "" : m_job.outlet.Name;
+                cbType.Text =  m_job.jobType.ToString();
                 txJobDes.Text = m_job.jobDescription;
+
 
 
             }
@@ -63,33 +65,45 @@ namespace TcarSystem
 
         private void btn_Submit_Click(object sender, EventArgs e)
         {
-            cbType.DataSource = System.Enum.GetNames(typeof(JobType));
-            foreach (Outlet o in JobInfoManager.getAllOutletsBycus())
+            if (cbOutlet.SelectedItem == null)
             {
-                ItemData item = new ItemData(o.Name, o);
-                cbOutlet.Items.Add(item);
-                if (m_job.outlet != null && o.Id == m_job.outlet.Id)
-                    cbOutlet.SelectedItem = item;
+                cbOutlet.Focus();
+                return;
             }
+            //cbType.DataSource = System.Enum.GetNames(typeof(JobType));
+            
 
 
             m_job.carNo = txCarNo.Text;
+            // m_job.jobType = (JobType)cbType.SelectedItem.ToString();
+            
             m_job.jobType = (JobType)Enum.Parse(typeof(JobType), cbType.Text);
+
             m_job.jobDescription = txJobDes.Text;
             m_job.priority = Priority.Normal;
             m_job.createdate = DateTime.Now;
             m_job.customer = user;
             m_job.outlet = (Outlet)((ItemData)cbOutlet.SelectedItem).Value;
             m_job.jobStatus = JobStatus.Unconfirmed;
+            m_job.resolve = ResolveStatus.Unresolved;
 
 
             if (m_job.id == null)
                 JobInfoManager.AddJob(m_job);
-            else if(m_job.jobStatus == JobStatus.Unconfirmed)
+            else if (m_job.jobStatus == JobStatus.Unconfirmed)
                 JobInfoManager.UpdateJob(m_job);
-            else
+            else 
+            {
                 MessageBox.Show("Sorry, cannot modify the job!");
+                //System.Windows.Forms.DialogResult.Cancel;
+            }
+
             DialogResult = System.Windows.Forms.DialogResult.OK;
+        }
+
+        private void cbType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

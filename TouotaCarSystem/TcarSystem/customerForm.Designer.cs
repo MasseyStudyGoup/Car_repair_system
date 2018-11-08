@@ -30,6 +30,8 @@
         {
             this.cusJobList = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnUpdataJob = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.JobId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CarNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.outlet = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,10 +39,7 @@
             this.JobStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.JobDes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.JobRes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.JobComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.JobCreate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnUpdataJob = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.cusJobList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,24 +57,43 @@
             this.JobStatus,
             this.JobDes,
             this.JobRes,
-            this.JobComment,
             this.JobCreate});
-            this.cusJobList.Location = new System.Drawing.Point(23, 93);
+            this.cusJobList.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.cusJobList.Location = new System.Drawing.Point(23, 86);
             this.cusJobList.Name = "cusJobList";
             this.cusJobList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.cusJobList.Size = new System.Drawing.Size(1214, 468);
+            this.cusJobList.Size = new System.Drawing.Size(1214, 432);
             this.cusJobList.TabIndex = 1;
             this.cusJobList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cusJobList_CellContentDoubleClick);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(40, 39);
+            this.btnAdd.Location = new System.Drawing.Point(40, 36);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(82, 33);
+            this.btnAdd.Size = new System.Drawing.Size(82, 30);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnUpdataJob
+            // 
+            this.btnUpdataJob.Location = new System.Drawing.Point(168, 36);
+            this.btnUpdataJob.Name = "btnUpdataJob";
+            this.btnUpdataJob.Size = new System.Drawing.Size(82, 30);
+            this.btnUpdataJob.TabIndex = 3;
+            this.btnUpdataJob.Text = "Modify";
+            this.btnUpdataJob.UseVisualStyleBackColor = true;
+            this.btnUpdataJob.Click += new System.EventHandler(this.btnUpdataJob_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(327, 36);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(74, 30);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // JobId
             // 
@@ -112,40 +130,16 @@
             this.JobRes.HeaderText = "Resolve";
             this.JobRes.Name = "JobRes";
             // 
-            // JobComment
-            // 
-            this.JobComment.HeaderText = "Comment";
-            this.JobComment.Name = "JobComment";
-            // 
             // JobCreate
             // 
             this.JobCreate.HeaderText = "CreateDate";
             this.JobCreate.Name = "JobCreate";
             // 
-            // btnUpdataJob
-            // 
-            this.btnUpdataJob.Location = new System.Drawing.Point(168, 39);
-            this.btnUpdataJob.Name = "btnUpdataJob";
-            this.btnUpdataJob.Size = new System.Drawing.Size(82, 33);
-            this.btnUpdataJob.TabIndex = 3;
-            this.btnUpdataJob.Text = "Modify";
-            this.btnUpdataJob.UseVisualStyleBackColor = true;
-            this.btnUpdataJob.Click += new System.EventHandler(this.btnUpdataJob_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(327, 39);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(74, 33);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // customerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1289, 573);
+            this.ClientSize = new System.Drawing.Size(1289, 529);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnUpdataJob);
             this.Controls.Add(this.btnAdd);
@@ -162,6 +156,8 @@
 
         private System.Windows.Forms.DataGridView cusJobList;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnUpdataJob;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn JobId;
         private System.Windows.Forms.DataGridViewTextBoxColumn CarNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn outlet;
@@ -169,9 +165,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn JobStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn JobDes;
         private System.Windows.Forms.DataGridViewTextBoxColumn JobRes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn JobComment;
         private System.Windows.Forms.DataGridViewTextBoxColumn JobCreate;
-        private System.Windows.Forms.Button btnUpdataJob;
-        private System.Windows.Forms.Button button1;
     }
 }

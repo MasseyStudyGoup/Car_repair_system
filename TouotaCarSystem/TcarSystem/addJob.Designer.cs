@@ -96,7 +96,6 @@ namespace TcarSystem
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(226, 29);
             this.cbType.TabIndex = 38;
-            this.cbType.Text = "Please select a job type";
             this.cbType.SelectedIndexChanged += new System.EventHandler(this.cbType_SelectedIndexChanged);
             // 
             // labelName
@@ -139,7 +138,6 @@ namespace TcarSystem
             this.cbOpen.Name = "cbOpen";
             this.cbOpen.Size = new System.Drawing.Size(226, 29);
             this.cbOpen.TabIndex = 50;
-            this.cbOpen.Text = "Please select one option";
             this.cbOpen.VisibleChanged += new System.EventHandler(this.addJob_Load);
             // 
             // label1
@@ -187,7 +185,7 @@ namespace TcarSystem
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.labelCarNo);
             this.Controls.Add(this.btn_Submit);
-            this.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "addJob";
             this.Text = "addJob";

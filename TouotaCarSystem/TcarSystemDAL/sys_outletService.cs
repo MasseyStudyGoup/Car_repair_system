@@ -36,8 +36,15 @@ namespace TcarSystem.DAL
         public static Outlet GetOutletbyotID(int id)
         {
             string sql = string.Format("select * from {0} where otID='{1}'", "outlets", id.ToString());
-
-            return GetOutlets(sql)[0];
+            try
+            {
+                return GetOutlets(sql)[0];
+            }
+            catch
+            {
+                return null;
+            }
+            
         }
 
         public static IList<Outlet> GetAlloutlet(int id)
