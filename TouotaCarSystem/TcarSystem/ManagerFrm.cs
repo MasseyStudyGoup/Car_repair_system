@@ -93,5 +93,27 @@ namespace TcarSystem
             JobStatisticFrm jobStatistic = new JobStatisticFrm(jobstatus);
             jobStatistic.ShowDialog();
         }
+
+        private void ManagerJobList_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            if (e.ColumnIndex == 1 )
+            {
+                SearchByCarNoFrm searchByCarNo = new SearchByCarNoFrm();
+                searchByCarNo.ShowDialog();
+            }
+
+
+        }
+        private void AddLinkColumn()
+        {
+            System.Windows.Forms.DataGridViewColumn
+            DataGridViewLinkColumn = new DataGridViewLinkColumn();
+
+        }
+
+        private void btn_signOut_Click(object sender, EventArgs e)
+        {
+
+        }
     }
-}

@@ -30,8 +30,11 @@
         {
             this.labelWelcome = new System.Windows.Forms.Label();
             this.ManagerJobList = new System.Windows.Forms.DataGridView();
+            this.btn_Msearch = new System.Windows.Forms.Button();
+            this.btnAssgin = new System.Windows.Forms.Button();
+            this.btn_Jobstatistic = new System.Windows.Forms.Button();
             this.JobId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CarNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CarNo = new System.Windows.Forms.DataGridViewLinkColumn();
             this.JobCus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.outlet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workType = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,16 +44,14 @@
             this.JobRes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.JobComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.JobCreate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_Msearch = new System.Windows.Forms.Button();
-            this.btnAssgin = new System.Windows.Forms.Button();
-            this.btn_Jobstatistic = new System.Windows.Forms.Button();
+            this.btn_signOut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ManagerJobList)).BeginInit();
             this.SuspendLayout();
             // 
             // labelWelcome
             // 
             this.labelWelcome.AutoSize = true;
-            this.labelWelcome.Location = new System.Drawing.Point(961, 22);
+            this.labelWelcome.Location = new System.Drawing.Point(9, 13);
             this.labelWelcome.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelWelcome.Name = "labelWelcome";
             this.labelWelcome.Size = new System.Drawing.Size(81, 21);
@@ -73,11 +74,44 @@
             this.JobRes,
             this.JobComment,
             this.JobCreate});
+            this.ManagerJobList.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.ManagerJobList.Location = new System.Drawing.Point(2, 154);
             this.ManagerJobList.Name = "ManagerJobList";
+            this.ManagerJobList.RowHeadersVisible = false;
             this.ManagerJobList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ManagerJobList.Size = new System.Drawing.Size(1214, 432);
             this.ManagerJobList.TabIndex = 3;
+            this.ManagerJobList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ManagerJobList_CellContentDoubleClick);
+            // 
+            // btn_Msearch
+            // 
+            this.btn_Msearch.Location = new System.Drawing.Point(118, 60);
+            this.btn_Msearch.Name = "btn_Msearch";
+            this.btn_Msearch.Size = new System.Drawing.Size(86, 33);
+            this.btn_Msearch.TabIndex = 6;
+            this.btn_Msearch.Text = "Search";
+            this.btn_Msearch.UseVisualStyleBackColor = true;
+            this.btn_Msearch.Click += new System.EventHandler(this.btn_Msearch_Click);
+            // 
+            // btnAssgin
+            // 
+            this.btnAssgin.Location = new System.Drawing.Point(8, 60);
+            this.btnAssgin.Name = "btnAssgin";
+            this.btnAssgin.Size = new System.Drawing.Size(82, 33);
+            this.btnAssgin.TabIndex = 5;
+            this.btnAssgin.Text = "Assign";
+            this.btnAssgin.UseVisualStyleBackColor = true;
+            this.btnAssgin.Click += new System.EventHandler(this.btnAssgin_Click);
+            // 
+            // btn_Jobstatistic
+            // 
+            this.btn_Jobstatistic.Location = new System.Drawing.Point(246, 60);
+            this.btn_Jobstatistic.Name = "btn_Jobstatistic";
+            this.btn_Jobstatistic.Size = new System.Drawing.Size(108, 33);
+            this.btn_Jobstatistic.TabIndex = 7;
+            this.btn_Jobstatistic.Text = "Job Statistic";
+            this.btn_Jobstatistic.UseVisualStyleBackColor = true;
+            this.btn_Jobstatistic.Click += new System.EventHandler(this.btn_Jobstatistic_Click);
             // 
             // JobId
             // 
@@ -86,8 +120,14 @@
             // 
             // CarNo
             // 
+            this.CarNo.ActiveLinkColor = System.Drawing.Color.Tomato;
+            this.CarNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.CarNo.HeaderText = "Car No";
+            this.CarNo.LinkColor = System.Drawing.Color.White;
             this.CarNo.Name = "CarNo";
+            this.CarNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.CarNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.CarNo.VisitedLinkColor = System.Drawing.Color.Brown;
             // 
             // JobCus
             // 
@@ -134,47 +174,28 @@
             this.JobCreate.HeaderText = "CreateDate";
             this.JobCreate.Name = "JobCreate";
             // 
-            // btn_Msearch
+            // btn_signOut
             // 
-            this.btn_Msearch.Location = new System.Drawing.Point(118, 60);
-            this.btn_Msearch.Name = "btn_Msearch";
-            this.btn_Msearch.Size = new System.Drawing.Size(86, 33);
-            this.btn_Msearch.TabIndex = 6;
-            this.btn_Msearch.Text = "Search";
-            this.btn_Msearch.UseVisualStyleBackColor = true;
-            this.btn_Msearch.Click += new System.EventHandler(this.btn_Msearch_Click);
-            // 
-            // btnAssgin
-            // 
-            this.btnAssgin.Location = new System.Drawing.Point(8, 60);
-            this.btnAssgin.Name = "btnAssgin";
-            this.btnAssgin.Size = new System.Drawing.Size(82, 33);
-            this.btnAssgin.TabIndex = 5;
-            this.btnAssgin.Text = "Assign";
-            this.btnAssgin.UseVisualStyleBackColor = true;
-            this.btnAssgin.Click += new System.EventHandler(this.btnAssgin_Click);
-            // 
-            // btn_Jobstatistic
-            // 
-            this.btn_Jobstatistic.Location = new System.Drawing.Point(246, 60);
-            this.btn_Jobstatistic.Name = "btn_Jobstatistic";
-            this.btn_Jobstatistic.Size = new System.Drawing.Size(108, 33);
-            this.btn_Jobstatistic.TabIndex = 7;
-            this.btn_Jobstatistic.Text = "Job Statistic";
-            this.btn_Jobstatistic.UseVisualStyleBackColor = true;
-            this.btn_Jobstatistic.Click += new System.EventHandler(this.btn_Jobstatistic_Click);
+            this.btn_signOut.Location = new System.Drawing.Point(1103, 13);
+            this.btn_signOut.Name = "btn_signOut";
+            this.btn_signOut.Size = new System.Drawing.Size(89, 36);
+            this.btn_signOut.TabIndex = 8;
+            this.btn_signOut.Text = "Sign Out";
+            this.btn_signOut.UseVisualStyleBackColor = true;
+            this.btn_signOut.Click += new System.EventHandler(this.btn_signOut_Click);
             // 
             // ManagerFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1218, 587);
+            this.Controls.Add(this.btn_signOut);
             this.Controls.Add(this.btn_Jobstatistic);
             this.Controls.Add(this.btn_Msearch);
             this.Controls.Add(this.btnAssgin);
             this.Controls.Add(this.ManagerJobList);
             this.Controls.Add(this.labelWelcome);
-            this.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ManagerFrm";
             this.Text = "ManagerFrm";
@@ -189,8 +210,11 @@
 
         private System.Windows.Forms.Label labelWelcome;
         private System.Windows.Forms.DataGridView ManagerJobList;
+        private System.Windows.Forms.Button btn_Msearch;
+        private System.Windows.Forms.Button btnAssgin;
+        private System.Windows.Forms.Button btn_Jobstatistic;
         private System.Windows.Forms.DataGridViewTextBoxColumn JobId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CarNo;
+        private System.Windows.Forms.DataGridViewLinkColumn CarNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn JobCus;
         private System.Windows.Forms.DataGridViewTextBoxColumn outlet;
         private System.Windows.Forms.DataGridViewTextBoxColumn workType;
@@ -200,8 +224,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn JobRes;
         private System.Windows.Forms.DataGridViewTextBoxColumn JobComment;
         private System.Windows.Forms.DataGridViewTextBoxColumn JobCreate;
-        private System.Windows.Forms.Button btn_Msearch;
-        private System.Windows.Forms.Button btnAssgin;
-        private System.Windows.Forms.Button btn_Jobstatistic;
+        private System.Windows.Forms.Button btn_signOut;
     }
 }

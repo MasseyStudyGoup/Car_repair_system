@@ -53,12 +53,13 @@
             // 
             // btn_Search
             // 
-            this.btn_Search.Location = new System.Drawing.Point(720, 18);
+            this.btn_Search.Location = new System.Drawing.Point(721, 23);
             this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(91, 44);
+            this.btn_Search.Size = new System.Drawing.Size(91, 33);
             this.btn_Search.TabIndex = 12;
             this.btn_Search.Text = "Search";
             this.btn_Search.UseVisualStyleBackColor = true;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // label2
             // 
@@ -190,12 +191,13 @@
             // 
             // btn_changeWoker
             // 
-            this.btn_changeWoker.Location = new System.Drawing.Point(849, 18);
+            this.btn_changeWoker.Location = new System.Drawing.Point(853, 23);
             this.btn_changeWoker.Name = "btn_changeWoker";
-            this.btn_changeWoker.Size = new System.Drawing.Size(134, 44);
+            this.btn_changeWoker.Size = new System.Drawing.Size(134, 33);
             this.btn_changeWoker.TabIndex = 15;
-            this.btn_changeWoker.Text = "Change Woker";
+            this.btn_changeWoker.Text = "Reassgin Woker";
             this.btn_changeWoker.UseVisualStyleBackColor = true;
+            this.btn_changeWoker.Click += new System.EventHandler(this.btn_changeWoker_Click);
             // 
             // ManagerSearchFrm
             // 
@@ -212,9 +214,10 @@
             this.Controls.Add(this.cbJobStatus);
             this.Controls.Add(this.MSearcjJobList);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ManagerSearchFrm";
             this.Text = "ManagerSearchFrm";
+            this.Load += new System.EventHandler(this.ManagerSearchFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MSearcjJobList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

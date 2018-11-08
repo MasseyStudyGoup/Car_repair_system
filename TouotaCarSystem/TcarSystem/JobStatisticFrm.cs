@@ -21,7 +21,8 @@ namespace TcarSystem
             InitializeComponent();
             btn_Close.DialogResult = DialogResult.Cancel;
 
-            //IList<JobStatistic> jobstatus = new List<JobStatistic>();
+            int jobt = 0;
+            int woknb = 0;
             foreach (JobStatistic js in jobstatus)
             {
                 dgStatistic.Rows.Add(new string[]
@@ -29,8 +30,11 @@ namespace TcarSystem
                     js.Worker.UserName.ToString(),
                     js.ClosedJob.ToString()
                 });
-                //jobt += js.closeJob;
+                jobt += js.ClosedJob;
+                woknb += js.Worker.UserId;//need adjust
             }
+
+            labelTotalJob.Text = "Total job " + jobt +"Unsolved job " + woknb;
         }
 
         private void JobStatistic_Load(object sender, EventArgs e)
@@ -38,6 +42,6 @@ namespace TcarSystem
 
         }
 
-        //labelTotalJob.Text = "Total job " +  + "Unsolved job " + ;
+        
     }
 }
