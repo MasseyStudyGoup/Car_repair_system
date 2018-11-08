@@ -66,5 +66,11 @@ namespace TcarSystem.BLL
         {
             return Sys_roleService.GetAllWorkers(outlet);
         }
+
+        public static IList<UserInfor> GetCustomers()
+        {
+            return Sys_roleService.GetAllCustomer();
+        }
+        
     }
 }

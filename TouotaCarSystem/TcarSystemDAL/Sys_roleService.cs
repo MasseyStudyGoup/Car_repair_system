@@ -96,6 +96,20 @@ namespace TcarSystem.DAL
             
         }
 
+        public static IList<UserInfor> GetAllCustomer()
+        {
+            string strsql = string.Format("select * from {0} where identity is 'user' ", "user");
+            try
+            {
+                return GetUsersBySQL(strsql);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+
 
     }
 }

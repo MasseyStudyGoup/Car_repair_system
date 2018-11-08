@@ -30,7 +30,6 @@ namespace TcarSystem
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxCName = new System.Windows.Forms.TextBox();
             this.textBoxCarNo = new System.Windows.Forms.TextBox();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.labelDescb = new System.Windows.Forms.Label();
@@ -43,16 +42,8 @@ namespace TcarSystem
             this.cbOpen = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lbopen = new System.Windows.Forms.Label();
+            this.cbCus = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // textBoxCName
-            // 
-            this.textBoxCName.Font = new System.Drawing.Font("Microsoft YaHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBoxCName.Location = new System.Drawing.Point(200, 91);
-            this.textBoxCName.Name = "textBoxCName";
-            this.textBoxCName.Size = new System.Drawing.Size(176, 29);
-            this.textBoxCName.TabIndex = 49;
-           
             // 
             // textBoxCarNo
             // 
@@ -169,15 +160,24 @@ namespace TcarSystem
             this.lbopen.Text = "Open it";
             this.lbopen.VisibleChanged += new System.EventHandler(this.addJob_Load);
             // 
+            // cbCus
+            // 
+            this.cbCus.FormattingEnabled = true;
+            this.cbCus.Location = new System.Drawing.Point(200, 91);
+            this.cbCus.Name = "cbCus";
+            this.cbCus.Size = new System.Drawing.Size(176, 29);
+            this.cbCus.TabIndex = 53;
+            this.cbCus.SelectedIndexChanged += new System.EventHandler(this.cbCus_SelectedIndexChanged);
+            // 
             // addJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(696, 580);
+            this.Controls.Add(this.cbCus);
             this.Controls.Add(this.lbopen);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbOpen);
-            this.Controls.Add(this.textBoxCName);
             this.Controls.Add(this.textBoxCarNo);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.labelDescb);
@@ -208,8 +208,6 @@ namespace TcarSystem
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBoxCName;
         private System.Windows.Forms.TextBox textBoxCarNo;
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Label labelDescb;
@@ -222,5 +220,6 @@ namespace TcarSystem
         private System.Windows.Forms.ComboBox cbOpen;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbopen;
+        private System.Windows.Forms.ComboBox cbCus;
     }
 }

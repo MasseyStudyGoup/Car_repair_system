@@ -37,12 +37,19 @@ namespace TcarSystem
         }
         private void addJob_Load(object sender, EventArgs e)
         {
+            foreach (UserInfor o in UserInforBLL.GetCustomers())
+            {
+                ItemData item = new ItemData(o.UserName, o);
+                cbCus.Items.Add(item);
+                if (m_job.customer != null && o.UserId == m_job.customer.UserId)
+                    cbCus.SelectedItem = item;
+            }
             cbType.DataSource = System.Enum.GetNames(typeof(JobType));
             if (m_job.id != null)
             {
                 
                 textBoxCarNo.Text = m_job.carNo;
-                textBoxCName.Text = (m_job.customer == null) ? "" : m_job.customer.UserName;
+                //cbCus.Text = (m_job.customer == null) ? "" : m_job.customer.UserName;
                 cbType.SelectedText = m_job.jobType.ToString();
                 jobDes.Text = m_job.jobDescription;
                 
@@ -58,10 +65,16 @@ namespace TcarSystem
 
         private void btn_Submit_Click(object sender, EventArgs e)
         {
-
+            foreach (UserInfor o in UserInforBLL.GetCustomers())
+            {
+                ItemData item = new ItemData(o.UserName, o);
+                cbCus.Items.Add(item);
+                if (m_job.customer != null && o.UserId == m_job.customer.UserId)
+                    cbCus.SelectedItem = item;
+            }
             cbType.DataSource = System.Enum.GetNames(typeof(JobType));
             m_job.carNo = textBoxCarNo.Text;
-            m_job.customer = UserInforBLL.GetUserByName(textBoxCName.Text);
+            m_job.customer = (UserInfor)((ItemData)cbCus.SelectedItem).Value;
             m_job.jobType = (JobType)Enum.Parse(typeof(JobType), cbType.Text);
             m_job.jobDescription = jobDes.Text;
             m_job.priority = Priority.Normal;
@@ -104,6 +117,9 @@ namespace TcarSystem
 
         }
 
-        
+        private void cbCus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

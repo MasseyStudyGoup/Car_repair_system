@@ -40,6 +40,7 @@
             this.JobComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.JobCreate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnUpdataJob = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.cusJobList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,11 +132,21 @@
             this.btnUpdataJob.UseVisualStyleBackColor = true;
             this.btnUpdataJob.Click += new System.EventHandler(this.btnUpdataJob_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(327, 39);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(74, 33);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // customerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1289, 573);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnUpdataJob);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.cusJobList);
@@ -161,5 +172,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn JobComment;
         private System.Windows.Forms.DataGridViewTextBoxColumn JobCreate;
         private System.Windows.Forms.Button btnUpdataJob;
+        private System.Windows.Forms.Button button1;
     }
 }
